@@ -1,0 +1,296 @@
+{
+  "site": {
+    "title": "윤지수 — Brand Experience Marketer",
+    "email": "gisu.y96n@gmail.com",
+    "linkedin_url": "https://linkedin.com/in/yoon-gisu",
+    "linkedin_label": "linkedin.com/in/yoon-gisu"
+  },
+  "hero": {
+    "eyebrow": "BX Marketer · SKT T Factory · 5yr",
+    "name_en": "YOON GISU",
+    "name_kr": "윤지수",
+    "position_highlight": "Brand Experience Marketer",
+    "position_sub": "공간·콘텐츠·캠페인을 데이터 기반으로 설계합니다",
+    "tagline": "SKT 플래그십스토어 T Factory에서 5년간\n팝업스토어, 전시 리뉴얼, IMC 캠페인을 기획·운영했습니다.",
+    "stats": [
+      { "end": 40, "suffix": "×", "label": "체류율 증가", "decimal": false },
+      { "end": 55, "suffix": "%", "label": "구매 전환율", "decimal": false },
+      { "end": 4.5, "suffix": "", "label": "고객 만족도", "decimal": true },
+      { "fixed": "5yr", "label": "T Factory" }
+    ],
+    "profile_image": "images/profile.png",
+    "profile_name": "Yoon Gisu",
+    "profile_role": "Brand Experience Marketer"
+  },
+  "about": {
+    "title_line1": "고객 경험을",
+    "title_accent": "데이터로",
+    "title_line3": "설계합니다",
+    "body": "큐레이터로서 1년간 플래그십스토어 현장에서 고객 니즈 기반 개선안을 도출하고, 이후 현장 경험과 데이터를 토대로 전시·콘텐츠·캠페인이 하나의 흐름으로 연결되도록 기획해 Brand Experience 마케터로 활동하고 있습니다.",
+    "skills": [
+      { "name": "BX 기획", "percent": 95, "tag": "Core" },
+      { "name": "공간 기획", "percent": 90, "tag": "Advanced" },
+      { "name": "IMC 전략", "percent": 88, "tag": "Advanced" },
+      { "name": "UX 설계", "percent": 82, "tag": "Proficient" },
+      { "name": "데이터 분석", "percent": 78, "tag": "Proficient" },
+      { "name": "Figma", "percent": 72, "tag": "Working" }
+    ],
+    "career": [
+      {
+        "org": "PS&Marketing (피에스앤마케팅)",
+        "period": "2021.10 — 현재",
+        "sub": "유통혁신팀 / SKT 플래그십매장 T Factory",
+        "sub_val": "4년 7개월+"
+      },
+      {
+        "org": "Vancouver Trump Hotel & Tower",
+        "period": "2019",
+        "sub": "S&M Dept. 인턴십 (2개월)",
+        "sub_val": ""
+      }
+    ],
+    "education": [
+      {
+        "org": "단국대학교",
+        "period": "2015 — 2020",
+        "sub": "몽골학 / 스포츠경영학 전공",
+        "sub_val": ""
+      }
+    ],
+    "qualifications": [
+      { "name": "OPIc IH", "val": "비즈니스 회화 가능" },
+      { "name": "MOS Master", "val": "OA 활용 능력" }
+    ],
+    "awards": [
+      { "name": "SKT T Factory 우수 구성원", "val": "2022 Q2 · Q3" },
+      { "name": "SKT T Factory 우수 구성원", "val": "2024 Q3" }
+    ]
+  },
+  "philosophy": {
+    "front_label": "일하는 철학",
+    "front_quote": "브랜드가 전하고자 하는 메시지를",
+    "front_main_line1": "고객 경험으로",
+    "front_main_line2": "설계합니다",
+    "items": [
+      { "num": "01", "bold": "데이터 먼저.", "text": " 현장 데이터와 시장 분석으로 문제를 정의하고 목표를 설정합니다." },
+      { "num": "02", "bold": "경험으로 연결.", "text": " 공간·콘텐츠·캠페인이 끊김 없이 하나의 흐름으로 이어지도록 설계합니다." },
+      { "num": "03", "bold": "측정하고 개선.", "text": " 성과 지표를 추적하고 인사이트를 다음 기획으로 연결합니다." }
+    ]
+  },
+  "process": [
+    {
+      "num": "STEP 01",
+      "image": "images/process_01.png",
+      "title": "목적 명확화 · 타겟 세분화",
+      "body": "현장 데이터와 시장 분석으로 핵심 목표와 타겟군을 도출합니다.",
+      "chips": ["목적 재정립", "세분화", "Key Message"]
+    },
+    {
+      "num": "STEP 02",
+      "image": "images/process_04.png",
+      "title": "공간·상품 · 경험 설계",
+      "body": "브랜드 아이덴티티를 반영한 동선과 통합 고객 여정을 설계합니다.",
+      "chips": ["공간 기획", "UX", "이해관계자"]
+    },
+    {
+      "num": "STEP 03",
+      "image": "images/process_06.png",
+      "title": "IMC 전략 · 프로젝트 총괄",
+      "body": "온·오프라인 통합 전략과 트래커 기반 일정·예산 관리를 담당합니다.",
+      "chips": ["IMC", "채널 실행", "PM"]
+    },
+    {
+      "num": "STEP 04",
+      "image": "images/process_09.png",
+      "title": "운영 관리 · 성과 분석",
+      "body": "정량·정성 데이터를 수집하고 성과 지표 분석으로 차기 방향을 제안합니다.",
+      "chips": ["현장 운영", "데이터", "인사이트"]
+    }
+  ],
+  "main_projects": [
+    {
+      "id": "p1",
+      "category": "Popup · Brand Experience",
+      "title": "SKT 0청년 × 폴더블5 팝업",
+      "desc": "체험 요소 부재가 이탈 원인임을 데이터로 파악. 고객 경험 중심으로 전환해 체류 성과를 40배 끌어올렸습니다.",
+      "kpis": [
+        { "val": "40×", "label": "체류 고객 증가" },
+        { "val": "41건", "label": "가입 유도" }
+      ],
+      "period": "2023.07 — 09",
+      "contrib": "90%",
+      "preview_images": ["images/p1_01.png", "images/p1_02.png", "images/p1_03.jpg"],
+      "panel_title": "SKT 0청년 요금제 × 폴더블5 팝업 스토어",
+      "panel_images": ["images/p1_01.png", "images/p1_02.png", "images/p1_03.jpg", "images/p1_04.png", "images/p1_05.png"],
+      "panel_kpis": [["40×", "체류 고객 증가율"], ["41건", "가입 유도 성과"], ["90%", "기여도"]],
+      "problem": "단순 홍보형 전시만으로는 방문 고객의 관심과 체류가 어렵다는 판단 하에, 고객 경험 중심의 요금제 안내 및 체험 콘텐츠 기획이 필요했습니다. 기존 단말 전시 체류 데이터 분석 결과 체험 요소 부재가 이탈 핵심 원인임을 파악했습니다.",
+      "points": ["콘텐츠 방향성 설정 및 체험안 기획", "체험존 운영 인원 및 응대 프로세스 설계", "응대 스크립트 작성 및 현장 교육", "파트너사·사업팀·대행사 커뮤니케이션 총괄"],
+      "result": "이전 플래그십 단말 전시 대비 고객 체류율 40배 증가, 현장 안내 및 응대를 통해 요금제 실 가입자 41건 유치."
+    },
+    {
+      "id": "p2",
+      "category": "Brand Naming · Campaign",
+      "title": "난-재로, ZERO 캠페인",
+      "desc": "'의심·걱정·거품 ZERO' USP를 설정하고 브랜딩부터 팝업스토어까지 전 과정 기획. 55% 구매 전환율 달성.",
+      "kpis": [
+        { "val": "55%", "label": "구매 전환율" },
+        { "val": "80%", "label": "기여도" }
+      ],
+      "period": "2023.09 — 2024.01",
+      "contrib": "80%",
+      "preview_images": ["images/p2_01.png", "images/p2_02.png", "images/p2_03.png"],
+      "panel_title": "난-재로, ZERO 캠페인 기획",
+      "panel_images": ["images/p2_01.png", "images/p2_02.png", "images/p2_03.png", "images/p2_04.png", "images/p2_05.png", "images/p2_06.png"],
+      "panel_kpis": [["55%", "구매 전환율"], ["80%", "기여도"], ["✓", "인사이트 도출"]],
+      "problem": "중고폰 입고부터 판매까지 브랜딩·마케팅·팝업스토어 전반의 기획이 필요했습니다. 소비자의 중고폰 신뢰 장벽을 낮추는 것이 핵심 과제였습니다.",
+      "points": ["브랜드명·Key Message·Key Visual 가이드 제안", "공간 구성 및 고객 경험 흐름 기획", "마케팅 채널별 운영 주기 및 콘텐츠 설정", "현장 응대 시나리오·스크립트 작성 및 교육"],
+      "result": "최초 입고 재고 기준 55% 구매 전환율 달성. 테스트베드 프로젝트로서 고객·마케팅·유통 인사이트 수집."
+    },
+    {
+      "id": "p3",
+      "category": "Exhibition Renewal",
+      "title": "스크트.zip 2차 개편",
+      "desc": "완주율·유입 데이터 교차 분석으로 몰입도 저하를 진단. 콘텐츠 전면 재설계로 3가지 지표를 동시에 달성.",
+      "kpis": [
+        { "val": "75%", "label": "체험 완주율" },
+        { "val": "2×", "label": "공간 유입" },
+        { "val": "4.5", "label": "만족도" }
+      ],
+      "period": "2024.02 — 2025.02",
+      "contrib": "90%",
+      "preview_images": ["images/p3_01.png", "images/p3_02.png", "images/p3_03.png"],
+      "panel_title": "SKT 홍보관 스크트.zip 2차 개편",
+      "panel_images": ["images/p3_01.png", "images/p3_02.png", "images/p3_03.png", "images/p3_04.png", "images/p3_05.png"],
+      "panel_kpis": [["75%", "체험 완주율"], ["2×", "공간 유입률"], ["4.5점", "고객 만족도"]],
+      "problem": "기존 체험 완주율 저하 및 공간 유입 감소로 몰입도·메시지 전달력 강화 리뉴얼이 필요했습니다. 완주율과 유입 데이터를 교차 분석해 콘텐츠 몰입도 저하가 원인임을 진단했습니다.",
+      "points": ["체험 서비스/상품/기술 재선정", "주요 콘텐츠 기획 및 UX 흐름 설계", "운영 방안 기획 및 고객 경험 설계", "대행사 커뮤니케이션 담당"],
+      "result": "2층 전체 입장객 대비 평균 체험 완주율 75% 달성, 이전 컨셉 대비 2층 유입 2배 증가, 체험 완료 고객 만족도 4.5점 기록."
+    },
+    {
+      "id": "p4",
+      "category": "UX Planning · Interactive",
+      "title": "X Caliber UX 기획",
+      "desc": "B2B AI 기술을 3분 안에 체험 가능하도록 전문 용어 없이 시각적 인터랙션 중심 UX로 설계했습니다.",
+      "kpis": [
+        { "val": "1.5×", "label": "체험 고객" },
+        { "val": "3위", "label": "콘텐츠 선호" }
+      ],
+      "period": "2024.02 — 2025.02",
+      "contrib": "90%",
+      "preview_images": ["images/p4_01.png", "images/p4_02.png", "images/p4_03.png"],
+      "panel_title": "X Caliber 체험 콘텐츠 UX 기획",
+      "panel_images": ["images/p4_01.png", "images/p4_02.png", "images/p4_03.png", "images/p4_04.png", "images/p4_05.png"],
+      "panel_kpis": [["1.5×", "체험 고객 증가"], ["3위", "콘텐츠 선호 (14개)"], ["90%", "기여도"]],
+      "problem": "AI 진단 보조 솔루션 B2B 서비스를 일반 고객이 쉽게 이해하고 체험할 수 있도록 직관적인 콘텐츠 UX/UI 설계가 필요했습니다.",
+      "points": ["UX/UI 로직 설정 및 상세 페이지 기획", "사업팀 커뮤니케이션 및 리소스 수급", "운영 방안 기획 및 고객 경험 설계", "체험존 구현 요소 리서치"],
+      "result": "메인 전시층 대비 체험존 완료 방문객 비율 1.5배 증가, 가장 좋았던 서비스 체험 설문 14개 항목 중 3위 선정."
+    }
+  ],
+  "other_projects": [
+    {
+      "id": "o1",
+      "image": "images/other_10.jpg",
+      "period": "2023.02 — 2024.02",
+      "title": "SKT 홍보관 스크트.zip",
+      "desc": "홍보관 초기 리뉴얼 설계 및 첫 정식 오픈.",
+      "result": "내방객 유입률 60% 달성",
+      "panel_category": "Exhibition",
+      "panel_title": "SKT 홍보관 스크트.zip (1차)",
+      "panel_images": ["images/other_10.jpg", "images/other_11.jpg", "images/other_12.png", "images/other_13.png"],
+      "panel_kpis": [["60%", "내방객 유입률"], ["4개월", "기획"], ["✓", "홍보관 첫 오픈"]],
+      "problem": "SKT 상품·서비스 중심 체험 콘텐츠로 홍보관 초기 리뉴얼을 설계했습니다.",
+      "points": ["체험 서비스 선정 및 콘텐츠 기획", "운영 방안 및 고객 경험 설계"],
+      "result_panel": "브랜드 홍보관 첫 정식 오픈, 전체 내방객 대비 평균 유입률 60% 달성."
+    },
+    {
+      "id": "o2",
+      "image": "images/other_22.png",
+      "period": "2023.01 — 08",
+      "title": "LCK T1 굿즈 & 뷰잉파티",
+      "desc": "T1 팬덤 타겟 굿즈 기획과 뷰잉파티.",
+      "result": "존 유입 40%↑ · SNS 태그 5배↑",
+      "panel_category": "Goods · Event",
+      "panel_title": "LCK T1 굿즈 & 뷰잉파티",
+      "panel_images": ["images/other_22.png", "images/other_23.jpg"],
+      "panel_kpis": [["40%↑", "T1존 유입"], ["20%↑", "굿즈 판매"], ["5배", "SNS 태그"]],
+      "problem": "T1 팬덤을 공략한 굿즈 기획과 뷰잉파티를 시즌별로 기획·운영했습니다.",
+      "points": ["시즌별 굿즈 기획 및 외주 제작", "뷰잉파티 운영 기획 및 현장 관리"],
+      "result_panel": "T1 존 유입률 40%↑, 뷰잉파티 기간 내 굿즈 판매 20%↑, SNS 스토리태그 5배 증가."
+    },
+    {
+      "id": "o3",
+      "image": "images/other_14.png",
+      "period": "2023.06 — 09",
+      "title": "원데이 클래스 기획",
+      "desc": "전시 연계 클래스 5회 기획·운영.",
+      "result": "클래스당 200명+ · 조기 마감",
+      "panel_category": "Class · Event",
+      "panel_title": "메인전시 연계 원데이 클래스",
+      "panel_images": ["images/other_14.png", "images/other_15.jpg", "images/other_16.png", "images/other_17.png"],
+      "panel_kpis": [["5회", "기획·운영"], ["200명+", "클래스당 신청"], ["✓", "전회 조기 마감"]],
+      "problem": "전시 콘텐츠와 연계된 클래스 5회를 기획·운영했습니다.",
+      "points": ["전시 테마 연계 프로그램 기획", "강사 섭외 및 운영 총괄"],
+      "result_panel": "클래스 당 평균 신청자 200명 이상, 전 회차 조기 마감."
+    },
+    {
+      "id": "o4",
+      "image": "images/other_18.jpg",
+      "period": "2023.04 — 2025.02",
+      "title": "T우주 UX 기획",
+      "desc": "구독 서비스 UX 흐름 중심 체험 설계.",
+      "result": "체험 완료 고객 5배↑",
+      "panel_category": "UX · Digital",
+      "panel_title": "T우주 체험 콘텐츠 UX 기획",
+      "panel_images": ["images/other_18.jpg", "images/other_19.jpg", "images/other_20.jpg", "images/other_21.jpg"],
+      "panel_kpis": [["5배", "체험 완료 증가"], ["1.5개월", "기획"], ["✓", "UX 재설계"]],
+      "problem": "구독 서비스 홍보를 위해 UX 흐름 중심 체험 콘텐츠로 설계했습니다.",
+      "points": ["UX 흐름 및 화면 기획", "구독 서비스 체험 시나리오 설계"],
+      "result_panel": "이전 콘텐츠 대비 체험 완료 고객 약 5배 증가."
+    },
+    {
+      "id": "o5",
+      "image": "images/other_06.png",
+      "period": "2023.01 — 03",
+      "title": "굿즈 패키지 개편",
+      "desc": "ESG 친환경 굿즈 5종 기획 및 외주 제작.",
+      "result": "투어 신청 3배↑",
+      "panel_category": "Goods · Branding",
+      "panel_title": "브랜드 굿즈 패키지 개편",
+      "panel_images": ["images/other_06.png", "images/other_07.png", "images/other_08.png", "images/other_09.png"],
+      "panel_kpis": [["5종", "친환경 굿즈"], ["3배", "투어 신청"], ["✓", "ESG 반영"]],
+      "problem": "ESG 경영 철학을 반영한 친환경 굿즈 5종 기획 및 외주 제작 총괄.",
+      "points": ["ESG 기반 컨셉 및 소재 선정", "외주 제작사 선정 및 품질 관리"],
+      "result_panel": "굿즈 공개 직후 투어 신청 3배 이상 증가."
+    },
+    {
+      "id": "",
+      "image": "",
+      "period": "2026.02 — 03",
+      "title": "SKT S26 마켓",
+      "desc": "Galaxy S26 출시 팝업. 10개 체험존 운영 및 28명 크루 교육.",
+      "result": "크루 28명 교육 완료",
+      "panel_category": "",
+      "panel_title": "",
+      "panel_images": [],
+      "panel_kpis": [],
+      "problem": "",
+      "points": [],
+      "result_panel": ""
+    }
+  ],
+  "contact": {
+    "title_line1": "함께 만들고 싶은",
+    "title_accent": "브랜드 경험",
+    "title_line3": "이 있다면",
+    "sub": "편하게 연락 주세요. 빠르게 답변드리겠습니다.",
+    "email_label": "이메일 보내기",
+    "linkedin_label": "LinkedIn ↗"
+  },
+  "footer": {
+    "name_kr": "윤지수",
+    "name_en": "Yoon Gisu",
+    "role": "Brand Experience Marketer",
+    "company": "SKT T Factory · PS&Marketing",
+    "copyright": "© 2025 윤지수 (Yoon Gisu). All rights reserved."
+  }
+}
