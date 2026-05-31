@@ -16,7 +16,7 @@
       { "end": 40, "suffix": "×", "label": "체류율 증가", "decimal": false },
       { "end": 55, "suffix": "%", "label": "구매 전환율", "decimal": false },
       { "end": 4.5, "suffix": "", "label": "고객 만족도", "decimal": true },
-      { "fixed": "5yr", "label": "T Factory" }
+      { "fixed": "5yr", "label": "SKT 플래그십스토어<br>T Factory" }
     ],
     "profile_image": "images/profile.png",
     "profile_name": "Yoon Gisu",
