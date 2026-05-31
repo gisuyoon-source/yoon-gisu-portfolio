@@ -174,21 +174,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .proj.even .proj-header{background:var(--bg2);padding:28px;margin:0 calc(var(--pad)*-1);padding-left:calc(var(--pad) + 48px + 20px);padding-right:var(--pad)}
 @media(max-width:640px){.proj.even .proj-header{padding-left:calc(var(--pad) + 36px + 16px)}}
 
-/* OTHER */
+/* OTHER SLIDER */
 .other-sec{padding:0 var(--pad) 88px}
-.other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bd);border:1px solid var(--bd);margin-top:24px}
-@media(max-width:768px){.other-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.other-grid{grid-template-columns:1fr}}
-.oc{background:var(--bg);padding:22px;position:relative;overflow:hidden;transition:background .25s;cursor:pointer}
-.oc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--o);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.oc:hover{background:var(--bg2)}
-.oc:hover::before{transform:scaleX(1)}
-.oc-img{width:100%;aspect-ratio:16/9;object-fit:contain;background:var(--bg3);margin-bottom:12px;transition:opacity .3s}
-.oc:hover .oc-img{opacity:.85}
+.oc-slider{position:relative;margin-top:24px;display:flex;align-items:center;gap:12px}
+.oc-viewport{overflow:hidden;flex:1;padding:28px 0}
+.oc-track{display:flex;gap:16px;transition:transform .5s cubic-bezier(.22,1,.36,1);will-change:transform}
+.oc{min-width:clamp(220px,36%,400px);flex-shrink:0;background:var(--bg);border:1px solid var(--bd);padding:18px;position:relative;cursor:pointer;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s,border-color .45s,opacity .45s;transform:scale(.95);opacity:.55}
+.oc.active{transform:scale(1);box-shadow:0 0 56px rgba(232,83,26,.12),0 0 0 1px rgba(232,83,26,.2);border-color:rgba(232,83,26,.2);opacity:1}
+.oc-img-wrap{position:relative;overflow:hidden;margin-bottom:12px}
+.oc-img{width:100%;aspect-ratio:16/9;object-fit:contain;background:var(--bg3);display:block;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.oc:hover .oc-img{transform:scale(1.06)}
+.oc-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(232,83,26,.18) 0%,rgba(8,8,8,.12) 100%);opacity:0;transition:opacity .35s}
+.oc:hover .oc-overlay{opacity:1}
 .oc-period{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--w3);margin-bottom:5px}
 .oc-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;line-height:1.3;margin-bottom:5px;color:var(--w)}
 .oc-desc{font-size:12px;color:var(--w2);line-height:1.6;font-weight:300;margin-bottom:8px}
 .oc-result{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--o);padding-top:8px;border-top:1px solid var(--bd)}
+.oc-arrow{width:38px;height:38px;flex-shrink:0;background:var(--bg2);border:1px solid var(--bd);color:var(--w2);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:'Outfit',sans-serif;align-self:center}
+.oc-arrow:hover{background:var(--o);color:#000;border-color:var(--o)}
+.oc-arrow:disabled{opacity:.2;pointer-events:none}
+@media(max-width:640px){.oc{min-width:clamp(200px,78%,340px)}}
 
 /* CONTACT */
 .contact{padding:120px var(--pad);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bd)}
@@ -361,7 +366,13 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 <!-- OTHER -->
 <section class="other-sec rv">
   <div class="sec-label">Other Projects</div>
-  <div class="other-grid rv-s" id="otherGrid"></div>
+  <div class="oc-slider">
+    <button class="oc-arrow" id="ocPrev" onclick="ocMove(-1)">←</button>
+    <div class="oc-viewport" id="ocViewport">
+      <div class="oc-track" id="ocTrack"></div>
+    </div>
+    <button class="oc-arrow" id="ocNext" onclick="ocMove(1)">→</button>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -467,6 +478,26 @@ function goSlide(n){
 }
 function slideNext(){goSlide(curSlide+1)}
 function slidePrev(){goSlide(curSlide-1)}
+
+// OTHER PROJECTS SLIDER
+let ocIdx=0,ocTotal=0;
+function ocUpdateSlider(){
+  const track=document.getElementById('ocTrack');
+  const vp=document.getElementById('ocViewport');
+  if(!track||!track.children.length)return;
+  const cardW=track.children[0].offsetWidth;
+  const gap=16;
+  const offset=(vp.offsetWidth-cardW)/2;
+  track.style.transform=`translateX(${offset-ocIdx*(cardW+gap)}px)`;
+  Array.from(track.children).forEach((c,i)=>c.classList.toggle('active',i===ocIdx));
+  document.getElementById('ocPrev').disabled=ocIdx===0;
+  document.getElementById('ocNext').disabled=ocIdx===ocTotal-1;
+}
+function ocMove(dir){
+  ocIdx=Math.max(0,Math.min(ocTotal-1,ocIdx+dir));
+  ocUpdateSlider();
+}
+window.addEventListener('resize',ocUpdateSlider);
 
 // PANEL DATA — populated from content.json
 let PD={};
@@ -631,12 +662,22 @@ async function loadContent(){
     </div>`;
   }).join('');
 
-  // ── Other projects ──
-  document.getElementById('otherGrid').innerHTML=c.other_projects.map(p=>{
+  // ── Other projects slider ──
+  const ocTrack=document.getElementById('ocTrack');
+  ocTotal=c.other_projects.length;
+  ocIdx=0;
+  ocTrack.innerHTML=c.other_projects.map((p,i)=>{
     const clickable=p.id&&p.panel_title?`onclick="openPanel('${p.id}')"`:'' ;
-    const imgHtml=p.image?`<img class="oc-img" src="${p.image}" alt="${p.title}">`:'' ;
-    return`<div class="oc" ${clickable}>${imgHtml}<div class="oc-period">${p.period}</div><div class="oc-title">${p.title}</div><div class="oc-desc">${p.desc}</div><div class="oc-result">${p.result}</div></div>`;
+    const imgHtml=p.image
+      ?`<div class="oc-img-wrap"><img class="oc-img" src="${p.image}" alt="${p.title}" loading="lazy"><div class="oc-overlay"></div></div>`
+      :'';
+    return`<div class="oc${i===0?' active':''}" ${clickable}>${imgHtml}<div class="oc-period">${p.period}</div><div class="oc-title">${p.title}</div><div class="oc-desc">${p.desc}</div><div class="oc-result">${p.result}</div></div>`;
   }).join('');
+  // touch swipe
+  let _tx=0;
+  ocTrack.addEventListener('touchstart',e=>{_tx=e.touches[0].clientX},{passive:true});
+  ocTrack.addEventListener('touchend',e=>{if(Math.abs(e.changedTouches[0].clientX-_tx)>50)ocMove(e.changedTouches[0].clientX<_tx?1:-1)});
+  setTimeout(ocUpdateSlider,50);
 
   // ── Contact ──
   const ct=c.contact;
