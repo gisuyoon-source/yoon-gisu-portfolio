@@ -238,17 +238,6 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .rv-s.on>*:nth-child(5){opacity:1;transform:none;transition-delay:.45s}
 .rv-s.on>*:nth-child(6){opacity:1;transform:none;transition-delay:.55s}
 
-/* FLOATING THUMBNAIL */
-.proj-float{
-  position:fixed;pointer-events:none;z-index:999;
-  opacity:0;transition:opacity .25s ease,transform .18s ease;
-  transform:translate(-50%,-60%) rotate(-2deg) scale(0.94);
-  width:clamp(200px,22vw,320px);
-  background:var(--bg3);border:1px solid var(--bd);
-  overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.75);
-}
-.proj-float.show{opacity:1;transform:translate(-50%,-60%) rotate(-1.5deg) scale(1)}
-.proj-float img{width:100%;height:auto;display:block;max-height:260px;object-fit:contain;background:var(--bg3)}
 
 /* PROJECT LIST */
 .proj-list{border-top:1px solid var(--bd)}
@@ -270,35 +259,10 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .proj-row-cat{position:relative;z-index:1;font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(232,83,26,.4);color:var(--o);padding:5px 14px;white-space:nowrap;border-radius:999px}
 .proj-row-year{position:relative;z-index:1;font-family:'Outfit',sans-serif;font-size:12px;color:var(--w3);font-weight:600;text-align:right}
 @media(max-width:640px){.proj-row{grid-template-columns:40px 1fr;gap:12px;padding:40px 0}.proj-row-cat,.proj-row-year{display:none}}
-.proj-thumb-wrap{display:none}
-.proj-thumb-area{display:none}
-#projThumbImg{display:none}
 /* floating thumbnail */
-.proj-floating-thumb{
-  position:fixed;
-  pointer-events:none;
-  z-index:999;
-  opacity:0;
-  transition:opacity .3s ease, transform .15s ease;
-  transform:translate(-50%,-50%) rotate(-3deg) scale(0.92);
-  max-width:320px;
-  background:var(--bg3);
-  border:1px solid var(--bd);
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.7);
-}
-.proj-floating-thumb.visible{
-  opacity:1;
-  transform:translate(-50%,-50%) rotate(-2deg) scale(1);
-}
-.proj-floating-thumb img{
-  width:100%;
-  height:auto;
-  display:block;
-  max-height:280px;
-  object-fit:contain;
-  background:var(--bg3);
-}
+#projFloat{position:fixed;pointer-events:none;z-index:999;opacity:0;transition:opacity .3s ease,transform .15s ease;transform:translate(-50%,-50%) rotate(-3deg) scale(0.92);max-width:320px;background:var(--bg3);border:1px solid var(--bd);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+#projFloat.visible{opacity:1;transform:translate(-50%,-50%) rotate(-2deg) scale(1)}
+#projFloat img{width:100%;height:auto;display:block;max-height:280px;object-fit:contain;background:var(--bg3)}
 
 /* PANEL */
 #panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:8000;opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(8px)}
@@ -741,11 +705,10 @@ async function loadContent(){
   }).join('');
   mpEl.innerHTML=`<div class="proj-sec-inner"><div class="proj-list">${rowsHtml}</div></div>`;
   // floating thumbnail
-  let floatEl=document.getElementById('projFloatThumb');
+  let floatEl=document.getElementById('projFloat');
   if(!floatEl){
     floatEl=document.createElement('div');
-    floatEl.id='projFloatThumb';
-    floatEl.className='proj-floating-thumb';
+    floatEl.id='projFloat';
     floatEl.innerHTML='<img id="projFloatImg" src="" alt="">';
     document.body.appendChild(floatEl);
   }
