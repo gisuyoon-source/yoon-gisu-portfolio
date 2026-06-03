@@ -263,19 +263,19 @@
       "result_panel": "굿즈 공개 직후 투어 신청 3배 이상 증가."
     },
     {
-      "id": "",
+      "id": "o_s26",
       "image": "images/other_s26_01.png",
       "period": "2026.02 — 03",
       "title": "SKT S26 마켓",
       "desc": "Galaxy S26 출시 팝업. 10개 체험존 운영 및 28명 크루 교육.",
       "result": "크루 28명 교육 완료",
-      "panel_category": "",
-      "panel_title": "",
-      "panel_images": [],
-      "panel_kpis": [],
-      "problem": "",
-      "points": [],
-      "result_panel": ""
+      "panel_category": "Popup · Operations",
+      "panel_title": "SKT S26 마켓 운영 기획",
+      "panel_images": ["images/other_s26_01.png", "images/other_s26_02.png", "images/other_s26_03.jpg", "images/other_s26_04.png"],
+      "panel_kpis": [["10개", "체험존 운영"], ["28명", "크루 교육"], ["2026.02~03", "운영 기간"]],
+      "problem": "삼성 Galaxy S26 출시 연계 SKT 사전예약·구매 혜택 홍보 팝업 운영 기획.",
+      "points": ["10개 체험존 운영안 작성", "응대 스크립트 작성", "28명 크루 교육 담당"],
+      "result_panel": "10개 체험존 운영 완료, 크루 28명 교육 완료."
     }
   ],
   "contact": {
