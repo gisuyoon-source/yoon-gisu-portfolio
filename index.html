@@ -65,6 +65,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 
 /* PROFILE - hidden (typographic hero) */
 .hero-r{display:none}
+
+/* HERO PROFILE PHOTO */
+.hero-profile{position:absolute;bottom:60px;right:var(--pad);display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2;opacity:0;animation:up .8s 1s ease forwards}
+.hero-profile-img{width:clamp(120px,15vw,220px);height:clamp(120px,15vw,220px);border-radius:50%;object-fit:cover;object-position:top center;border:2px solid var(--o);display:block}
+.hero-profile-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--w3);text-align:center;text-transform:uppercase;line-height:1.8}
+.hero-profile-label span{color:var(--o);display:block}
+@media(max-width:640px){.hero-profile{display:none}}
 @keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .divider{height:1px;background:var(--bd);margin:0 var(--pad)}
 
@@ -173,14 +180,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .oc-arrow:disabled{opacity:.18;pointer-events:none}
 .oc-viewport{overflow:hidden}
 .oc-track{display:flex;gap:12px;transition:transform .5s cubic-bezier(.22,1,.36,1);will-change:transform}
-.oc{flex-shrink:0;background:var(--bg2);cursor:pointer;position:relative;overflow:hidden;opacity:0;transform:perspective(1000px) rotateX(4deg) translateY(60px);transform-origin:50% 0%;transition:transform .32s cubic-bezier(.22,1,.36,1),box-shadow .32s,opacity .65s ease}
-.oc.on{opacity:1;transform:perspective(1000px) rotateX(4deg) translateY(0)}
-.oc.on:hover{transform:perspective(1000px) rotateX(0deg) translateY(-12px) scale(1.03);box-shadow:0 32px 64px rgba(0,0,0,.75),0 0 0 1px rgba(232,83,26,.22);z-index:2}
+.oc{flex-shrink:0;background:var(--bg2);cursor:pointer;position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,opacity .6s ease}
+.oc.oc-hidden{opacity:0;transform:translateY(40px);pointer-events:none}
+.oc:hover{transform:translateY(-14px) scale(1.04);box-shadow:0 20px 40px rgba(0,0,0,.5);z-index:2}
 .oc-img-wrap{position:relative;overflow:hidden;height:300px}
 .oc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.22,1,.36,1),filter .5s ease;filter:grayscale(100%) brightness(1.05) contrast(1.02);background:var(--bg3)}
-.oc.on:hover .oc-img{transform:scale(1.05);filter:grayscale(0%) brightness(1.05) contrast(1.02)}
+.oc:hover .oc-img{transform:scale(1.05);filter:grayscale(0%) brightness(1.05) contrast(1.02)}
 .oc-hover{position:absolute;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
-.oc.on:hover .oc-hover{opacity:1}
+.oc:hover .oc-hover{opacity:1}
 .oc-hover-text{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;color:#fff;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px}
 .oc-foot{padding:10px 14px;border-top:1px solid var(--bd)}
 .oc-period{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;color:var(--w3);margin-bottom:2px}
@@ -329,6 +336,10 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
         <div class="profile-tag"><p id="profileName"></p><span id="profileRole"></span></div>
       </div>
     </div>
+  </div>
+  <div class="hero-profile">
+    <img class="hero-profile-img" src="images/profile.png" alt="윤지수">
+    <div class="hero-profile-label">Yoon Gisu<span>BX Marketer</span></div>
   </div>
 </section>
 
@@ -695,26 +706,26 @@ async function loadContent(){
     const imgHtml=p.image
       ?`<div class="oc-img-wrap"><img class="oc-img" src="${p.image}" alt="${p.title}" loading="lazy">${clickable?'<div class="oc-hover"><span class="oc-hover-text">자세히 보기 →</span></div>':''}</div>`
       :`<div class="oc-img-wrap"></div>`;
-    return`<div class="oc" ${clickable}>${imgHtml}<div class="oc-foot"><div class="oc-period">${p.period}</div><div class="oc-title">${p.title}</div></div></div>`;
+    return`<div class="oc oc-hidden" ${clickable}>${imgHtml}<div class="oc-foot"><div class="oc-period">${p.period}</div><div class="oc-title">${p.title}</div></div></div>`;
   }).join('');
   let _tx=0;
   ocTrack.addEventListener('touchstart',e=>{_tx=e.touches[0].clientX},{passive:true});
   ocTrack.addEventListener('touchend',e=>{if(Math.abs(e.changedTouches[0].clientX-_tx)>50)ocMove(e.changedTouches[0].clientX<_tx?1:-1)});
   setTimeout(ocUpdateSlider,50);
-  // 3D stagger animation on scroll entry
+  // Stagger animation on scroll entry
   const ocSecEl=document.querySelector('.other-sec');
   if(ocSecEl){
-    const ocStaggerObs=new IntersectionObserver(entries=>{
+    let ocFired=false;
+    new IntersectionObserver(entries=>{
       entries.forEach(e=>{
-        if(e.isIntersecting){
-          Array.from(document.querySelectorAll('.oc')).forEach((card,i)=>{
-            setTimeout(()=>card.classList.add('on'),i*100);
+        if(e.isIntersecting&&!ocFired){
+          ocFired=true;
+          Array.from(document.querySelectorAll('.oc.oc-hidden')).forEach((card,i)=>{
+            setTimeout(()=>card.classList.remove('oc-hidden'),i*150);
           });
-          ocStaggerObs.disconnect();
         }
       });
-    },{threshold:0.1});
-    ocStaggerObs.observe(ocSecEl);
+    },{threshold:0.1}).observe(ocSecEl);
   }
 
   // ── Contact ──
