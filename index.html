@@ -186,16 +186,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .oc-track{display:flex;gap:12px;transition:transform .5s cubic-bezier(.22,1,.36,1);will-change:transform}
 .oc{flex-shrink:0;background:var(--bg2);cursor:pointer;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s;position:relative;overflow:hidden}
 .oc:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 20px 56px rgba(0,0,0,.65),0 0 0 1px rgba(232,83,26,.28);z-index:2}
-.oc-img-wrap{position:relative;overflow:hidden}
-.oc-img{width:100%;height:auto;display:block;transition:transform .45s cubic-bezier(.22,1,.36,1);filter:brightness(1.1) contrast(1.02);background:var(--bg3)}
+.oc-img-wrap{position:relative;overflow:hidden;height:300px}
+.oc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.22,1,.36,1);filter:brightness(1.05) contrast(1.02);background:var(--bg3)}
 .oc:hover .oc-img{transform:scale(1.05)}
-.oc-hover{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,5,.95) 0%,rgba(5,5,5,.6) 45%,rgba(5,5,5,.08) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;opacity:0;transition:opacity .32s}
+.oc-hover{position:absolute;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
 .oc:hover .oc-hover{opacity:1}
-.oc-hover-cat{font-family:'Outfit',sans-serif;font-size:9px;font-weight:700;letter-spacing:.18em;color:var(--o);text-transform:uppercase;margin-bottom:5px}
-.oc-hover-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--w);line-height:1.35;margin-bottom:8px}
-.oc-hover-kpis{display:flex;flex-direction:column;gap:3px}
-.oc-hover-kpi{font-size:11px;color:var(--w2);font-weight:400;line-height:1.5;padding-left:12px;position:relative}
-.oc-hover-kpi::before{content:'—';position:absolute;left:0;color:var(--o);font-size:10px}
+.oc-hover-text{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;color:#fff;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px}
 .oc-foot{padding:10px 14px;border-top:1px solid var(--bd)}
 .oc-period{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;color:var(--w3);margin-bottom:2px}
 .oc-title{font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--w2);line-height:1.3}
@@ -240,25 +236,30 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .rv-s.on>*:nth-child(6){opacity:1;transform:none;transition-delay:.55s}
 
 /* PROJECT LIST */
-.proj-list{border-top:1px solid var(--bd);margin-top:4px}
+.proj-list{border-top:1px solid var(--bd)}
 @keyframes rowIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.proj-row{display:grid;grid-template-columns:56px 1fr auto 72px;align-items:center;padding:22px var(--pad);margin:0 calc(var(--pad)*-1);border-bottom:1px solid var(--bd);cursor:pointer;gap:24px;text-decoration:none;color:inherit;position:relative;opacity:0}
+.proj-sec-inner{display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:start;margin-top:8px}
+@media(max-width:960px){.proj-sec-inner{grid-template-columns:1fr}.proj-thumb-wrap{display:none}}
+.proj-row{display:grid;grid-template-columns:56px 1fr auto 64px;align-items:center;padding:36px 0;border-bottom:1px solid var(--bd);cursor:pointer;gap:20px;color:inherit;position:relative;opacity:0}
 .proj-row.on{animation:rowIn .65s cubic-bezier(.22,1,.36,1) forwards}
 .proj-row.on:nth-child(1){animation-delay:.05s}
 .proj-row.on:nth-child(2){animation-delay:.15s}
 .proj-row.on:nth-child(3){animation-delay:.25s}
 .proj-row.on:nth-child(4){animation-delay:.35s}
-.proj-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--o);transition:width .28s cubic-bezier(.22,1,.36,1)}
+.proj-row::before{content:'';position:absolute;left:-1px;top:0;bottom:0;width:0;background:var(--o);transition:width .28s cubic-bezier(.22,1,.36,1)}
 .proj-row:hover::before{width:4px}
-.proj-row-num{position:relative;font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w3);letter-spacing:.05em;transition:color .22s}
-.proj-row-num::after{content:'→';position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0;color:var(--o);font-size:16px;line-height:1;transition:opacity .22s}
+.proj-row-num{position:relative;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--w3);letter-spacing:.05em;transition:color .22s}
+.proj-row-num::after{content:'→';position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0;color:var(--o);font-size:18px;line-height:1;transition:opacity .22s}
 .proj-row:hover .proj-row-num{color:transparent}
 .proj-row:hover .proj-row-num::after{opacity:1}
-.proj-row-name{font-family:'Outfit',sans-serif;font-size:clamp(18px,2.2vw,30px);font-weight:800;letter-spacing:-.025em;line-height:1;transition:color .22s,transform .28s cubic-bezier(.22,1,.36,1)}
-.proj-row:hover .proj-row-name{color:var(--o);transform:translateX(8px)}
-.proj-row-cat{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--o);color:var(--o);padding:4px 14px;white-space:nowrap;border-radius:999px}
+.proj-row-name{font-family:'Outfit',sans-serif;font-size:clamp(32px,3vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1;transition:color .22s,transform .28s cubic-bezier(.22,1,.36,1)}
+.proj-row:hover .proj-row-name{color:var(--o);transform:translateX(10px)}
+.proj-row-cat{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--o);color:var(--o);padding:5px 14px;white-space:nowrap;border-radius:999px}
 .proj-row-year{font-family:'Outfit',sans-serif;font-size:12px;color:var(--w3);font-weight:600;text-align:right}
-@media(max-width:640px){.proj-row{grid-template-columns:40px 1fr 64px;gap:12px}.proj-row-cat{display:none}}
+@media(max-width:640px){.proj-row{grid-template-columns:40px 1fr;gap:12px;padding:28px 0}.proj-row-cat,.proj-row-year{display:none}}
+.proj-thumb-wrap{position:sticky;top:120px}
+.proj-thumb-area{width:100%;aspect-ratio:3/2;overflow:hidden;background:var(--bg3);border:1px solid var(--bd)}
+#projThumbImg{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .4s ease}
 
 /* PANEL */
 #panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:8000;opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(8px)}
@@ -673,15 +674,21 @@ async function loadContent(){
 
   // ── Main projects ──
   const mpEl=document.getElementById('mainProjects');
-  mpEl.innerHTML=`<div class="proj-list">${c.main_projects.map((p,i)=>{
+  const rowsHtml=c.main_projects.map((p,i)=>{
     const yr=(p.period.match(/\d{4}/)||[''])[0];
-    return`<div class="proj-row" onclick="openPanel('${p.id}')">
+    return`<div class="proj-row" onclick="openPanel('${p.id}')" data-thumb="${p.preview_images[0]}">
       <span class="proj-row-num">${String(i+1).padStart(2,'0')}</span>
       <span class="proj-row-name">${p.title}</span>
       <span class="proj-row-cat">${p.category}</span>
       <span class="proj-row-year">${yr}</span>
     </div>`;
-  }).join('')}</div>`;
+  }).join('');
+  mpEl.innerHTML=`<div class="proj-sec-inner"><div class="proj-list">${rowsHtml}</div><div class="proj-thumb-wrap"><div class="proj-thumb-area"><img id="projThumbImg" src="" alt=""></div></div></div>`;
+  const thumbImg=document.getElementById('projThumbImg');
+  document.querySelectorAll('.proj-row').forEach(row=>{
+    row.addEventListener('mouseenter',()=>{if(thumbImg&&row.dataset.thumb){thumbImg.src=row.dataset.thumb;thumbImg.style.opacity='1'}});
+    row.addEventListener('mouseleave',()=>{if(thumbImg)thumbImg.style.opacity='0'});
+  });
   new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.proj-row').forEach(r=>r.classList.add('on'))});
   },{threshold:0.1}).observe(mpEl.querySelector('.proj-list'));
@@ -692,10 +699,9 @@ async function loadContent(){
   ocIdx=0;
   ocTrack.innerHTML=c.other_projects.map(p=>{
     const clickable=p.id&&p.panel_title?`onclick="openPanel('${p.id}')"`:'' ;
-    const kpiLines=(p.panel_kpis||[]).slice(0,3).map(k=>`<div class="oc-hover-kpi">${k[0]} ${k[1]}</div>`).join('');
     const imgHtml=p.image
-      ?`<div class="oc-img-wrap"><img class="oc-img" src="${p.image}" alt="${p.title}" loading="lazy"><div class="oc-hover"><div class="oc-hover-cat">${p.panel_category||''}</div><div class="oc-hover-title">${p.title}</div><div class="oc-hover-kpis">${kpiLines}</div></div></div>`
-      :`<div class="oc-img-wrap" style="background:var(--bg3)"></div>`;
+      ?`<div class="oc-img-wrap"><img class="oc-img" src="${p.image}" alt="${p.title}" loading="lazy">${clickable?'<div class="oc-hover"><span class="oc-hover-text">자세히 보기 →</span></div>':''}</div>`
+      :`<div class="oc-img-wrap"></div>`;
     return`<div class="oc" ${clickable}>${imgHtml}<div class="oc-foot"><div class="oc-period">${p.period}</div><div class="oc-title">${p.title}</div></div></div>`;
   }).join('');
   let _tx=0;
