@@ -187,8 +187,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .oc{flex-shrink:0;background:var(--bg2);cursor:pointer;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s;position:relative;overflow:hidden}
 .oc:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 20px 56px rgba(0,0,0,.65),0 0 0 1px rgba(232,83,26,.28);z-index:2}
 .oc-img-wrap{position:relative;overflow:hidden;height:300px}
-.oc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.22,1,.36,1);filter:brightness(1.05) contrast(1.02);background:var(--bg3)}
-.oc:hover .oc-img{transform:scale(1.05)}
+.oc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.22,1,.36,1),filter .5s ease;filter:grayscale(100%) brightness(1.05) contrast(1.02);background:var(--bg3)}
+.oc:hover .oc-img{transform:scale(1.05);filter:grayscale(0%) brightness(1.05) contrast(1.02)}
 .oc-hover{position:absolute;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
 .oc:hover .oc-hover{opacity:1}
 .oc-hover-text{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;color:#fff;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px}
