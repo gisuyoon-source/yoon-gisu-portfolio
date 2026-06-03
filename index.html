@@ -241,21 +241,24 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 
 /* PROJECT LIST */
 .proj-list{border-top:1px solid var(--bd);margin-top:4px}
-.proj-row{display:grid;grid-template-columns:56px 1fr auto 72px;align-items:center;padding:22px var(--pad);margin:0 calc(var(--pad)*-1);border-bottom:1px solid var(--bd);cursor:pointer;gap:24px;text-decoration:none;color:inherit;transition:background .25s,color .25s}
-.proj-row:hover{background:var(--o);color:#000}
-.proj-row-num{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w3);letter-spacing:.05em;transition:color .25s}
-.proj-row:hover .proj-row-num{color:rgba(0,0,0,.4)}
-.proj-row-name{font-family:'Outfit',sans-serif;font-size:clamp(18px,2.2vw,30px);font-weight:800;letter-spacing:-.025em;line-height:1}
-.proj-row-cat{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--o);color:var(--o);padding:4px 12px;white-space:nowrap;transition:border-color .25s,color .25s}
-.proj-row:hover .proj-row-cat{border-color:#000;color:#000}
-.proj-row-year{font-family:'Outfit',sans-serif;font-size:12px;color:var(--w3);font-weight:600;text-align:right;transition:color .25s}
-.proj-row:hover .proj-row-year{color:rgba(0,0,0,.55)}
+@keyframes rowIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.proj-row{display:grid;grid-template-columns:56px 1fr auto 72px;align-items:center;padding:22px var(--pad);margin:0 calc(var(--pad)*-1);border-bottom:1px solid var(--bd);cursor:pointer;gap:24px;text-decoration:none;color:inherit;position:relative;opacity:0}
+.proj-row.on{animation:rowIn .65s cubic-bezier(.22,1,.36,1) forwards}
+.proj-row.on:nth-child(1){animation-delay:.05s}
+.proj-row.on:nth-child(2){animation-delay:.15s}
+.proj-row.on:nth-child(3){animation-delay:.25s}
+.proj-row.on:nth-child(4){animation-delay:.35s}
+.proj-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--o);transition:width .28s cubic-bezier(.22,1,.36,1)}
+.proj-row:hover::before{width:4px}
+.proj-row-num{position:relative;font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w3);letter-spacing:.05em;transition:color .22s}
+.proj-row-num::after{content:'→';position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0;color:var(--o);font-size:16px;line-height:1;transition:opacity .22s}
+.proj-row:hover .proj-row-num{color:transparent}
+.proj-row:hover .proj-row-num::after{opacity:1}
+.proj-row-name{font-family:'Outfit',sans-serif;font-size:clamp(18px,2.2vw,30px);font-weight:800;letter-spacing:-.025em;line-height:1;transition:color .22s,transform .28s cubic-bezier(.22,1,.36,1)}
+.proj-row:hover .proj-row-name{color:var(--o);transform:translateX(8px)}
+.proj-row-cat{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--o);color:var(--o);padding:4px 14px;white-space:nowrap;border-radius:999px}
+.proj-row-year{font-family:'Outfit',sans-serif;font-size:12px;color:var(--w3);font-weight:600;text-align:right}
 @media(max-width:640px){.proj-row{grid-template-columns:40px 1fr 64px;gap:12px}.proj-row-cat{display:none}}
-
-/* FLOATING PROJECT IMAGE */
-#proj-float{position:fixed;top:0;left:0;pointer-events:none;z-index:7000;opacity:0;transition:opacity .25s;will-change:transform}
-#proj-float img{width:280px;height:auto;display:block;transform:rotate(-5deg);box-shadow:0 20px 60px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.06)}
-@media(pointer:coarse){#proj-float{display:none}}
 
 /* PANEL */
 #panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:8000;opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(8px)}
@@ -278,7 +281,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .slider-wrap{position:relative;margin-bottom:20px;overflow:hidden;background:var(--bg3)}
 .slider-track{display:flex;transition:transform .4s cubic-bezier(.22,1,.36,1)}
 .slide{min-width:100%;background:var(--bg3)}
-.slide img{width:100%;height:auto;display:block}
+.slide img{width:100%;height:auto;display:block;max-height:380px;object-fit:contain}
 .sbtns{position:absolute;bottom:10px;right:10px;display:flex;gap:5px}
 .sbtn{width:30px;height:30px;background:rgba(8,8,8,.85);border:1px solid var(--bd);color:var(--w);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .sbtn:hover{background:var(--o);color:#000}
@@ -303,7 +306,6 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 <div id="progress"></div>
 <div id="cur"></div>
 <div id="cur2"></div>
-<div id="proj-float"><img src="" alt=""></div>
 
 <nav>
   <a class="nav-name" href="#">Portfolio<span> /</span></a>
@@ -455,15 +457,6 @@ if(window.matchMedia('(pointer:fine)').matches){
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
   (function loop(){fx+=(mx-fx)*.11;fy+=(my-fy)*.11;cur2.style.left=fx+'px';cur2.style.top=fy+'px';requestAnimationFrame(loop)})();
 }
-
-// FLOATING PROJECT IMAGE
-let fX=0,fY=0,fTX=0,fTY=0;
-const $float=document.getElementById('proj-float');
-const $floatImg=$float&&$float.querySelector('img');
-document.addEventListener('mousemove',e=>{fTX=e.clientX+30;fTY=e.clientY-80});
-(function fLoop(){fX+=(fTX-fX)*.1;fY+=(fTY-fY)*.1;if($float)$float.style.transform=`translate(${fX}px,${fY}px)`;requestAnimationFrame(fLoop)})();
-function showFloat(src){if($floatImg){$floatImg.src=src;$float.style.opacity='1'}}
-function hideFloat(){if($float)$float.style.opacity='0'}
 
 // COUNT UP
 function animCount(el,end,suffix,decimal){
@@ -682,13 +675,16 @@ async function loadContent(){
   const mpEl=document.getElementById('mainProjects');
   mpEl.innerHTML=`<div class="proj-list">${c.main_projects.map((p,i)=>{
     const yr=(p.period.match(/\d{4}/)||[''])[0];
-    return`<a class="proj-row" href="projects/${p.id}.html" onmouseenter="showFloat('${p.preview_images[0]}')" onmouseleave="hideFloat()">
+    return`<div class="proj-row" onclick="openPanel('${p.id}')">
       <span class="proj-row-num">${String(i+1).padStart(2,'0')}</span>
       <span class="proj-row-name">${p.title}</span>
       <span class="proj-row-cat">${p.category}</span>
       <span class="proj-row-year">${yr}</span>
-    </a>`;
+    </div>`;
   }).join('')}</div>`;
+  new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.proj-row').forEach(r=>r.classList.add('on'))});
+  },{threshold:0.1}).observe(mpEl.querySelector('.proj-list'));
 
   // ── Other projects slider ──
   const ocTrack=document.getElementById('ocTrack');
