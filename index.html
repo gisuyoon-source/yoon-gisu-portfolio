@@ -23,7 +23,7 @@ body{font-family:'Pretendard','Noto Sans KR',sans-serif;background:var(--bg);col
 #cur,#cur2{display:none}
 @media(pointer:fine){
   #cur{display:block;width:8px;height:8px;background:var(--o);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9990;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s,border .2s}
-  #cur2{display:block;width:36px;height:36px;border:1px solid rgba(232,83,26,.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9989;transform:translate(-50%,-50%)}
+  #cur2{display:block;width:30px;height:30px;border:1px solid rgba(232,83,26,.35);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9989;transform:translate(-50%,-50%)}
   body{cursor:none}
 }
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9000}
@@ -34,10 +34,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .nav-name span{color:var(--o)}
 .nav-center{display:flex;gap:28px;list-style:none}
 @media(max-width:640px){.nav-center{display:none}}
-.nav-center a{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--w2);text-decoration:none;transition:color .25s}
+.nav-center a{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--w2);text-decoration:none;transition:color .25s;position:relative}
+.nav-center a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--o);transition:width .28s cubic-bezier(.22,1,.36,1)}
 .nav-center a:hover{color:var(--w)}
+.nav-center a:hover::after{width:100%}
 .nav-cta{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:10px 22px;border:1px solid var(--o);color:var(--o);transition:all .3s;background:transparent;white-space:nowrap}
-.nav-cta:hover{background:var(--o);color:#000}
+.nav-cta:hover{background:var(--o);color:#000;box-shadow:0 0 20px rgba(232,83,26,.35)}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:110px var(--pad) 80px;position:relative;overflow:hidden;gap:0}
@@ -61,17 +63,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .hn-yoon{position:absolute;top:0;left:0;font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,15vw,230px);line-height:.85;letter-spacing:.02em;color:var(--w);z-index:1;opacity:0;animation:textRevealLR .9s .25s cubic-bezier(.22,1,.36,1) forwards}
 .hn-gisu{position:absolute;bottom:0;right:0;font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,15vw,230px);line-height:.85;letter-spacing:.02em;color:var(--w);z-index:3;opacity:0;animation:textRevealLR 1s .45s cubic-bezier(.22,1,.36,1) forwards}
 
-/* 프로필 사진 — 동전처럼 Y축 3바퀴 회전 후 바운스 착지 */
-.hero-photo-c{position:relative;width:clamp(240px,28vw,380px);z-index:2;flex-shrink:0;perspective:700px}
-@keyframes photo3DFlip{
-  0%  {opacity:0;transform:rotateY(0deg) scale(.88)}
-  6%  {opacity:1}
-  75% {transform:rotateY(-1080deg) scale(1.03)}
-  85% {transform:rotateY(-1075deg) scale(.98)}
-  93% {transform:rotateY(-1083deg) scale(1)}
-  100%{transform:rotateY(-1080deg) scale(1)}
+/* 프로필 사진 — 아래서 위로 등장, hover 시 앞으로 당겨지는 효과 */
+.hero-photo-c{position:relative;width:clamp(240px,28vw,380px);z-index:2;flex-shrink:0;transition:transform .55s cubic-bezier(.22,1,.36,1),box-shadow .55s ease}
+@keyframes photoEnter{
+  from{opacity:0;transform:translateY(40px) scale(.96)}
+  to  {opacity:1;transform:translateY(0) scale(1)}
 }
-.hero-photo-img{width:100%;height:clamp(320px,44vw,520px);object-fit:cover;object-position:top center;display:block;transform-origin:center;animation:photo3DFlip 1.8s .35s cubic-bezier(.22,1,.36,1) both;backface-visibility:hidden}
+.hero-photo-c:hover{transform:translateY(-7px) scale(1.03);box-shadow:0 32px 60px rgba(0,0,0,.6),0 0 0 1px rgba(232,83,26,.1)}
+.hero-photo-img{width:100%;height:clamp(320px,44vw,520px);object-fit:cover;object-position:top center;display:block;animation:photoEnter .9s .4s cubic-bezier(.22,1,.36,1) both}
 .hero-photo-c::after{content:'';position:absolute;bottom:0;left:0;right:0;height:52%;background:linear-gradient(to top,#080808,transparent);pointer-events:none}
 @media(max-width:640px){.hero-stage{height:clamp(280px,85vw,420px)}.hn-yoon,.hn-gisu{font-size:clamp(56px,17vw,110px)}.hero-photo-c{width:clamp(150px,38vw,240px)}}
 
@@ -79,7 +78,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .hero-meta{text-align:center;margin-top:32px;position:relative;z-index:4;width:100%}
 .hero-eyebrow{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:.22em;color:var(--o);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:12px;opacity:0;animation:up .8s .75s ease forwards}
 .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--o)}
-.hero-sub{font-family:'Outfit',sans-serif;font-size:clamp(18px,2.2vw,28px);font-weight:600;color:var(--w);letter-spacing:-.02em;line-height:1.4;margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 8px}
+.hero-sub{font-family:'Outfit',sans-serif;font-size:clamp(16px,2vw,24px);font-weight:600;color:var(--w);letter-spacing:-.02em;line-height:1.4;margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 8px}
 .hero-sub-word{opacity:0;transform:translateY(16px);display:inline-block;animation:wordUp .6s cubic-bezier(.22,1,.36,1) forwards}
 .hero-sub-word.acc{color:var(--o)}
 @keyframes wordUp{to{opacity:1;transform:none}}
@@ -136,7 +135,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .flip-hint{font-family:'Outfit',sans-serif;font-size:11px;color:var(--w3);display:flex;align-items:center;gap:8px;animation:blink 2.5s ease-in-out infinite}
 .flip-hint::before{content:'↻';color:var(--o);font-size:13px}
 @keyframes blink{0%,100%{opacity:.4}50%{opacity:1}}
-.flip-main{font-family:'Outfit',sans-serif;font-size:clamp(24px,3.5vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.0}
+.flip-main{font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.0}
 .flip-main .acc{color:var(--o)}
 .back-items{display:flex;flex-direction:column;gap:10px}
 .back-item{display:flex;align-items:flex-start;gap:12px}
@@ -221,13 +220,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .oc-foot{padding:12px 14px;border-top:1px solid var(--bd)}
 .oc-period{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;color:var(--w3);margin-bottom:4px}
 .oc-title{font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--w2);line-height:1.3;transition:font-size .25s ease,color .25s ease}
-.oc:hover .oc-title{font-size:15px;color:var(--w)}
+.oc:hover .oc-title{color:var(--w);font-weight:700}
 
 /* CONTACT */
 .contact{padding:120px var(--pad);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bd)}
 .contact-orb{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(232,83,26,.09),transparent 60%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%;filter:blur(60px);animation:drift 8s ease-in-out infinite}
 .contact-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;color:var(--o);text-transform:uppercase;margin-bottom:24px;position:relative}
-.contact-title{font-family:'Outfit',sans-serif;font-size:clamp(32px,6vw,76px);font-weight:800;letter-spacing:-.04em;line-height:.95;margin-bottom:16px;position:relative}
+.contact-title{font-family:'Outfit',sans-serif;font-size:clamp(28px,5vw,64px);font-weight:800;letter-spacing:-.04em;line-height:.95;margin-bottom:16px;position:relative}
 .contact-title .acc{color:var(--o)}
 .contact-sub{font-size:14px;color:var(--w2);font-weight:300;margin-bottom:44px;position:relative}
 .btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative}
@@ -258,15 +257,15 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 @keyframes revealRight{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:none}}
 @keyframes revealScale{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 @keyframes revealClip{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0% 0 0)}}
-.rv{opacity:0;transform:translateY(48px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.rv{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
 .rv.on{opacity:1;transform:none}
 /* About — 왼쪽에서 */
 .about.rv{transform:none}
-.about.rv .about-l{opacity:0;transform:translateX(-48px);transition:opacity .9s .1s cubic-bezier(.22,1,.36,1),transform .9s .1s cubic-bezier(.22,1,.36,1)}
-.about.rv .about-r{opacity:0;transform:translateX(48px);transition:opacity .9s .25s cubic-bezier(.22,1,.36,1),transform .9s .25s cubic-bezier(.22,1,.36,1)}
+.about.rv .about-l{opacity:0;transform:translateX(-36px);transition:opacity .9s .1s cubic-bezier(.22,1,.36,1),transform .9s .1s cubic-bezier(.22,1,.36,1)}
+.about.rv .about-r{opacity:0;transform:translateX(36px);transition:opacity .9s .25s cubic-bezier(.22,1,.36,1),transform .9s .25s cubic-bezier(.22,1,.36,1)}
 .about.rv.on .about-l,.about.rv.on .about-r{opacity:1;transform:none}
 /* Flip card — scale */
-.flip-wrap.rv{transform:scale(.92);transition:opacity .9s .05s cubic-bezier(.22,1,.36,1),transform .9s .05s cubic-bezier(.22,1,.36,1)}
+.flip-wrap.rv{transform:scale(.96);transition:opacity .9s .05s cubic-bezier(.22,1,.36,1),transform .9s .05s cubic-bezier(.22,1,.36,1)}
 .flip-wrap.rv.on{transform:scale(1)}
 /* Main projects — 각 행 clip-path 왼→오 */
 @keyframes rowReveal{from{opacity:0;transform:translateX(-32px) scaleX(.97)}to{opacity:1;transform:none}}
@@ -277,12 +276,12 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .proj-row.on:nth-child(3){animation-delay:.24s}
 .proj-row.on:nth-child(4){animation-delay:.34s}
 /* Other sec — 위에서 아래로 */
-.other-sec.rv{transform:translateY(64px)}
+.other-sec.rv{transform:translateY(48px)}
 /* Contact — scale + up */
-.contact.rv{transform:translateY(40px) scale(.97);transition:opacity 1s .05s cubic-bezier(.22,1,.36,1),transform 1s .05s cubic-bezier(.22,1,.36,1)}
+.contact.rv{transform:translateY(28px);transition:opacity 1s .05s cubic-bezier(.22,1,.36,1),transform 1s .05s cubic-bezier(.22,1,.36,1)}
 .contact.rv.on{transform:none}
 /* rv-s stagger — 더 역동적으로 */
-.rv-s>*{opacity:0;transform:translateY(32px) scale(.97);transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1)}
+.rv-s>*{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1)}
 .rv-s.on>*:nth-child(1){opacity:1;transform:none;transition-delay:.06s}
 .rv-s.on>*:nth-child(2){opacity:1;transform:none;transition-delay:.16s}
 .rv-s.on>*:nth-child(3){opacity:1;transform:none;transition-delay:.26s}
@@ -311,7 +310,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .proj-list{border-top:1px solid var(--bd)}
 @keyframes rowIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .proj-sec-inner{display:block;margin-top:8px}
-.proj-row{display:grid;grid-template-columns:56px 1fr auto 64px;align-items:center;padding:52px 0;border-bottom:1px solid var(--bd);cursor:pointer;gap:20px;color:inherit;position:relative;opacity:0;overflow:visible}
+.proj-row{display:grid;grid-template-columns:56px 1fr auto 64px;align-items:center;padding:44px 0;border-bottom:1px solid var(--bd);cursor:pointer;gap:20px;color:inherit;position:relative;opacity:0;overflow:visible;transition:background .25s}
 .proj-row.on{animation:rowIn .65s cubic-bezier(.22,1,.36,1) forwards}
 .proj-row.on:nth-child(1){animation-delay:.05s}
 .proj-row.on:nth-child(2){animation-delay:.15s}
@@ -320,6 +319,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .proj-row-bg-num{position:absolute;right:-4px;top:50%;transform:translateY(-50%);font-family:'Outfit',sans-serif;font-size:clamp(80px,13vw,190px);font-weight:900;color:var(--w);opacity:.035;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.05em}
 .proj-row-num{position:relative;z-index:1;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--w3);letter-spacing:.05em;transition:color .22s}
 .proj-row-num::after{content:'→';position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0;color:var(--o);font-size:18px;line-height:1;transition:opacity .22s}
+.proj-row:hover{background:rgba(232,83,26,.025)}
 .proj-row:hover .proj-row-num{color:transparent}
 .proj-row:hover .proj-row-num::after{opacity:1}
 .proj-row-name{position:relative;z-index:1;font-family:'Outfit',sans-serif;font-size:clamp(32px,3vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1;transition:color .22s,transform .28s cubic-bezier(.22,1,.36,1)}
