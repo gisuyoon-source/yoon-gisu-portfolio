@@ -153,9 +153,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .step:hover{background:var(--bg2)}
 .step:hover::after{transform:scaleX(1)}
 .step-num{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);opacity:.5;margin-bottom:12px}
-.step-imgs{display:flex;flex-direction:column;gap:3px;margin-bottom:16px}
-.step-img{width:100%;height:120px;object-fit:cover;display:block;transition:opacity .35s}
-.step:hover .step-img{opacity:.82}
+.step-text{opacity:0;transform:translateY(-10px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.step.anim-in .step-text{opacity:1;transform:none}
+.step-imgs{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+@keyframes stepImgDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+.step:not(.anim-in) .step-img{opacity:0}
+.step-img{width:100%;height:auto;display:block}
+.step.anim-in .step-imgs .step-img:nth-child(1){animation:stepImgDown .45s .3s cubic-bezier(.22,1,.36,1) both}
+.step.anim-in .step-imgs .step-img:nth-child(2){animation:stepImgDown .45s .4s cubic-bezier(.22,1,.36,1) both}
+.step.anim-in .step-imgs .step-img:nth-child(3){animation:stepImgDown .45s .5s cubic-bezier(.22,1,.36,1) both}
 .step-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;line-height:1.35;letter-spacing:-.01em;margin-bottom:8px;color:var(--w)}
 .step-body{font-size:12px;color:var(--w2);line-height:1.7;font-weight:300}
 .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
@@ -461,7 +467,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 <!-- PROCESS -->
 <section class="steps-sec rv" id="process">
   <div class="sec-label">Process — How I Work</div>
-  <div class="steps-grid rv-s" id="stepsGrid"></div>
+  <div class="steps-grid" id="stepsGrid"></div>
 </section>
 
 <div class="divider"></div>
@@ -774,8 +780,12 @@ async function loadContent(){
   document.getElementById('stepsGrid').innerHTML=c.process.map(s=>{
     const srcs=s.images||[s.image];
     const imgs=srcs.map(src=>`<img class="step-img" src="${src}" alt="" loading="lazy">`).join('');
-    return`<div class="step"><div class="step-num">${s.num}</div><div class="step-imgs">${imgs}</div><div class="step-title">${s.title}</div><div class="step-body">${s.body}</div><div class="chips">${s.chips.map(ch=>`<span class="chip">${ch}</span>`).join('')}</div></div>`;
+    return`<div class="step"><div class="step-text"><div class="step-num">${s.num}</div><div class="step-title">${s.title}</div><div class="step-body">${s.body}</div><div class="chips">${s.chips.map(ch=>`<span class="chip">${ch}</span>`).join('')}</div></div><div class="step-imgs">${imgs}</div></div>`;
   }).join('');
+  const stepObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('anim-in');stepObs.unobserve(e.target)}});
+  },{threshold:0.15});
+  document.querySelectorAll('#stepsGrid .step').forEach(s=>stepObs.observe(s));
 
   // ── Main projects ──
   const mpEl=document.getElementById('mainProjects');
