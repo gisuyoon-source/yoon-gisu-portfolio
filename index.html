@@ -44,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 /* HERO — 2-column B-layout */
 .hero{height:100vh;min-height:100vh;display:grid;grid-template-columns:70fr 30fr;position:relative;overflow:hidden}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 60px;gap:28px;position:relative;z-index:4}
-.hero-right{position:relative;overflow:hidden}
+.hero-right{position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-end}
 .hero-right::before{content:'';position:absolute;left:0;top:0;bottom:0;width:80px;background:linear-gradient(to right,var(--bg),transparent);pointer-events:none;z-index:2}
 .hero-right::after{content:'';position:absolute;bottom:0;left:0;right:0;height:28%;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none;z-index:2}
 .orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 /* 프로필 사진 — 아래서 위로 등장, hover 시 앞으로 당겨지는 효과 */
 /* Profile photo fills right column */
 @keyframes photoEnter{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
-.hero-photo-img{width:100%;height:100vh;object-fit:cover;object-position:top center;display:block;animation:photoEnter .9s .4s cubic-bezier(.22,1,.36,1) both}
+.hero-photo-img{height:70vh;width:auto;display:block;animation:photoEnter .9s .4s cubic-bezier(.22,1,.36,1) both}
 
 /* Hero text — left aligned */
 .hero-eyebrow{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.22em;color:var(--o);text-transform:uppercase;display:flex;align-items:center;justify-content:flex-start;gap:12px;opacity:0;animation:up .8s .75s ease forwards}
