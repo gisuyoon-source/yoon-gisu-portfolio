@@ -234,18 +234,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 
 /* SKILLS SECTION */
 .skills-sec{padding:120px var(--pad)}
-.sk-grid{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
-.sk-badge{display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 16px;background:var(--bg2);border:1px solid var(--bd);width:calc(20% - 13px);min-width:100px;cursor:default;opacity:0;transform:translateY(28px);transition:border-color .3s,box-shadow .3s}
-@media(max-width:900px){.sk-badge{width:calc(33.33% - 11px)}}
-@media(max-width:560px){.sk-badge{width:calc(50% - 8px)}}
-.sk-badge.sk-in{opacity:1;transform:none;transition:border-color .3s,box-shadow .3s,transform .3s}
-.sk-badge:hover{border-color:rgba(232,83,26,.35);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.55),0 0 0 1px rgba(232,83,26,.1)}
-.sk-icon{width:56px;height:56px;object-fit:contain;opacity:.85;transition:opacity .3s,transform .3s}
-.sk-badge:hover .sk-icon{opacity:1;transform:scale(1.08)}
-.sk-name{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w3);letter-spacing:.06em;text-align:center;transition:color .3s}
-.sk-badge:hover .sk-name{color:var(--w2)}
-.sk-level{width:100%;height:2px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:2px}
-.sk-level-fill{height:100%;background:var(--o);border-radius:2px;width:0;transition:width 1s .1s cubic-bezier(.22,1,.36,1)}
+.sk-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:40px;margin-top:36px}
+.sk-item{display:flex;flex-direction:column;align-items:center;gap:14px;cursor:default;opacity:0;transform:translateY(24px);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.sk-item.sk-in{opacity:1;transform:none}
+.sk-item:hover{transform:translateY(-6px)}
+.sk-icon{width:80px;height:80px;object-fit:contain;display:block}
+.sk-name{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--w2);letter-spacing:.04em;text-align:center}
 
 /* CONTACT */
 .contact{padding:120px var(--pad);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bd)}
@@ -807,17 +801,13 @@ async function loadContent(){
   const sg=document.getElementById('skGrid');
   if(c.skills&&sg){
     sg.innerHTML=c.skills.map(s=>
-      `<div class="sk-badge"><img class="sk-icon" src="${s.image}" alt="${s.name}" width="56" height="56"><span class="sk-name">${s.name}</span><div class="sk-level"><div class="sk-level-fill" data-w="${s.level}"></div></div></div>`
+      `<div class="sk-item"><img class="sk-icon" src="${s.icon}" alt="${s.name}" width="80" height="80"><span class="sk-name">${s.name}</span></div>`
     ).join('');
     new IntersectionObserver(entries=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
-          e.target.querySelectorAll('.sk-badge').forEach((b,i)=>{
-            setTimeout(()=>{
-              b.classList.add('sk-in');
-              const f=b.querySelector('.sk-level-fill');
-              if(f)f.style.width=f.dataset.w+'%';
-            },i*90);
+          e.target.querySelectorAll('.sk-item').forEach((b,i)=>{
+            setTimeout(()=>b.classList.add('sk-in'),i*90);
           });
         }
       });

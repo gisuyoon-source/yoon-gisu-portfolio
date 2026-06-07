@@ -78,11 +78,11 @@
     ]
   },
   "skills": [
-    {"name": "PowerPoint", "level": 95, "image": "images/skills_ppt.png"},
-    {"name": "Excel",      "level": 90, "image": "images/skills_excel.png"},
-    {"name": "Word",       "level": 85, "image": "images/skills_word.png"},
-    {"name": "Figma",      "level": 80, "image": "images/skills_figma.png"},
-    {"name": "Notion",     "level": 85, "image": "images/skills_notion.png"}
+    {"name": "PowerPoint", "icon": "images/skills_ppt.png"},
+    {"name": "Excel",      "icon": "images/skills_excel.png"},
+    {"name": "Word",       "icon": "images/skills_word.png"},
+    {"name": "Figma",      "icon": "images/skills_figma.png"},
+    {"name": "Notion",     "icon": "images/skills_notion.png"}
   ],
   "process": [
     {
