@@ -284,6 +284,36 @@
       "problem": "ESG 경영 철학을 반영한 친환경 굿즈 5종 기획 및 외주 제작 총괄.",
       "points": ["ESG 기반 컨셉 및 소재 선정", "외주 제작사 선정 및 품질 관리"],
       "result_panel": "굿즈 공개 직후 투어 신청 3배 이상 증가."
+    },
+    {
+      "id": "o_horok",
+      "image": "images/other_horok_01.png",
+      "period": "2023.06 — 2023.09",
+      "title": "메인전시 연계 원데이 클래스 기획",
+      "desc": "전시 콘텐츠와 연계된 클래스 5회 기획·운영",
+      "result": "클래스당 200명+ · 전회 조기 마감",
+      "panel_category": "Class · Operation",
+      "panel_title": "메인전시 연계 원데이 클래스 기획",
+      "panel_images": ["images/other_horok_01.png", "images/other_horok_02.jpg.png", "images/other_horok_03.png", "images/other_horok_04.png"],
+      "panel_kpis": [["5회", "기획·운영"], ["200명+", "클래스당 신청"], ["✓", "전회 조기 마감"]],
+      "problem": "전시 콘텐츠와 연계된 체험 클래스 기획·운영이 필요했습니다.",
+      "points": ["전시 테마 연계 프로그램 기획", "강사 섭외 및 운영 총괄"],
+      "result_panel": "클래스 당 평균 신청자 200명 이상 모집, 신청 조기 마감."
+    },
+    {
+      "id": "o_crew",
+      "image": "images/other_edu_01.png",
+      "period": "2022.09 — 2023.01",
+      "title": "고객 응대 스크립트 작성 및 크루 교육",
+      "desc": "공간/메인전시 관련 고객 응대 스크립트 작성 및 교육",
+      "result": "24명 크루 교육 · 응대 매뉴얼 정착",
+      "panel_category": "Education · Operation",
+      "panel_title": "고객 응대 스크립트 작성 및 크루 교육",
+      "panel_images": ["images/other_edu_01.png", "images/other_edu_02.png", "images/other_edu_03.png", "images/other_edu_04.png", "images/other_edu_05.png", "images/other_edu_06.png"],
+      "panel_kpis": [["24명", "크루 교육 진행"], ["✓", "응대 매뉴얼 정착"], ["✓", "운영 체계 수립"]],
+      "problem": "공간 및 메인전시 관련 고객 응대 역량 강화를 위한 스크립트 작성 및 교육 체계 구축이 필요했습니다.",
+      "points": ["고객 응대 스크립트 작성", "크루 교육 기획 및 운영 총괄"],
+      "result_panel": "총 24명 크루 교육 진행, 응대 매뉴얼 정착 및 운영 체계 수립."
     }
   ],
   "contact": {
