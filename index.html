@@ -148,11 +148,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
 @media(max-width:768px){.steps-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.steps-grid{grid-template-columns:1fr}}
-.step{background:var(--bg);padding:24px 20px;position:relative;overflow:hidden;cursor:default;transition:background .3s}
+.step{background:var(--bg);padding:24px 20px;position:relative;cursor:default;transition:background .3s,transform .3s ease,z-index 0s}
 .step::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--o);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
-.step:hover{background:var(--bg2)}
+.step:hover{background:var(--bg2);transform:scale(1.03);z-index:2}
 .step:hover::after{transform:scaleX(1)}
-.step-num{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);opacity:.5;margin-bottom:12px}
+.step-num{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);opacity:.5;margin-bottom:12px;transition:font-size .3s ease,opacity .3s ease}
+.step:hover .step-num{font-size:12px;opacity:1}
 .step-text{opacity:0;transform:translateY(-10px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
 .step.anim-in .step-text{opacity:1;transform:none}
 .step-imgs{display:flex;flex-direction:column;gap:6px;margin-top:16px}
@@ -162,7 +163,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .step.anim-in .step-imgs .step-img:nth-child(1){animation:stepImgDown .45s .3s cubic-bezier(.22,1,.36,1) both}
 .step.anim-in .step-imgs .step-img:nth-child(2){animation:stepImgDown .45s .4s cubic-bezier(.22,1,.36,1) both}
 .step.anim-in .step-imgs .step-img:nth-child(3){animation:stepImgDown .45s .5s cubic-bezier(.22,1,.36,1) both}
-.step-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;line-height:1.35;letter-spacing:-.01em;margin-bottom:8px;color:var(--w)}
+.step-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;line-height:1.35;letter-spacing:-.01em;margin-bottom:8px;color:var(--w);transition:font-size .3s ease}
+.step:hover .step-title{font-size:15px}
 .step-body{font-size:12px;color:var(--w2);line-height:1.7;font-weight:300}
 .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
 .chip{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.05em;color:var(--o);border:1px solid rgba(232,83,26,.2);padding:3px 8px}
