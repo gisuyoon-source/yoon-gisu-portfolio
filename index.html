@@ -221,7 +221,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .oc-img-wrap{position:relative;overflow:hidden;height:300px}
 .oc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.22,1,.36,1),filter .5s ease;filter:grayscale(100%) brightness(1.05) contrast(1.02);background:var(--bg3)}
 .oc:hover .oc-img{transform:scale(1.05);filter:grayscale(0%) brightness(1.05) contrast(1.02)}
-.oc-img[src="images/other_skrt1_01.jpg"],
+.oc-img[src="images/other_skrt1_01.jpg.png"],
 .oc-img[src="images/other_t1_01.png"]{object-position:top}
 .oc-img[src="images/other_s26_01.png"]{object-position:center 30%}
 .oc-hover{position:absolute;inset:0;background:rgba(0,0,0,.68);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
@@ -231,6 +231,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .oc-period{font-family:'Outfit',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;color:var(--w3);margin-bottom:4px}
 .oc-title{font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--w2);line-height:1.3;transition:font-size .25s ease,color .25s ease}
 .oc:hover .oc-title{color:var(--w);font-weight:700}
+
+/* SKILLS SECTION */
+.skills-sec{padding:120px var(--pad)}
+.sk-grid{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.sk-badge{display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 16px;background:var(--bg2);border:1px solid var(--bd);width:calc(20% - 13px);min-width:100px;cursor:default;opacity:0;transform:translateY(28px);transition:border-color .3s,box-shadow .3s}
+@media(max-width:900px){.sk-badge{width:calc(33.33% - 11px)}}
+@media(max-width:560px){.sk-badge{width:calc(50% - 8px)}}
+.sk-badge.sk-in{opacity:1;transform:none;transition:border-color .3s,box-shadow .3s,transform .3s}
+.sk-badge:hover{border-color:rgba(232,83,26,.35);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.55),0 0 0 1px rgba(232,83,26,.1)}
+.sk-icon{width:32px;height:32px;opacity:.7;transition:opacity .3s,transform .3s}
+.sk-badge:hover .sk-icon{opacity:1;transform:scale(1.08)}
+.sk-name{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w3);letter-spacing:.06em;text-align:center;transition:color .3s}
+.sk-badge:hover .sk-name{color:var(--w2)}
+.sk-level{width:100%;height:2px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:2px}
+.sk-level-fill{height:100%;background:var(--o);border-radius:2px;width:0;transition:width 1s .1s cubic-bezier(.22,1,.36,1)}
 
 /* CONTACT */
 .contact{padding:120px var(--pad);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bd)}
@@ -393,6 +408,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
   <a class="nav-name" href="#">Portfolio<span> /</span></a>
   <ul class="nav-center">
     <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -466,6 +482,14 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
     </div>
   </div>
 </div>
+
+<!-- SKILLS -->
+<section class="skills-sec rv" id="skills">
+  <div class="sec-label">Skills</div>
+  <div class="sk-grid" id="skGrid"></div>
+</section>
+
+<div class="divider"></div>
 
 <!-- PROCESS -->
 <section class="steps-sec rv" id="process">
@@ -778,6 +802,27 @@ async function loadContent(){
   document.getElementById('backItems').innerHTML=ph.items.map(it=>
     `<div class="back-item"><div class="back-num">${it.num}</div><div class="back-text"><b>${it.bold}</b>${it.text}</div></div>`
   ).join('');
+
+  // ── Skills ──
+  const sg=document.getElementById('skGrid');
+  if(c.skills&&sg){
+    sg.innerHTML=c.skills.map(s=>
+      `<div class="sk-badge"><img class="sk-icon" src="https://cdn.simpleicons.org/${s.icon}" alt="${s.name}" width="32" height="32"><span class="sk-name">${s.name}</span><div class="sk-level"><div class="sk-level-fill" data-w="${s.level}"></div></div></div>`
+    ).join('');
+    new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.querySelectorAll('.sk-badge').forEach((b,i)=>{
+            setTimeout(()=>{
+              b.classList.add('sk-in');
+              const f=b.querySelector('.sk-level-fill');
+              if(f)f.style.width=f.dataset.w+'%';
+            },i*90);
+          });
+        }
+      });
+    },{threshold:0.1}).observe(sg);
+  }
 
   // ── Process ──
   document.getElementById('stepsGrid').innerHTML=c.process.map(s=>{
