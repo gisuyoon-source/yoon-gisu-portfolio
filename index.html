@@ -43,10 +43,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 
 /* HERO — 2-column B-layout */
 .hero{height:100vh;min-height:100vh;display:grid;grid-template-columns:60fr 40fr;position:relative;overflow:hidden}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 60px;gap:24px;position:relative;z-index:4}
-.hero-right{position:relative;overflow:hidden}
-.hero-right::before{content:'';position:absolute;left:0;top:0;bottom:0;width:130px;background:linear-gradient(to right,var(--bg),transparent);pointer-events:none;z-index:2}
-.hero-right::after{content:'';position:absolute;bottom:0;left:0;right:0;height:36%;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none;z-index:2}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 60px;gap:28px;position:relative;z-index:4}
+.hero-right{position:relative;overflow:hidden;padding:clamp(32px,4vh,64px) clamp(20px,3vw,44px) clamp(32px,4vh,64px) 0}
+.hero-right::before{content:'';position:absolute;left:0;top:0;bottom:0;width:110px;background:linear-gradient(to right,var(--bg),transparent);pointer-events:none;z-index:2}
+.hero-right::after{content:'';position:absolute;bottom:0;left:0;right:0;height:32%;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none;z-index:2}
 .orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
 .orb-a{width:700px;height:700px;background:radial-gradient(circle,rgba(232,83,26,.08),transparent 70%);top:-150px;right:-150px;animation:drift 14s ease-in-out infinite}
 .orb-b{width:500px;height:500px;background:radial-gradient(circle,rgba(232,83,26,.04),transparent 70%);bottom:-100px;left:-80px;animation:drift 18s ease-in-out infinite reverse}
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 /* 프로필 사진 — 아래서 위로 등장, hover 시 앞으로 당겨지는 효과 */
 /* Profile photo fills right column */
 @keyframes photoEnter{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
-.hero-photo-img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;animation:photoEnter .9s .4s cubic-bezier(.22,1,.36,1) both}
+.hero-photo-img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;border-radius:2px;animation:photoEnter .9s .4s cubic-bezier(.22,1,.36,1) both}
 
 /* Hero text — left aligned */
 .hero-eyebrow{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.22em;color:var(--o);text-transform:uppercase;display:flex;align-items:center;justify-content:flex-start;gap:12px;opacity:0;animation:up .8s .75s ease forwards}
@@ -92,9 +92,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 @media(max-width:768px){
   .hero{grid-template-columns:1fr;height:auto}
   .hero-left{padding:100px var(--pad) 40px;gap:18px}
-  .hero-right{height:80vw}
+  .hero-right{height:80vw;padding:0 var(--pad) var(--pad)}
   .hero-right::before{width:0}
-  .hero-right::after{height:22%}
+  .hero-right::after{height:20%}
   .hn-yoon,.hn-gisu{font-size:clamp(60px,16vw,120px)}
 }
 
