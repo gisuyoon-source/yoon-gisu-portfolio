@@ -409,7 +409,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" id="navCta" href="mailto:gisu.y96n@gmail.com">연락하기</a>
+  <a class="nav-cta" id="navCta" href="https://mail.google.com/mail/?view=cm&to=gisu.y96n@gmail.com" target="_blank" rel="noopener noreferrer">연락하기</a>
 </nav>
 
 <!-- HERO -->
@@ -525,7 +525,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
   <h2 class="contact-title" id="contactTitle"></h2>
   <p class="contact-sub" id="contactSub"></p>
   <div class="btns">
-    <a class="btn btn-p" id="contactEmailBtn" href="mailto:gisu.y96n@gmail.com">이메일 보내기</a>
+    <a class="btn btn-p" id="contactEmailBtn" href="https://mail.google.com/mail/?view=cm&to=gisu.y96n@gmail.com" target="_blank" rel="noopener noreferrer">이메일 보내기</a>
     <a class="btn btn-s" id="contactLinkedInBtn" href="#" target="_blank"><span>LinkedIn ↗</span></a>
   </div>
 </section>
@@ -709,7 +709,8 @@ async function loadContent(){
   // ── 사이트 타이틀 / nav ──
   document.getElementById('siteTitle').textContent=c.site.title;
   const navCta=document.getElementById('navCta');
-  navCta.href='mailto:'+c.site.email;
+  navCta.href='https://mail.google.com/mail/?view=cm&to='+c.site.email;
+  navCta.target='_blank';navCta.rel='noopener noreferrer';
 
   // ── 히어로 ──
   const h=c.hero;
@@ -938,7 +939,9 @@ async function loadContent(){
   document.getElementById('contactTitle').innerHTML=
     ct.title_line1+'<br><span class="acc">'+ct.title_accent+'</span>'+ct.title_line3;
   document.getElementById('contactSub').textContent=ct.sub;
-  document.getElementById('contactEmailBtn').href='mailto:'+c.site.email;
+  const ceb=document.getElementById('contactEmailBtn');
+  ceb.href='https://mail.google.com/mail/?view=cm&to='+c.site.email;
+  ceb.target='_blank';ceb.rel='noopener noreferrer';
   document.getElementById('contactEmailBtn').textContent=ct.email_label;
   document.getElementById('contactLinkedInBtn').href=c.site.linkedin_url;
   document.getElementById('contactLinkedInBtn').querySelector('span').textContent=ct.linkedin_label;
