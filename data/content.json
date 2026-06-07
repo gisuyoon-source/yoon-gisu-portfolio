@@ -148,6 +148,7 @@
     },
     {
       "id": "p3",
+      "img_pos_top": true,
       "category": "Exhibition Renewal",
       "title": "스크트.zip 2차 개편",
       "desc": "완주율·유입 데이터 교차 분석으로 몰입도 저하를 진단. 콘텐츠 전면 재설계로 3가지 지표를 동시에 달성.",
