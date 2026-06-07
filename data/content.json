@@ -78,15 +78,11 @@
     ]
   },
   "skills": [
-    {"name": "PowerPoint",       "level": 95, "icon": "microsoftpowerpoint", "image": "images/skills_ppt.png"},
-    {"name": "Excel",            "level": 90, "icon": "microsoftexcel",      "image": "images/skills_excel.png"},
-    {"name": "Word",             "level": 85, "icon": "microsoftword",       "image": "images/skills_word.png"},
-    {"name": "Figma",            "level": 80, "icon": "figma",               "image": "images/skills_figma.png"},
-    {"name": "Notion",           "level": 85, "icon": "notion",              "image": "images/skills_notion.png"},
-    {"name": "Google Analytics", "level": 75, "icon": "googleanalytics"},
-    {"name": "Meta Ads",         "level": 80, "icon": "meta"},
-    {"name": "Instagram",        "level": 90, "icon": "instagram"},
-    {"name": "YouTube",          "level": 75, "icon": "youtube"}
+    {"name": "PowerPoint", "level": 95, "image": "images/skills_ppt.png"},
+    {"name": "Excel",      "level": 90, "image": "images/skills_excel.png"},
+    {"name": "Word",       "level": 85, "image": "images/skills_word.png"},
+    {"name": "Figma",      "level": 80, "image": "images/skills_figma.png"},
+    {"name": "Notion",     "level": 85, "image": "images/skills_notion.png"}
   ],
   "process": [
     {

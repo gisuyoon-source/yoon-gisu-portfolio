@@ -240,7 +240,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 @media(max-width:560px){.sk-badge{width:calc(50% - 8px)}}
 .sk-badge.sk-in{opacity:1;transform:none;transition:border-color .3s,box-shadow .3s,transform .3s}
 .sk-badge:hover{border-color:rgba(232,83,26,.35);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.55),0 0 0 1px rgba(232,83,26,.1)}
-.sk-icon{width:32px;height:32px;opacity:.7;transition:opacity .3s,transform .3s}
+.sk-icon{width:56px;height:56px;object-fit:contain;opacity:.85;transition:opacity .3s,transform .3s}
 .sk-badge:hover .sk-icon{opacity:1;transform:scale(1.08)}
 .sk-name{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w3);letter-spacing:.06em;text-align:center;transition:color .3s}
 .sk-badge:hover .sk-name{color:var(--w2)}
@@ -807,7 +807,7 @@ async function loadContent(){
   const sg=document.getElementById('skGrid');
   if(c.skills&&sg){
     sg.innerHTML=c.skills.map(s=>
-      `<div class="sk-badge"><img class="sk-icon" src="${s.image||'https://cdn.simpleicons.org/'+s.icon}" alt="${s.name}" width="32" height="32"><span class="sk-name">${s.name}</span><div class="sk-level"><div class="sk-level-fill" data-w="${s.level}"></div></div></div>`
+      `<div class="sk-badge"><img class="sk-icon" src="${s.image}" alt="${s.name}" width="56" height="56"><span class="sk-name">${s.name}</span><div class="sk-level"><div class="sk-level-fill" data-w="${s.level}"></div></div></div>`
     ).join('');
     new IntersectionObserver(entries=>{
       entries.forEach(e=>{
