@@ -153,8 +153,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .step:hover{background:var(--bg2)}
 .step:hover::after{transform:scaleX(1)}
 .step-num{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);opacity:.5;margin-bottom:12px}
-.step-img{width:100%;height:auto;display:block;margin-bottom:16px;transition:opacity .35s}
-.step:hover .step-img{opacity:.85}
+.step-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:16px;overflow:hidden}
+.step-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;transition:opacity .35s}
+.step:hover .step-img{opacity:.82}
 .step-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;line-height:1.35;letter-spacing:-.01em;margin-bottom:8px;color:var(--w)}
 .step-body{font-size:12px;color:var(--w2);line-height:1.7;font-weight:300}
 .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
@@ -770,9 +771,11 @@ async function loadContent(){
   ).join('');
 
   // ── Process ──
-  document.getElementById('stepsGrid').innerHTML=c.process.map(s=>
-    `<div class="step"><div class="step-num">${s.num}</div><img class="step-img" src="${s.image}" alt=""><div class="step-title">${s.title}</div><div class="step-body">${s.body}</div><div class="chips">${s.chips.map(ch=>`<span class="chip">${ch}</span>`).join('')}</div></div>`
-  ).join('');
+  document.getElementById('stepsGrid').innerHTML=c.process.map(s=>{
+    const srcs=s.images||[s.image];
+    const imgs=srcs.map(src=>`<img class="step-img" src="${src}" alt="" loading="lazy">`).join('');
+    return`<div class="step"><div class="step-num">${s.num}</div><div class="step-imgs">${imgs}</div><div class="step-title">${s.title}</div><div class="step-body">${s.body}</div><div class="chips">${s.chips.map(ch=>`<span class="chip">${ch}</span>`).join('')}</div></div>`;
+  }).join('');
 
   // ── Main projects ──
   const mpEl=document.getElementById('mainProjects');

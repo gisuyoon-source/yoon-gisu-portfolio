@@ -80,28 +80,28 @@
   "process": [
     {
       "num": "STEP 01",
-      "image": "images/process_01.png",
+      "images": ["images/process_01.png", "images/process_02.png", "images/process_03.png"],
       "title": "목적 명확화 · 타겟 세분화",
       "body": "현장 데이터와 시장 분석으로 핵심 목표와 타겟군을 도출합니다.",
       "chips": ["목적 재정립", "세분화", "Key Message"]
     },
     {
       "num": "STEP 02",
-      "image": "images/process_04.png",
+      "images": ["images/process_04.png", "images/process_05.png", "images/process_06.png"],
       "title": "공간·상품 · 경험 설계",
       "body": "브랜드 아이덴티티를 반영한 동선과 통합 고객 여정을 설계합니다.",
       "chips": ["공간 기획", "UX", "이해관계자"]
     },
     {
       "num": "STEP 03",
-      "image": "images/process_06.png",
+      "images": ["images/process_07.png", "images/process_08.png", "images/process_09.png"],
       "title": "IMC 전략 · 프로젝트 총괄",
       "body": "온·오프라인 통합 전략과 트래커 기반 일정·예산 관리를 담당합니다.",
       "chips": ["IMC", "채널 실행", "PM"]
     },
     {
       "num": "STEP 04",
-      "image": "images/process_09.png",
+      "images": ["images/process_10.png", "images/process_11.png", "images/process_12.png"],
       "title": "운영 관리 · 성과 분석",
       "body": "정량·정성 데이터를 수집하고 성과 지표 분석으로 차기 방향을 제안합니다.",
       "chips": ["현장 운영", "데이터", "인사이트"]
