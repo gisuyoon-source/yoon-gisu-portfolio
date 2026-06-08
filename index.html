@@ -252,6 +252,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 
 /* CONTACT */
 .contact{padding:120px var(--pad);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bd)}
+.contact-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;opacity:.18}
 .contact-orb{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(232,83,26,.09),transparent 60%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%;filter:blur(60px);animation:drift 8s ease-in-out infinite}
 .contact-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;color:var(--o);text-transform:uppercase;margin-bottom:24px;position:relative}
 .contact-title{font-family:'Outfit',sans-serif;font-size:clamp(28px,5vw,64px);font-weight:800;letter-spacing:-.04em;line-height:.95;margin-bottom:16px;position:relative}
@@ -530,6 +531,9 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 
 <!-- CONTACT -->
 <section class="contact rv" id="contact">
+  <video class="contact-video" autoplay loop muted playsinline>
+    <source src="images/contact_bg.mp4" type="video/mp4">
+  </video>
   <div class="contact-orb"></div>
   <div class="contact-label">Contact</div>
   <h2 class="contact-title" id="contactTitle"></h2>
