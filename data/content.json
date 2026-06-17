@@ -241,21 +241,6 @@
       "result_panel": "브랜드 홍보관 첫 정식 오픈, 전체 내방객 대비 평균 유입률 60% 달성."
     },
     {
-      "id": "o3",
-      "image": "images/other_edu_01.png",
-      "period": "2023.06 — 09",
-      "title": "원데이 클래스 기획",
-      "desc": "전시 연계 클래스 5회 기획·운영.",
-      "result": "클래스당 200명+ · 조기 마감",
-      "panel_category": "Class · Event",
-      "panel_title": "메인전시 연계 원데이 클래스",
-      "panel_images": ["images/other_edu_01.png", "images/other_edu_02.png", "images/other_edu_03.png", "images/other_edu_04.png", "images/other_edu_05.png", "images/other_edu_06.png"],
-      "panel_kpis": [["5회", "기획·운영"], ["200명+", "클래스당 신청"], ["✓", "전회 조기 마감"]],
-      "problem": "전시 콘텐츠와 연계된 클래스 5회를 기획·운영했습니다.",
-      "points": ["전시 테마 연계 프로그램 기획", "강사 섭외 및 운영 총괄"],
-      "result_panel": "클래스 당 평균 신청자 200명 이상, 전 회차 조기 마감."
-    },
-    {
       "id": "o2",
       "image": "images/other_t1_01.png",
       "period": "2023.01 — 08",
