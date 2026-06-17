@@ -97,11 +97,21 @@
     ]
   },
   "skills": [
-    {"name": "PowerPoint", "icon": "images/skills_ppt.png"},
-    {"name": "Excel",      "icon": "images/skills_excel.png"},
-    {"name": "Word",       "icon": "images/skills_word.png"},
-    {"name": "Figma",      "icon": "images/skills_figma.png"},
-    {"name": "Notion",     "icon": "images/skills_notion.png"}
+    {"name": "PowerPoint", "icon": "images/skills_ppt.png",   "context": "기획안·제안서·보고서 제작"},
+    {"name": "Excel",      "icon": "images/skills_excel.png", "context": "운영 트래커·예산·성과 데이터 관리"},
+    {"name": "Word",       "icon": "images/skills_word.png",  "context": "응대 스크립트·운영 매뉴얼 작성"},
+    {"name": "Figma",      "icon": "images/skills_figma.png", "context": "UX 흐름·콘텐츠 기획 시각화"},
+    {"name": "Notion",     "icon": "images/skills_notion.png","context": "프로젝트 일정·협업 문서 관리"}
+  ],
+  "competencies": [
+    "공간·콘텐츠 기획",
+    "IMC 전략 수립",
+    "고객 경험 설계",
+    "운영 트래커 관리",
+    "이해관계자 커뮤니케이션",
+    "데이터 기반 성과 분석",
+    "현장 운영 총괄",
+    "응대 스크립트 작성 및 교육"
   ],
   "process": [
     {

@@ -279,6 +279,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .sk-item:hover{transform:translateY(-6px)}
 .sk-icon{width:80px;height:80px;object-fit:contain;display:block}
 .sk-name{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--w2);letter-spacing:.04em;text-align:center}
+.sk-context{font-family:'Outfit',sans-serif;font-size:11px;font-weight:400;color:var(--w3);letter-spacing:.02em;text-align:center;line-height:1.4;margin-top:2px}
+.comp-wrap{margin-top:56px}
+.comp-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;color:var(--o);text-transform:uppercase;margin-bottom:20px;text-align:center}
+.comp-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.comp-badge{font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--o);border:1px solid rgba(232,83,26,.4);padding:8px 18px;transition:all .3s;cursor:default;position:relative;overflow:hidden}
+.comp-badge::before{content:'';position:absolute;inset:0;background:var(--o);transform:translateX(-100%);transition:transform .3s cubic-bezier(.22,1,.36,1);z-index:0}
+.comp-badge:hover::before{transform:translateX(0)}
+.comp-badge span{position:relative;z-index:1;transition:color .3s}
+.comp-badge:hover span{color:#000}
 
 /* CONTACT */
 .contact{padding:120px var(--pad);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bd)}
@@ -545,6 +554,10 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 <section class="skills-sec rv" id="skills">
   <div class="sec-label">Skills</div>
   <div class="sk-grid" id="skGrid"></div>
+  <div class="comp-wrap">
+    <div class="comp-label">Core Competency</div>
+    <div class="comp-badges" id="compBadges"></div>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -909,7 +922,7 @@ async function loadContent(){
   const sg=document.getElementById('skGrid');
   if(c.skills&&sg){
     sg.innerHTML=c.skills.map(s=>
-      `<div class="sk-item"><img class="sk-icon" src="${s.icon}" alt="${s.name}" width="80" height="80"><span class="sk-name">${s.name}</span></div>`
+      `<div class="sk-item"><img class="sk-icon" src="${s.icon}" alt="${s.name}" width="80" height="80"><span class="sk-name">${s.name}</span>${s.context?`<span class="sk-context">${s.context}</span>`:''}</div>`
     ).join('');
     new IntersectionObserver(entries=>{
       entries.forEach(e=>{
@@ -920,6 +933,10 @@ async function loadContent(){
         }
       });
     },{threshold:0.1}).observe(sg);
+    const cb=document.getElementById('compBadges');
+    if(cb&&c.competencies){
+      cb.innerHTML=c.competencies.map(comp=>`<div class="comp-badge"><span>${comp}</span></div>`).join('');
+    }
   }
 
   // ── Process ──
