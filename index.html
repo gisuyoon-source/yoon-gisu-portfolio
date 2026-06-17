@@ -138,8 +138,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .skill-bar{flex:1;height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
 .skill-fill{height:100%;background:var(--o);border-radius:2px;width:0;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
 .skill-tag{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;color:var(--o);letter-spacing:.04em;white-space:nowrap;width:60px;text-align:right}
+.about-quote{font-size:clamp(13px,1.1vw,15px);font-style:italic;color:var(--w2);border-left:2px solid var(--o);padding-left:16px;margin-bottom:24px;line-height:1.8}
 .about-r{display:flex;flex-direction:column}
 .info-block{border-top:1px solid var(--bd);padding:16px 0}
+
+/* BACKGROUND */
+.bg-sec{padding:80px var(--pad) 120px}
+.bg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
+@media(max-width:768px){.bg-grid{grid-template-columns:1fr}}
+.bg-col{background:var(--bg);padding:28px 24px}
+.bg-col-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.bg-item{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.bg-item:last-child{border-bottom:none}
+.bg-item-name{font-size:13px;color:var(--w);font-weight:400;line-height:1.4}
+.bg-item-val{font-family:'Outfit',sans-serif;font-size:11px;color:var(--w3);margin-top:3px;letter-spacing:.03em}
 .info-block:last-child{border-bottom:1px solid var(--bd)}
 .ib-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);margin-bottom:10px;text-transform:uppercase}
 .ib-row{display:flex;justify-content:space-between;align-items:baseline;padding:3px 0;gap:12px}
@@ -492,10 +504,19 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
   <div>
     <div class="sec-label">About</div>
     <h2 class="about-title" id="aboutTitle"></h2>
+    <p class="about-quote" id="aboutQuote"></p>
     <p class="about-body" id="aboutBody"></p>
     <div class="skills-wrap" id="skillsWrap"></div>
   </div>
   <div class="about-r" id="aboutR"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BACKGROUND -->
+<section class="bg-sec rv" id="background">
+  <div class="sec-label">Background</div>
+  <div class="bg-grid" id="bgGrid"></div>
 </section>
 
 <div class="divider"></div>
@@ -826,6 +847,7 @@ async function loadContent(){
   const a=c.about;
   document.getElementById('aboutTitle').innerHTML=
     a.title_line1+'<br><span class="acc">'+a.title_accent+'</span><br>'+a.title_line3;
+  if(a.quote)document.getElementById('aboutQuote').textContent='“'+a.quote+'”';
   document.getElementById('aboutBody').textContent=a.body;
 
   const sw=document.getElementById('skillsWrap');
@@ -858,6 +880,20 @@ async function loadContent(){
     `<div class="ib-row"><span class="ib-name">${c.site.email}</span></div>`+
     `<div class="ib-row"><a href="${c.site.linkedin_url}" style="color:var(--o);font-size:13px;text-decoration:none">${c.site.linkedin_label} ↗</a></div>`+
     `</div>`;
+
+  // ── Background ──
+  if(c.background){
+    const bg=c.background;
+    const bgGrid=document.getElementById('bgGrid');
+    if(bgGrid){
+      const mkItems=arr=>arr.map(x=>`<div class="bg-item"><div class="bg-item-name">${x.name}</div><div class="bg-item-val">${x.val}${x.date?' · '+x.date:''}</div></div>`).join('');
+      bgGrid.innerHTML=[
+        {label:'Awards',items:mkItems(bg.awards)},
+        {label:'Qualifications',items:mkItems(bg.qualifications)},
+        {label:'Experience',items:mkItems(bg.experience)}
+      ].map(col=>`<div class="bg-col"><div class="bg-col-label">${col.label}</div>${col.items}</div>`).join('');
+    }
+  }
 
   // ── Flip card ──
   const ph=c.philosophy;

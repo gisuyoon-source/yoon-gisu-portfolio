@@ -26,7 +26,8 @@
     "title_line1": "고객 경험을",
     "title_accent": "데이터로",
     "title_line3": "설계합니다",
-    "body": "큐레이터로서 1년간 플래그십스토어 현장에서 고객 니즈 기반 개선안을 도출하고, 이후 현장 경험과 데이터를 토대로 전시·콘텐츠·캠페인이 하나의 흐름으로 연결되도록 기획해 Brand Experience 마케터로 활동하고 있습니다.",
+    "quote": "브랜드가 전하고자 하는 메시지를 고객 경험으로 설계합니다.",
+    "body": "1년간 큐레이터로서 플래그십스토어 현장의 다양한 상황을 선제적으로 대응하며 고객 니즈 기반의 개선안을 도출·실행했습니다.\n\n이후 현장 운영 경험과 데이터를 기반으로, 전시·콘텐츠·캠페인이 하나의 흐름으로 연결되도록 기획하며 BX·CX 기획자로 활동하고 있습니다.",
     "skills": [
       { "name": "BX 기획", "percent": 95, "tag": "Core" },
       { "name": "공간 기획", "percent": 90, "tag": "Advanced" },
@@ -58,12 +59,30 @@
       }
     ],
     "qualifications": [
-      { "name": "OPIc IH", "val": "비즈니스 회화 가능" },
-      { "name": "MOS Master", "val": "OA 활용 능력" }
+      { "name": "OPIc IH", "val": "비즈니스 회화 가능 (2025.06)" },
+      { "name": "MOS Master", "val": "OA 활용 능력 (2017.07)" }
     ],
     "awards": [
       { "name": "SKT T Factory 우수 구성원", "val": "2022 Q2 · Q3" },
-      { "name": "SKT T Factory 우수 구성원", "val": "2024 Q3" }
+      { "name": "SKT T Factory 우수 구성원", "val": "2024 Q3" },
+      { "name": "외국어우수상", "val": "단국대학교 (2015.10)" },
+      { "name": "성적우수상", "val": "단국대학교 (2019.07)" }
+    ]
+  },
+  "background": {
+    "awards": [
+      { "name": "SKT T Factory 우수 구성원", "val": "2022 Q2 · Q3 / 2024 Q3" },
+      { "name": "외국어우수상", "val": "단국대학교 (2015.10)" },
+      { "name": "성적우수상", "val": "단국대학교 (2019.07)" }
+    ],
+    "qualifications": [
+      { "name": "OPIc IH", "val": "비즈니스 회화 가능", "date": "2025.06" },
+      { "name": "MOS Master", "val": "OA 활용 능력", "date": "2017.07" }
+    ],
+    "experience": [
+      { "name": "Vancouver Trump Hotel & Tower", "val": "S&M Dept. 인턴십 (2019, 2개월)" },
+      { "name": "외국어대학 학생회 기획부", "val": "단국대학교 (2016–2017)" },
+      { "name": "총대의원 사무부", "val": "단국대학교 (2017–2018)" }
     ]
   },
   "philosophy": {
@@ -302,10 +321,10 @@
     }
   ],
   "contact": {
-    "title_line1": "함께 만들고 싶은",
-    "title_accent": "브랜드 경험",
-    "title_line3": "이 있다면",
-    "sub": "편하게 연락 주세요. 빠르게 답변드리겠습니다.",
+    "title_line1": "앞으로도 브랜드와 사람 사이,",
+    "title_accent": "더 좋은 경험을",
+    "title_line3": "만들겠습니다.",
+    "sub": "함께 만들고 싶은 브랜드 경험이 있다면 편하게 연락 주세요.",
     "email_label": "이메일 보내기",
     "linkedin_label": "LinkedIn ↗"
   },
