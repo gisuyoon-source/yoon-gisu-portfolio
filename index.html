@@ -799,12 +799,12 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();clo
 async function loadContent(){
   let c;
   try{
-    const r=await fetch('/yoon-gisu-portfolio/data/content.json');
+    const r=await fetch('/data/content.json');
     c=await r.json();
   }catch(e){
     // fallback: try relative path (local file:// open)
     try{
-      const r=await fetch('/yoon-gisu-portfolio/data/content.json');
+      const r=await fetch('/data/content.json');
       c=await r.json();
     }catch(e2){
       console.warn('content.json 로드 실패. 정적 텍스트를 표시합니다.');
