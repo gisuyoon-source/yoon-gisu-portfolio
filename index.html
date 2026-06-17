@@ -7,6 +7,13 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title id="siteTitle">윤지수 — Brand Experience Marketer</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8531A'/><text y='.9em' font-size='80' x='10' fill='white' font-family='Arial Black'>Y</text></svg>">
+<meta property="og:title" content="윤지수 | BX·CX 기획자 포트폴리오">
+<meta property="og:description" content="브랜드와 사람을 경험으로 연결합니다. SKT T Factory 5년차 BX·CX 기획자 윤지수의 포트폴리오입니다.">
+<meta property="og:image" content="https://yoon-gisu-portfolio.vercel.app/images/profile.png">
+<meta property="og:url" content="https://yoon-gisu-portfolio.vercel.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -154,6 +161,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .bg-item-name{font-size:13px;color:var(--w);font-weight:400;line-height:1.4}
 .bg-item-val{font-family:'Outfit',sans-serif;font-size:11px;color:var(--w3);margin-top:3px;letter-spacing:.03em}
 .info-block:last-child{border-bottom:1px solid var(--bd)}
+
+/* AWARDS SECTION */
+.awards-sec{padding:100px var(--pad)}
+.aw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--bd);margin-top:36px}
+@media(max-width:768px){.aw-grid{grid-template-columns:1fr}}
+.aw-col{padding:32px 28px;border-right:1px solid var(--bd)}
+.aw-col:last-child{border-right:none}
+@media(max-width:768px){.aw-col{border-right:none;border-bottom:1px solid var(--bd)}.aw-col:last-child{border-bottom:none}}
+.aw-col-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--o);text-transform:uppercase;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(232,83,26,.25)}
+.aw-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.aw-item:last-child{border-bottom:none}
+.aw-item-name{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--w);line-height:1.4;margin-bottom:4px}
+.aw-item-val{font-size:12px;color:var(--w3);font-weight:400;line-height:1.5}
 .ib-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);margin-bottom:10px;text-transform:uppercase}
 .ib-row{display:flex;justify-content:space-between;align-items:baseline;padding:3px 0;gap:12px}
 .ib-name{font-size:13px;color:var(--w);font-weight:400;flex:1}
@@ -478,8 +498,8 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" autoplay loop muted playsinline>
-    <source src="images/hero_bg.mp4" type="video/mp4">
+  <video class="hero-video" autoplay loop muted playsinline preload="none" id="heroVideo">
+    <source data-src="images/hero_bg.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="orb orb-a"></div><div class="orb orb-b"></div>
@@ -552,6 +572,14 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
     </div>
   </div>
 </div>
+
+<!-- AWARDS -->
+<section class="awards-sec rv" id="awards">
+  <div class="sec-label">Awards &amp; Background</div>
+  <div class="aw-grid" id="awGrid"></div>
+</section>
+
+<div class="divider"></div>
 
 <!-- SKILLS -->
 <section class="skills-sec rv" id="skills">
@@ -911,6 +939,18 @@ async function loadContent(){
     }
   }
 
+  // ── Awards ──
+  const ag=document.getElementById('awGrid');
+  if(ag&&c.background){
+    const bg=c.background;
+    const mkItems=arr=>arr.map(x=>`<div class="aw-item"><div class="aw-item-name">${x.name}</div><div class="aw-item-val">${x.val}${x.date?' · '+x.date:''}</div></div>`).join('');
+    ag.innerHTML=[
+      {label:'Awards',items:mkItems(bg.awards)},
+      {label:'Qualifications',items:mkItems(bg.qualifications)},
+      {label:'Experience',items:mkItems(bg.experience)}
+    ].map(col=>`<div class="aw-col"><div class="aw-col-label">${col.label}</div>${col.items}</div>`).join('');
+  }
+
   // ── Flip card ──
   const ph=c.philosophy;
   document.getElementById('flipFrontLabel').textContent=ph.front_label;
@@ -1133,6 +1173,14 @@ async function loadContent(){
 }
 
 loadContent();
+
+setTimeout(()=>{
+  const hv=document.getElementById('heroVideo');
+  if(hv){
+    const s=hv.querySelector('source[data-src]');
+    if(s){s.src=s.dataset.src;hv.load();hv.play().catch(()=>{});}
+  }
+},2000);
 </script>
 </body>
 </html>
