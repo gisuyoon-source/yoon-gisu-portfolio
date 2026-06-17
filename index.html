@@ -29,15 +29,34 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Pretendard','Noto Sans KR',sans-serif;background:var(--bg);color:var(--w);overflow-x:hidden;cursor:none}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--o)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#111}::-webkit-scrollbar-thumb{background:var(--o);border-radius:999px}
 #progress{position:fixed;top:0;left:0;height:2px;background:var(--o);z-index:9999;width:0;box-shadow:0 0 8px rgba(232,83,26,.6)}
 #cur,#cur2{display:none}
 @media(pointer:fine){
-  #cur{display:block;width:8px;height:8px;background:var(--o);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9990;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s,border .2s}
-  #cur2{display:block;width:30px;height:30px;border:1px solid rgba(232,83,26,.35);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9989;transform:translate(-50%,-50%)}
+  #cur{display:block;width:12px;height:12px;background:var(--o);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9990;transform:translate(-50%,-50%);transition:transform .18s ease,background .18s ease}
+  #cur.hov{transform:translate(-50%,-50%) scale(2.5);background:transparent;box-shadow:0 0 0 1px var(--o)}
+  #cur2{display:block;width:36px;height:36px;border:1px solid rgba(232,83,26,.28);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9989;transform:translate(-50%,-50%)}
   body{cursor:none}
 }
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9000}
+
+/* SPLASH */
+#splash{position:fixed;inset:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;transition:opacity .6s ease}
+#splash.out{opacity:0;pointer-events:none}
+.splash-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,7vw,88px);letter-spacing:.08em;color:var(--w)}
+.splash-name span{color:var(--o)}
+.splash-bar-wrap{width:160px;height:2px;background:rgba(255,255,255,.1)}
+.splash-bar{height:100%;background:var(--o);width:0;animation:splashLoad .75s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes splashLoad{to{width:100%}}
+
+/* PROJ ROW KPI */
+.proj-row-kpi{position:absolute;right:80px;top:50%;transform:translateY(-50%);font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;color:var(--o);letter-spacing:.03em;opacity:0;transition:opacity .28s;pointer-events:none;text-align:right;white-space:nowrap;z-index:2}
+.proj-row:hover .proj-row-kpi{opacity:.85}
+@media(max-width:640px){.proj-row-kpi{display:none}}
+
+/* SLIDE PLACEHOLDER */
+.slide-placeholder{width:100%;min-height:320px;height:100%;background:linear-gradient(135deg,#1a1a1a 0%,#2a1a0a 100%);display:flex;align-items:center;justify-content:center}
+.slide-ph-text{font-family:'Outfit',sans-serif;font-size:clamp(13px,1.6vw,18px);font-weight:700;color:var(--o);text-align:center;letter-spacing:.06em;line-height:1.8;padding:24px;opacity:.85}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:24px var(--pad);background:linear-gradient(to bottom,rgba(8,8,8,.96),transparent);gap:16px}
@@ -471,6 +490,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 </style>
 </head>
 <body>
+<div id="splash"><div class="splash-name">YOON <span>GISU</span></div><div class="splash-bar-wrap"><div class="splash-bar"></div></div></div>
 <div id="progress"></div>
 <div id="cur"></div>
 <div id="cur2"></div>
@@ -697,6 +717,12 @@ window.addEventListener('scroll',()=>{
   document.getElementById('progress').style.width=((s.scrollTop/(s.scrollHeight-s.clientHeight))*100)+'%';
 });
 
+// SPLASH
+setTimeout(()=>{
+  const sp=document.getElementById('splash');
+  if(sp){sp.classList.add('out');setTimeout(()=>sp.remove(),700);}
+},800);
+
 // CURSOR
 const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
 let mx=0,my=0,fx=0,fy=0;
@@ -707,7 +733,7 @@ if(window.matchMedia('(pointer:fine)').matches){
 
 // COUNT UP
 function animCount(el,end,suffix,decimal){
-  const dur=1800,start=performance.now();
+  const dur=1200,start=performance.now();
   function tick(now){
     const p=Math.min((now-start)/dur,1);
     const ease=1-Math.pow(1-p,3);
@@ -735,6 +761,11 @@ const skillObs=new IntersectionObserver(entries=>{
 },{threshold:0.3});
 
 // SLIDER
+const BAD_IMGS=['p1_02','p1_03','p1_04','p1_05','p3_02','p3_03','p3_04','p3_05'];
+const BAD_LABELS={p1:'팝업 스토어 · 체험 콘텐츠 설계',p3:'전시 리뉴얼 · 콘텐츠 개편'};
+function isBadImg(src){return BAD_IMGS.some(b=>src.includes(b));}
+function getBadLabel(src){for(const[k,v]of Object.entries(BAD_LABELS)){if(src.includes(k))return v;}return '';}
+
 let curSlide=0,totalSlides=0;
 function buildSlider(imgs){
   const area=document.getElementById('sliderArea');
@@ -742,7 +773,11 @@ function buildSlider(imgs){
   area.innerHTML='<div class="skel"></div>';
   setTimeout(()=>{
     totalSlides=imgs.length;curSlide=0;
-    area.innerHTML=`<div class="slider-wrap"><div class="slider-track" id="sTrack">${imgs.map(s=>`<div class="slide"><img src="${s}" alt="" loading="lazy" style="cursor:zoom-in" onclick="openLightbox(this.src)"></div>`).join('')}</div><div class="sdots" id="sDots">${imgs.map((_,i)=>`<div class="dot${i===0?' active':''}" onclick="goSlide(${i})"></div>`).join('')}</div><div class="sbtns"><button class="sbtn" onclick="slidePrev()">←</button><button class="sbtn" onclick="slideNext()">→</button></div></div>`;
+    const slides=imgs.map(s=>{
+      if(isBadImg(s))return`<div class="slide"><div class="slide-placeholder"><span class="slide-ph-text">${getBadLabel(s)}</span></div></div>`;
+      return`<div class="slide"><img src="${s}" alt="" loading="lazy" style="cursor:zoom-in" onclick="openLightbox(this.src)"></div>`;
+    }).join('');
+    area.innerHTML=`<div class="slider-wrap"><div class="slider-track" id="sTrack">${slides}</div><div class="sdots" id="sDots">${imgs.map((_,i)=>`<div class="dot${i===0?' active':''}" onclick="goSlide(${i})"></div>`).join('')}</div><div class="sbtns"><button class="sbtn" onclick="slidePrev()">←</button><button class="sbtn" onclick="slideNext()">→</button></div></div>`;
   },300);
 }
 function goSlide(n){
@@ -861,6 +896,8 @@ async function loadContent(){
   const countEls=[];
   statsEl.innerHTML=h.stats.map((s,i)=>{
     if(s.fixed){
+      const m=s.fixed.match(/^(\d+(?:\.\d+)?)(.*)$/);
+      if(m)return`<div class="stat"><span class="stat-n" id="cnt${i}">—</span><div class="stat-l">${s.label}</div></div>`;
       return`<div class="stat"><span class="stat-n">${s.fixed}</span><div class="stat-l">${s.label}</div></div>`;
     }
     return`<div class="stat"><span class="stat-n" id="cnt${i}">—</span><div class="stat-l">${s.label}</div></div>`;
@@ -871,9 +908,14 @@ async function loadContent(){
     entries.forEach(e=>{
       if(e.isIntersecting){
         h.stats.forEach((s,i)=>{
-          if(s.fixed)return;
           const el=document.getElementById('cnt'+i);
-          if(el)animCount(el,s.end,s.suffix,s.decimal);
+          if(!el)return;
+          if(s.fixed){
+            const m=s.fixed.match(/^(\d+(?:\.\d+)?)(.*)$/);
+            if(m)animCount(el,parseFloat(m[1]),m[2],m[1].includes('.'));
+          } else {
+            animCount(el,s.end,s.suffix,s.decimal);
+          }
         });
         cntObs.disconnect();
       }
@@ -1003,6 +1045,7 @@ async function loadContent(){
 
   // ── Main projects ──
   const mpEl=document.getElementById('mainProjects');
+  const projKpis=['체류율 40배↑ · 가입유도 41건','구매전환율 55% · 인사이트 수집','완주율 75% · 유입 2배↑ · 만족도 4.5','체험증가 1.5배↑ · 선호도 3위'];
   const rowsHtml=c.main_projects.map((p,i)=>{
     const yr=(p.period.match(/\d{4}/)||[''])[0];
     const num=String(i+1).padStart(2,'0');
@@ -1012,6 +1055,7 @@ async function loadContent(){
       <span class="proj-row-name">${p.title}</span>
       <span class="proj-row-cat">${p.category}</span>
       <span class="proj-row-year">${yr}</span>
+      <span class="proj-row-kpi">${projKpis[i]||''}</span>
     </div>`;
   }).join('');
   mpEl.innerHTML=`<div class="proj-sec-inner"><div class="proj-list">${rowsHtml}</div></div>`;
@@ -1162,9 +1206,9 @@ async function loadContent(){
 
   // ── cursor hover 대상 재설정 ──
   if(window.matchMedia('(pointer:fine)').matches){
-    document.querySelectorAll('a,.proj,.step,.oc,#flipCard,.view-btn,.sbtn,.ph-close,.btn,.stat,.kpi,.pkpi,.nav-cta').forEach(el=>{
-      el.addEventListener('mouseenter',()=>{cur.style.width='20px';cur.style.height='20px';cur.style.background='transparent';cur.style.border='1px solid var(--o)'});
-      el.addEventListener('mouseleave',()=>{cur.style.width='8px';cur.style.height='8px';cur.style.background='var(--o)';cur.style.border='none'});
+    document.querySelectorAll('a,.proj,.step,.oc,#flipCard,.view-btn,.sbtn,.ph-close,.btn,.stat,.kpi,.pkpi,.nav-cta,.proj-row,.comp-badge').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cur.classList.add('hov'));
+      el.addEventListener('mouseleave',()=>cur.classList.remove('hov'));
     });
   }
 
