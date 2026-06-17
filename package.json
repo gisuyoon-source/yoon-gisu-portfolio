@@ -1,0 +1,24 @@
+{
+  "name": "yoon-gisu-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gisuyoon-source/yoon-gisu-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gisuyoon-source/yoon-gisu-portfolio/issues"
+  },
+  "homepage": "https://github.com/gisuyoon-source/yoon-gisu-portfolio#readme",
+  "devDependencies": {
+    "sharp": "^0.35.1"
+  }
+}
