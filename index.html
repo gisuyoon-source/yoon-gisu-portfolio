@@ -96,12 +96,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 
 /* Mobile: 2-column (text left, photo right) */
 @media(max-width:768px){
-  .hero{grid-template-columns:55fr 45fr;height:100vh;min-height:100vh;display:grid}
+  .hero{grid-template-columns:55fr 45fr;height:auto;min-height:85vh;display:grid}
+  .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:15%;background:linear-gradient(to top,#000 0%,transparent 100%);z-index:3;pointer-events:none}
   .hero-left{padding:80px clamp(12px,3vw,20px) 40px;gap:14px}
-  .hero-right{align-items:center;justify-content:center;overflow:hidden}
+  .hero-right{align-items:flex-start;justify-content:center;overflow:hidden}
   .hero-right::before{width:0}
   .hero-right::after{display:none}
-  .hero-photo-img{width:45%;height:auto;object-fit:contain;display:block;margin:0 auto;border:none;box-shadow:none}
+  .hero-photo-img{width:58%;height:auto;object-fit:contain;display:block;margin:0 auto;border:none;box-shadow:none}
+  .hero-eyebrow{font-size:10px;letter-spacing:.06em}
   .hn-yoon,.hn-gisu{font-size:clamp(30px,8.5vw,64px)}
   .hero-sub{font-size:clamp(12px,1.4vw,16px)}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:0}
