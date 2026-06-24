@@ -108,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 /* 프로필 사진 — 아래서 위로 등장, hover 시 앞으로 당겨지는 효과 */
 /* Profile photo fills right column */
 @keyframes photoEnter{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
-.hero-photo-img{height:70vh;width:auto;display:block;animation:photoEnter .9s .8s cubic-bezier(.22,1,.36,1) both;border:none;box-shadow:none}
+.hero-photo-img{height:auto;width:auto;max-height:70vh;max-width:100%;display:block;animation:photoEnter .9s .8s cubic-bezier(.22,1,.36,1) both;border:none;box-shadow:none}
 
 /* Hero text — left aligned */
 .hero-eyebrow{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.22em;color:var(--o);text-transform:uppercase;display:flex;align-items:center;justify-content:flex-start;gap:12px;opacity:0;animation:up .8s 2.0s ease forwards}
