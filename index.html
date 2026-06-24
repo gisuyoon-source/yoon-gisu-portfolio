@@ -157,8 +157,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .sec-label::after{content:'';height:1px;background:var(--bd);width:80px}
 
 /* ABOUT */
-.about{display:grid;grid-template-columns:1fr 1fr;padding:120px var(--pad);gap:clamp(32px,5vw,80px);align-items:start}
-@media(max-width:768px){.about{grid-template-columns:1fr;gap:40px}}
+.about{padding:120px var(--pad) 60px}
+.about-r{display:none}
 .about-title{font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,38px);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin-bottom:20px}
 .about-title .acc{color:var(--o)}
 .about-body{font-size:14px;color:var(--w2);line-height:1.9;font-weight:300;margin-bottom:32px}
@@ -174,14 +174,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 
 /* BACKGROUND */
 .bg-sec{padding:80px var(--pad) 120px}
-.bg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
-@media(max-width:768px){.bg-grid{grid-template-columns:1fr}}
+.bg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
+@media(max-width:1024px){.bg-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.bg-grid{grid-template-columns:1fr}}
 .bg-col{background:var(--bg);padding:28px 24px}
 .bg-col-label{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
 .bg-item{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
 .bg-item:last-child{border-bottom:none}
 .bg-item-name{font-size:13px;color:var(--w);font-weight:400;line-height:1.4}
 .bg-item-val{font-family:'Outfit',sans-serif;font-size:11px;color:var(--w3);margin-top:3px;letter-spacing:.03em}
+.bg-item-sub{font-family:'Pretendard','Noto Sans KR',sans-serif;font-size:11px;color:var(--w3);margin-top:2px;opacity:.7}
 .info-block:last-child{border-bottom:1px solid var(--bd)}
 
 /* AWARDS SECTION */
@@ -931,24 +933,6 @@ async function loadContent(){
   ).join('');
   skillObs.observe(sw);
 
-  const buildInfoBlock=(label,rows)=>{
-    if(!rows||!rows.length)return'';
-    return`<div class="info-block"><div class="ib-label">${label}</div>${rows.join('')}</div>`;
-  };
-  const aboutR=document.getElementById('aboutR');
-  aboutR.innerHTML=
-    buildInfoBlock('Career',a.career.map(x=>
-      `<div class="ib-row"><span class="ib-name">${x.org}</span><span class="ib-val">${x.period}</span></div>`+
-      (x.sub?`<div class="ib-row"><span class="ib-sub">${x.sub}</span>${x.sub_val?`<span class="ib-val">${x.sub_val}</span>`:''}</div>`:'')
-    ))+
-    buildInfoBlock('Education',a.education.map(x=>
-      `<div class="ib-row"><span class="ib-name">${x.org}</span><span class="ib-val">${x.period}</span></div>`+
-      (x.sub?`<div class="ib-row"><span class="ib-sub">${x.sub}</span></div>`:'')
-    ))+
-    `<div class="info-block"><div class="ib-label">Contact</div>`+
-    `<div class="ib-row"><span class="ib-name">${c.site.email}</span></div>`+
-    `<div class="ib-row"><a href="${c.site.linkedin_url}" style="color:var(--o);font-size:13px;text-decoration:none">${c.site.linkedin_label} ↗</a></div>`+
-    `</div>`;
 
   // ── Background ──
   if(c.background){
@@ -956,10 +940,13 @@ async function loadContent(){
     const bgGrid=document.getElementById('bgGrid');
     if(bgGrid){
       const mkItems=arr=>arr.map(x=>`<div class="bg-item"><div class="bg-item-name">${x.name}</div><div class="bg-item-val">${x.val}${x.date?' · '+x.date:''}</div></div>`).join('');
+      const mkCareer=arr=>arr.map(x=>`<div class="bg-item"><div class="bg-item-name">${x.org}</div><div class="bg-item-val">${x.period}</div>${x.sub?`<div class="bg-item-sub">${x.sub}${x.sub_val?' · '+x.sub_val:''}</div>`:''}</div>`).join('');
+      const mkEdu=arr=>arr.map(x=>`<div class="bg-item"><div class="bg-item-name">${x.org}</div><div class="bg-item-val">${x.period}</div>${x.sub?`<div class="bg-item-sub">${x.sub}</div>`:''}</div>`).join('');
       bgGrid.innerHTML=[
+        {label:'Career',items:mkCareer(a.career)},
+        {label:'Education',items:mkEdu(a.education)},
         {label:'Awards',items:mkItems(bg.awards)},
-        {label:'Qualifications',items:mkItems(bg.qualifications)},
-        {label:'Experience',items:mkItems(bg.experience)}
+        {label:'Qualifications',items:mkItems(bg.qualifications)}
       ].map(col=>`<div class="bg-col"><div class="bg-col-label">${col.label}</div>${col.items}</div>`).join('');
     }
   }
