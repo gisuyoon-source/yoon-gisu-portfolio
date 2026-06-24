@@ -6,7 +6,7 @@
     "linkedin_label": "linkedin.com/in/yoon-gisu"
   },
   "hero": {
-    "eyebrow": "BX·CX 기획 · SKT T Factory · 5yr",
+    "eyebrow": "브랜드 마케터 · SKT T Factory · 5yr",
     "name_en": "YOON GISU",
     "name_kr": "윤지수",
     "position_highlight": "Brand Experience Marketer",
@@ -14,9 +14,9 @@
     "tagline": "SKT 플래그십스토어 T Factory에서 5년간\n팝업스토어, 전시 리뉴얼, IMC 캠페인을 기획·운영했습니다.",
     "stats": [
       { "end": 40, "suffix": "×", "label": "체류율 증가", "decimal": false },
-      { "end": 55, "suffix": "%", "label": "구매 전환율", "decimal": false },
-      { "end": 4.5, "suffix": "", "label": "고객 만족도", "decimal": true },
-      { "fixed": "5yr", "label": "SKT 플래그십스토어<br>T Factory" }
+      { "end": 55, "suffix": "%", "label": "구매전환율<br>목표 대비 1.8배", "decimal": false },
+      { "end": 75, "suffix": "%", "label": "콘텐츠 완주율", "decimal": false },
+      { "fixed": "6,500+", "label": "누적 방문객" }
     ],
     "profile_image": "images/profile.png",
     "profile_name": "Yoon Gisu",
@@ -27,7 +27,7 @@
     "title_accent": "데이터로",
     "title_line3": "설계합니다",
     "quote": "브랜드가 전하고자 하는 메시지를 고객 경험으로 설계합니다.",
-    "body": "1년간 큐레이터로서 플래그십스토어 현장의 다양한 상황을 선제적으로 대응하며 고객 니즈 기반의 개선안을 도출·실행했습니다.\n\n이후 현장 운영 경험과 데이터를 기반으로, 전시·콘텐츠·캠페인이 하나의 흐름으로 연결되도록 기획하며 BX·CX 기획자로 활동하고 있습니다.",
+    "body": "1년간 큐레이터로서 플래그십스토어 현장의 다양한 상황을 선제적으로 대응하며 고객 니즈 기반의 개선안을 도출·실행했습니다.\n\n이후 현장 운영 경험과 데이터를 기반으로, 전시·콘텐츠·캠페인이 하나의 흐름으로 연결되도록 기획하며 브랜드 마케터로 활동하고 있습니다.",
     "skills": [
       { "name": "BX 기획", "percent": 95, "tag": "Core" },
       { "name": "공간 기획", "percent": 90, "tag": "Advanced" },
