@@ -945,12 +945,6 @@ async function loadContent(){
       `<div class="ib-row"><span class="ib-name">${x.org}</span><span class="ib-val">${x.period}</span></div>`+
       (x.sub?`<div class="ib-row"><span class="ib-sub">${x.sub}</span></div>`:'')
     ))+
-    buildInfoBlock('Qualifications',a.qualifications.map(x=>
-      `<div class="ib-row"><span class="ib-name">${x.name}</span><span class="ib-val">${x.val}</span></div>`
-    ))+
-    buildInfoBlock('Awards',a.awards.map(x=>
-      `<div class="ib-row"><span class="ib-name">${x.name}</span><span class="ib-val">${x.val}</span></div>`
-    ))+
     `<div class="info-block"><div class="ib-label">Contact</div>`+
     `<div class="ib-row"><span class="ib-name">${c.site.email}</span></div>`+
     `<div class="ib-row"><a href="${c.site.linkedin_url}" style="color:var(--o);font-size:13px;text-decoration:none">${c.site.linkedin_label} ↗</a></div>`+
