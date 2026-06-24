@@ -153,7 +153,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .divider{height:1px;background:var(--bd);margin:0 var(--pad)}
 
 /* SECTION LABEL */
-.sec-label{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--o);margin-bottom:52px;display:flex;align-items:center;gap:16px}
+.sec-label{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--o);margin-bottom:52px;display:flex;align-items:center;gap:16px}
 .sec-label::after{content:'';height:1px;background:var(--bd);width:80px}
 
 /* ABOUT */
@@ -596,13 +596,6 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
   </div>
 </div>
 
-<!-- AWARDS -->
-<section class="awards-sec rv" id="awards">
-  <div class="sec-label">Awards &amp; Background</div>
-  <div class="aw-grid" id="awGrid"></div>
-</section>
-
-<div class="divider"></div>
 
 <!-- SKILLS -->
 <section class="skills-sec rv" id="skills">
@@ -975,18 +968,6 @@ async function loadContent(){
         {label:'Experience',items:mkItems(bg.experience)}
       ].map(col=>`<div class="bg-col"><div class="bg-col-label">${col.label}</div>${col.items}</div>`).join('');
     }
-  }
-
-  // ── Awards ──
-  const ag=document.getElementById('awGrid');
-  if(ag&&c.background){
-    const bg=c.background;
-    const mkItems=arr=>arr.map(x=>`<div class="aw-item"><div class="aw-item-name">${x.name}</div><div class="aw-item-val">${x.val}${x.date?' · '+x.date:''}</div></div>`).join('');
-    ag.innerHTML=[
-      {label:'Awards',items:mkItems(bg.awards)},
-      {label:'Qualifications',items:mkItems(bg.qualifications)},
-      {label:'Experience',items:mkItems(bg.experience)}
-    ].map(col=>`<div class="aw-col"><div class="aw-col-label">${col.label}</div>${col.items}</div>`).join('');
   }
 
   // ── Flip card ──
