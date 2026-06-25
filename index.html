@@ -228,31 +228,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .back-text{font-size:13px;color:var(--w);font-weight:300;line-height:1.6}
 .back-text b{color:var(--o);font-weight:500}
 
-/* STEPS */
+/* STEPS — A to Z Process */
 .steps-sec{padding:120px var(--pad)}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
-@media(max-width:768px){.steps-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.steps-grid{grid-template-columns:1fr}}
-.step{background:var(--bg);padding:24px 20px;position:relative;cursor:default;transition:background .3s,transform .3s ease,z-index 0s}
-.step::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--o);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
-.step:hover{background:var(--bg2);transform:scale(1.03);z-index:2}
-.step:hover::after{transform:scaleX(1)}
-.step-num{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--o);opacity:.5;margin-bottom:12px;transition:font-size .3s ease,opacity .3s ease}
-.step:hover .step-num{font-size:12px;opacity:1}
-.step-text{opacity:0;transform:translateY(-10px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:1px;background:var(--o);opacity:.14;pointer-events:none;z-index:0}
+.step{background:transparent;padding:0 16px 40px;position:relative;cursor:default;text-align:center;z-index:1}
+.step:not(:last-child)::after{content:'→';position:absolute;top:20px;right:-5px;color:var(--o);opacity:.32;font-size:13px;font-family:'Outfit',sans-serif;line-height:1;z-index:2}
+.step-text{opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
 .step.anim-in .step-text{opacity:1;transform:none}
-.step-imgs{display:flex;flex-direction:column;gap:6px;margin-top:16px}
-@keyframes stepImgDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
-.step:not(.anim-in) .step-img{opacity:0}
-.step-img{width:100%;height:auto;display:block}
-.step.anim-in .step-imgs .step-img:nth-child(1){animation:stepImgDown .45s .3s cubic-bezier(.22,1,.36,1) both}
-.step.anim-in .step-imgs .step-img:nth-child(2){animation:stepImgDown .45s .4s cubic-bezier(.22,1,.36,1) both}
-.step.anim-in .step-imgs .step-img:nth-child(3){animation:stepImgDown .45s .5s cubic-bezier(.22,1,.36,1) both}
-.step-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;line-height:1.35;letter-spacing:-.01em;margin-bottom:8px;color:var(--w);transition:font-size .3s ease}
-.step:hover .step-title{font-size:15px}
-.step-body{font-size:12px;color:var(--w2);line-height:1.7;font-weight:300}
-.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
-.chip{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:.05em;color:var(--o);border:1px solid rgba(232,83,26,.2);padding:3px 8px}
+.step.anim-in:nth-child(1) .step-text{transition-delay:.04s}
+.step.anim-in:nth-child(2) .step-text{transition-delay:.14s}
+.step.anim-in:nth-child(3) .step-text{transition-delay:.24s}
+.step.anim-in:nth-child(4) .step-text{transition-delay:.34s}
+.step.anim-in:nth-child(5) .step-text{transition-delay:.44s}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,3.8vw,56px);line-height:1;color:var(--o);letter-spacing:.03em;display:block;margin-bottom:10px}
+.step-kw{font-family:'Outfit',sans-serif;font-size:clamp(9px,.85vw,11px);font-weight:800;letter-spacing:.24em;color:var(--w);text-transform:uppercase;display:block;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid rgba(232,83,26,.2)}
+.step-body{font-size:clamp(11px,.85vw,12px);color:var(--w2);line-height:1.85;font-weight:300}
+@media(max-width:768px){.steps-grid{grid-template-columns:1fr;padding-left:24px;border-left:2px solid rgba(232,83,26,.2);margin-left:8px}}
+@media(max-width:768px){.steps-grid::before{display:none}}
+@media(max-width:768px){.step{text-align:left;padding:0 0 28px 0}}
+@media(max-width:768px){.step:not(:last-child)::after{display:none}}
+@media(max-width:768px){.step::before{content:'';position:absolute;left:-31px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--o);opacity:.7;z-index:2}}
 
 /* PROJECTS */
 .proj-sec{padding:120px var(--pad)}
@@ -622,7 +618,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 
 <!-- PROCESS -->
 <section class="steps-sec rv" id="process">
-  <div class="sec-label">Process — How I Work</div>
+  <div class="sec-label">A to Z Process</div>
   <div class="steps-grid" id="stepsGrid"></div>
 </section>
 
@@ -1001,9 +997,7 @@ async function loadContent(){
 
   // ── Process ──
   document.getElementById('stepsGrid').innerHTML=c.process.map(s=>{
-    const srcs=s.images||[s.image];
-    const imgs=srcs.map(src=>`<img class="step-img" src="${src}" alt="" loading="lazy">`).join('');
-    return`<div class="step"><div class="step-text"><div class="step-num">${s.num}</div><div class="step-title">${s.title}</div><div class="step-body">${s.body}</div><div class="chips">${s.chips.map(ch=>`<span class="chip">${ch}</span>`).join('')}</div></div><div class="step-imgs">${imgs}</div></div>`;
+    return`<div class="step"><div class="step-text"><span class="step-num">${s.num}</span><span class="step-kw">${s.keyword}</span><p class="step-body">${s.title}</p></div></div>`;
   }).join('');
   const stepObs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('anim-in');stepObs.unobserve(e.target)}});

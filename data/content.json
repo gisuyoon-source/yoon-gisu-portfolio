@@ -115,32 +115,29 @@
   ],
   "process": [
     {
-      "num": "STEP 01",
-      "images": ["images/process_01.png", "images/process_02.png", "images/process_03.png"],
-      "title": "목적 명확화 · 타겟 세분화",
-      "body": "현장 데이터와 시장 분석으로 핵심 목표와 타겟군을 도출합니다.",
-      "chips": ["목적 재정립", "세분화", "Key Message"]
+      "num": "01",
+      "keyword": "STRATEGY",
+      "title": "공간·전시 기획부터 마케팅·콘텐츠 방향성까지, 프로젝트의 큰 그림을 설계합니다"
     },
     {
-      "num": "STEP 02",
-      "images": ["images/process_04.png", "images/process_05.png", "images/process_06.png"],
-      "title": "공간·상품 · 경험 설계",
-      "body": "브랜드 아이덴티티를 반영한 동선과 통합 고객 여정을 설계합니다.",
-      "chips": ["공간 기획", "UX", "커뮤니케이션"]
+      "num": "02",
+      "keyword": "COORDINATION",
+      "title": "일정·예산을 관리하고 협업부서·대행사 커뮤니케이션을 주관합니다"
     },
     {
-      "num": "STEP 03",
-      "images": ["images/process_07.png", "images/process_08.png", "images/process_09.png"],
-      "title": "IMC 전략 · 프로젝트 총괄",
-      "body": "온·오프라인 통합 전략과 트래커 기반 일정·예산 관리를 담당합니다.",
-      "chips": ["IMC", "채널 실행", "PM"]
+      "num": "03",
+      "keyword": "DESIGN",
+      "title": "현장 운영안을 설계하고 실행 가능한 매뉴얼로 구체화합니다"
     },
     {
-      "num": "STEP 04",
-      "images": ["images/process_10.png", "images/process_11.png", "images/process_12.png"],
-      "title": "운영 관리 · 성과 분석",
-      "body": "정량·정성 데이터를 수집하고 성과 지표 분석으로 차기 방향을 제안합니다.",
-      "chips": ["현장 운영", "데이터", "인사이트"]
+      "num": "04",
+      "keyword": "EXECUTION",
+      "title": "크루 교육을 진행하고 현장 운영을 총괄합니다"
+    },
+    {
+      "num": "05",
+      "keyword": "IMPACT",
+      "title": "성과 데이터를 분석하고 사후 개선점을 도출해 다음 기획에 반영합니다"
     }
   ],
   "main_projects": [
