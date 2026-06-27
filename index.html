@@ -164,7 +164,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .about-r{display:none}
 .about-title{font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,38px);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin-bottom:20px}
 .about-title .acc{color:var(--o)}
-.about-body{font-size:14px;color:var(--w2);line-height:1.9;font-weight:300;margin-bottom:32px}
+.about-body{font-size:14px;color:var(--w2);line-height:1.9;font-weight:300;margin-bottom:24px}
+.about-def{font-family:'Outfit',sans-serif;font-size:clamp(20px,2.8vw,34px);font-weight:800;line-height:1.3;letter-spacing:-.025em;margin-bottom:32px;color:var(--w)}
+.acc-bold{color:var(--o);font-weight:700}
 .skills-wrap{display:flex;flex-direction:column;gap:12px}
 .skill-row{display:flex;align-items:center;gap:12px}
 .skill-name{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w2);width:68px;flex-shrink:0;letter-spacing:.03em}
@@ -563,12 +565,11 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 
 <!-- ABOUT -->
 <section class="about rv" id="about">
-  <div>
+  <div class="about-l">
     <div class="sec-label">About</div>
-    <h2 class="about-title" id="aboutTitle"></h2>
-    <p class="about-quote" id="aboutQuote"></p>
-    <p class="about-body" id="aboutBody"></p>
-    <div class="skills-wrap" id="skillsWrap"></div>
+    <p class="about-def" id="aboutBlock1"></p>
+    <p class="about-body" id="aboutBlock2"></p>
+    <p class="about-body" id="aboutBlock3"></p>
   </div>
   <div class="about-r" id="aboutR"></div>
 </section>
@@ -927,16 +928,15 @@ async function loadContent(){
 
   // ── About ──
   const a=c.about;
-  document.getElementById('aboutTitle').innerHTML=
-    a.title_line1+'<br><span class="acc">'+a.title_accent+'</span><br>'+a.title_line3;
-  if(a.quote)document.getElementById('aboutQuote').textContent='“'+a.quote+'”';
-  document.getElementById('aboutBody').textContent=a.body;
-
-  const sw=document.getElementById('skillsWrap');
-  sw.innerHTML=a.skills.map(s=>
-    `<div class="skill-row"><span class="skill-name">${s.name}</span><div class="skill-bar"><div class="skill-fill" data-w="${s.percent}"></div></div><span class="skill-tag">${s.tag}</span></div>`
-  ).join('');
-  skillObs.observe(sw);
+  function hlAbout(t){
+    return t
+      .replace(/A to Z/g,'<span class=”acc-bold”>A to Z</span>')
+      .replace(/1\.8배/g,'<span class=”acc-bold”>1.8배</span>')
+      .replace(/40배/g,'<span class=”acc-bold”>40배</span>');
+  }
+  if(a.block1)document.getElementById('aboutBlock1').innerHTML=hlAbout(a.block1);
+  if(a.block2)document.getElementById('aboutBlock2').innerHTML=hlAbout(a.block2);
+  if(a.block3)document.getElementById('aboutBlock3').innerHTML=hlAbout(a.block3);
 
 
   // ── Background ──
