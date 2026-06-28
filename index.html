@@ -160,21 +160,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .sec-label::after{content:'';height:1px;background:var(--bd);width:80px}
 
 /* ABOUT */
-.about{padding:120px var(--pad) 60px}
-.about-r{display:none}
-.about-title{font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,38px);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin-bottom:20px}
-.about-title .acc{color:var(--o)}
-.about-body{font-size:14px;color:var(--w2);line-height:1.9;font-weight:300;margin-bottom:24px}
-.about-def{font-family:'Outfit',sans-serif;font-size:clamp(20px,2.8vw,34px);font-weight:800;line-height:1.3;letter-spacing:-.025em;margin-bottom:32px;color:var(--w)}
+.about{padding:100px var(--pad) 80px}
+.about-headline{font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.2;letter-spacing:-.025em;color:var(--w);margin-bottom:40px;max-width:860px}
+.about-az{color:var(--o)}
+.about-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+@media(max-width:768px){.about-cards{grid-template-columns:1fr;gap:12px}}
+.about-card{background:var(--bg2);border:1px solid var(--bd);padding:24px 22px;border-radius:2px}
+.about-card--hl{border-color:var(--o);background:rgba(232,83,26,.05)}
+.card-title{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--w);margin-bottom:12px;letter-spacing:.08em;text-transform:uppercase}
+.card-desc{font-size:13px;color:var(--w2);line-height:1.85;font-weight:300;margin:0}
+.about-tagline{font-size:12px;color:var(--w3);line-height:1.6}
 .acc-bold{color:var(--o);font-weight:700}
-.skills-wrap{display:flex;flex-direction:column;gap:12px}
-.skill-row{display:flex;align-items:center;gap:12px}
-.skill-name{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--w2);width:68px;flex-shrink:0;letter-spacing:.03em}
-.skill-bar{flex:1;height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
-.skill-fill{height:100%;background:var(--o);border-radius:2px;width:0;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
-.skill-tag{font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;color:var(--o);letter-spacing:.04em;white-space:nowrap;width:60px;text-align:right}
-.about-quote{font-size:clamp(13px,1.1vw,15px);font-style:italic;color:var(--w2);border-left:2px solid var(--o);padding-left:16px;margin-bottom:24px;line-height:1.8}
-.about-r{display:flex;flex-direction:column}
 .info-block{border-top:1px solid var(--bd);padding:16px 0}
 
 /* BACKGROUND */
@@ -375,11 +371,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 @keyframes revealClip{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0% 0 0)}}
 .rv{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
 .rv.on{opacity:1;transform:none}
-/* About — 왼쪽에서 */
-.about.rv{transform:none}
-.about.rv .about-l{opacity:0;transform:translateX(-36px);transition:opacity .9s .1s cubic-bezier(.22,1,.36,1),transform .9s .1s cubic-bezier(.22,1,.36,1)}
-.about.rv .about-r{opacity:0;transform:translateX(36px);transition:opacity .9s .25s cubic-bezier(.22,1,.36,1),transform .9s .25s cubic-bezier(.22,1,.36,1)}
-.about.rv.on .about-l,.about.rv.on .about-r{opacity:1;transform:none}
+/* About — 기본 rv fade-up 사용 */
 /* Flip card — scale */
 .flip-wrap.rv{transform:scale(.96);transition:opacity .9s .05s cubic-bezier(.22,1,.36,1),transform .9s .05s cubic-bezier(.22,1,.36,1)}
 .flip-wrap.rv.on{transform:scale(1)}
@@ -565,13 +557,23 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 
 <!-- ABOUT -->
 <section class="about rv" id="about">
-  <div class="about-l">
-    <div class="sec-label">About</div>
-    <p class="about-def" id="aboutBlock1"></p>
-    <p class="about-body" id="aboutBlock2"></p>
-    <p class="about-body" id="aboutBlock3"></p>
+  <div class="sec-label">About</div>
+  <p class="about-headline">브랜드의 메시지를 고객 경험으로 <span class="about-az">A to Z</span> 설계하는 브랜드 마케터</p>
+  <div class="about-cards">
+    <div class="about-card">
+      <h3 class="card-title">브랜드 경험 기획</h3>
+      <p class="card-desc">브랜드 콘셉트와 타겟에 맞춰 오프라인 공간의 동선·존·체험 콘텐츠를 설계합니다</p>
+    </div>
+    <div class="about-card about-card--hl">
+      <h3 class="card-title">현장 실행 총괄</h3>
+      <p class="card-desc">예산·대행사 조율부터 운영안 설계, 크루 교육, 현장 운영까지 기획을 실제로 작동시킵니다</p>
+    </div>
+    <div class="about-card">
+      <h3 class="card-title">데이터 기반 개선</h3>
+      <p class="card-desc">방문객 행동과 고객 피드백을 분석해 성과를 검증하고 다음 기획에 반영합니다</p>
+    </div>
   </div>
-  <div class="about-r" id="aboutR"></div>
+  <p class="about-tagline">SK텔레콤 T Factory 5년 — 브랜드 팝업·플래그십 공간 기획부터 현장 운영, 사후 성과 분석까지</p>
 </section>
 
 <div class="divider"></div>
@@ -928,15 +930,6 @@ async function loadContent(){
 
   // ── About ──
   const a=c.about;
-  function hlAbout(t){
-    return t
-      .replace(/A to Z/g,'<span class=”acc-bold”>A to Z</span>')
-      .replace(/1\.8배/g,'<span class=”acc-bold”>1.8배</span>')
-      .replace(/40배/g,'<span class=”acc-bold”>40배</span>');
-  }
-  if(a.block1)document.getElementById('aboutBlock1').innerHTML=hlAbout(a.block1);
-  if(a.block2)document.getElementById('aboutBlock2').innerHTML=hlAbout(a.block2);
-  if(a.block3)document.getElementById('aboutBlock3').innerHTML=hlAbout(a.block3);
 
 
   // ── Background ──
