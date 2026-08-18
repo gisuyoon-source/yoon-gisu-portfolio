@@ -1,0 +1,343 @@
+{
+  "site": {
+    "title": "Gisu Yoon — Brand Marketer",
+    "email": "gisu.y96n@gmail.com",
+    "linkedin_url": "https://linkedin.com/in/yoon-gisu",
+    "linkedin_label": "linkedin.com/in/yoon-gisu"
+  },
+  "hero": {
+    "eyebrow": "5 Yrs · Pop-ups · Exhibition Renewals · IMC Campaigns",
+    "name_en": "YOON GISU",
+    "name_kr": "윤지수",
+    "position_highlight": "Brand Marketer",
+    "position_sub": "Designing spaces, content and campaigns from data",
+    "tagline": "Five years at T Factory, SK Telecom's flagship store —\nplanning and running pop-ups, exhibition renewals and IMC campaigns.",
+    "stats": [
+      { "end": 40, "suffix": "×", "label": "Dwell-time growth", "decimal": false },
+      { "end": 55, "suffix": "%", "label": "Purchase conversion<br>1.8× vs. target", "decimal": false },
+      { "end": 75, "suffix": "%", "label": "Content completion", "decimal": false },
+      { "fixed": "6,500+", "label": "Visitors per activation" }
+    ],
+    "profile_image": "images/profile.png",
+    "profile_name": "Gisu Yoon",
+    "profile_role": "Brand Marketer"
+  },
+  "about": {
+    "block1": "A brand marketer who designs what a brand wants to say into customer experience, A to Z.",
+    "block2": "Five years planning brand pop-ups and flagship retail experiences at SK Telecom's T Factory. From space and content planning through budget and agency coordination, operating models and crew training, to post-launch performance analysis — owning projects from first brief to final read-out.",
+    "block3": "Sets direction from quantitative and qualitative data. Analyses visitor volume, dwell time and customer feedback, feeds it into the next plan, and turns it into measurable results — 1.8× purchase conversion against target, 40× dwell-time growth. Recently applying AI tools in daily work to speed up planning and documentation.",
+    "skills": [
+      { "name": "Brand Activation", "percent": 95, "tag": "Core" },
+      { "name": "Retail Space Planning", "percent": 90, "tag": "Advanced" },
+      { "name": "IMC Strategy", "percent": 88, "tag": "Advanced" },
+      { "name": "Experience UX", "percent": 82, "tag": "Proficient" },
+      { "name": "Data Analysis", "percent": 78, "tag": "Proficient" },
+      { "name": "Figma", "percent": 72, "tag": "Working" }
+    ],
+    "career": [
+      {
+        "org": "PS&Marketing",
+        "period": "Oct 2021 — Present",
+        "sub": "Retail Innovation Team / SKT Flagship Store, T Factory",
+        "sub_val": "4 yrs 7 mos+"
+      },
+      {
+        "org": "Vancouver Trump Hotel & Tower",
+        "period": "2019",
+        "sub": "Sales & Marketing Dept., Intern (2 mos)",
+        "sub_val": ""
+      }
+    ],
+    "education": [
+      {
+        "org": "Dankook University",
+        "period": "2015 — 2020",
+        "sub": "B.A., Mongolian Studies / Sports Management",
+        "sub_val": ""
+      }
+    ],
+    "qualifications": [
+      { "name": "OPIc IH", "val": "Business-level English (Jun 2025)" },
+      { "name": "MOS Master", "val": "Microsoft Office proficiency (Jul 2017)" }
+    ],
+    "awards": [
+      { "name": "Top Performer, SKT T Factory", "val": "2022 Q2 · Q3" },
+      { "name": "Top Performer, SKT T Factory", "val": "2024 Q3" },
+      { "name": "Foreign Language Excellence Award", "val": "Dankook University (Oct 2015)" },
+      { "name": "Academic Excellence Award", "val": "Dankook University (Jul 2019)" }
+    ]
+  },
+  "background": {
+    "awards": [
+      { "name": "Top Performer, SKT T Factory", "val": "2022 Q2 · Q3 / 2024 Q3 (PS&Marketing)" },
+      { "name": "Foreign Language Excellence Award", "val": "Dankook University (Oct 2015)" },
+      { "name": "Academic Excellence Award", "val": "Dankook University (Jul 2019)" }
+    ],
+    "qualifications": [
+      { "name": "OPIc IH", "val": "Business-level English", "date": "Jun 2025" },
+      { "name": "MOS Master", "val": "Microsoft Office proficiency", "date": "Jul 2017" }
+    ],
+    "experience": [
+      { "name": "Vancouver Trump Hotel & Tower", "val": "Sales & Marketing Dept., Intern (2019, 2 mos)" },
+      { "name": "Student Council, College of Foreign Languages — Planning Div.", "val": "Dankook University (2016–2017)" },
+      { "name": "General Student Assembly — Administration Div.", "val": "Dankook University (2017–2018)" }
+    ]
+  },
+  "philosophy": {
+    "front_label": "How I Work",
+    "front_quote": "What a brand wants to say,",
+    "front_main_line1": "designed into",
+    "front_main_line2": "customer experience",
+    "items": [
+      { "num": "01", "bold": "Data first.", "text": " Define the problem and set the target from on-site data and market analysis." },
+      { "num": "02", "bold": "Connect through experience.", "text": " Design space, content and campaign so they run as one uninterrupted flow." },
+      { "num": "03", "bold": "Measure, then improve.", "text": " Track performance metrics and carry the insight into the next plan." }
+    ]
+  },
+  "skills": [
+    {"name": "PowerPoint", "icon": "images/skills_ppt.png",   "context": "Planning decks, proposals and reports"},
+    {"name": "Excel",      "icon": "images/skills_excel.png", "context": "Operations trackers, budgets, performance data"},
+    {"name": "Word",       "icon": "images/skills_word.png",  "context": "Customer-response scripts and operating manuals"},
+    {"name": "Figma",      "icon": "images/skills_figma.png", "context": "Visualising UX flows and content plans"},
+    {"name": "Notion",     "icon": "images/skills_notion.png","context": "Project schedules and collaboration docs"}
+  ],
+  "competencies": [
+    {"name":"Space & Content Planning","icon":"layout-dashboard","desc":"Designing visitor flow, zoning and hands-on content that carry the brand identity"},
+    {"name":"IMC Strategy","icon":"target","desc":"Building integrated online/offline marketing strategy by target segment and managing channel-level execution plans"},
+    {"name":"Customer Experience Design","icon":"route","desc":"Designing the full pre-visit, in-visit and post-visit journey to maximise engagement"},
+    {"name":"Operations Tracker Management","icon":"bar-chart-2","desc":"Tracking progress and KPIs across every project phase while owning schedule, budget and quality"},
+    {"name":"Stakeholder Communication","icon":"message-circle","desc":"Aligning internal business teams, construction agencies and partner brands, and keeping progress visible to all sides"},
+    {"name":"Data-Driven Performance Analysis","icon":"trending-up","desc":"Collecting visitor volume, participation and feedback data, analysing KPIs, and recommending direction for the next plan"},
+    {"name":"On-Site Operations Ownership","icon":"settings-2","desc":"Running schedules, staffing and day-to-day site conditions with stable execution"},
+    {"name":"Response Scripts & Crew Training","icon":"file-text","desc":"Writing space- and exhibition-specific customer-response scripts and training crew to standardise service quality"}
+  ],
+  "process": [
+    {
+      "num": "01",
+      "keyword": "STRATEGY",
+      "title": "Set the big picture — from space and exhibition planning to marketing and content direction"
+    },
+    {
+      "num": "02",
+      "keyword": "COORDINATION",
+      "title": "Manage schedule and budget, and lead communication with partner teams and agencies"
+    },
+    {
+      "num": "03",
+      "keyword": "DESIGN",
+      "title": "Design the on-site operating model and turn it into an executable manual"
+    },
+    {
+      "num": "04",
+      "keyword": "EXECUTION",
+      "title": "Train the crew and take ownership of on-site operations"
+    },
+    {
+      "num": "05",
+      "keyword": "IMPACT",
+      "title": "Analyse performance data, draw out improvements, and feed them into the next plan"
+    }
+  ],
+  "main_projects": [
+    {
+      "id": "p1",
+      "category": "Pop-up · Brand Experience",
+      "title": "0 Youth Plan × Foldable 5 Pop-up",
+      "desc": "Data showed the absence of hands-on content was driving drop-off. Shifting to an experience-led format lifted dwell time 40×.",
+      "kpis": [
+        { "val": "40×", "label": "Dwell-time growth" },
+        { "val": "41", "label": "Plan sign-ups" }
+      ],
+      "period": "Jul — Sep 2023",
+      "contrib": "90%",
+      "preview_images": ["images/p1_01.png", "images/p1_02.png", "images/p1_03.jpg"],
+      "panel_title": "SKT 0 Youth Mobile Plan × Foldable 5 Pop-up Store",
+      "panel_images": ["images/p1_01.png", "images/p1_02.png", "images/p1_03.jpg", "images/p1_04.png", "images/p1_05.png"],
+      "panel_kpis": [["40×", "Dwell-time growth"], ["41", "On-site plan sign-ups"], ["90%", "Ownership"]],
+      "problem": "A display-only promotion could not hold visitor attention, so the plan launch needed experience-led content rather than signage. Dwell-time data on the existing device display showed the absence of hands-on content was the core reason visitors left.",
+      "points": ["Set content direction and designed the hands-on experience concept", "Designed experience-zone staffing and the customer-response process", "Wrote response scripts and ran on-site crew training", "Led communication across the partner brand, business teams and agencies"],
+      "result": "Dwell time grew 40× versus the previous flagship device display, and on-site guidance converted into 41 mobile-plan subscriptions."
+    },
+    {
+      "id": "p2",
+      "category": "Brand Naming · Campaign",
+      "title": "“NAN-ZERO” Resale Campaign",
+      "desc": "Set the “Zero Doubt · Zero Worry · Zero Markup” USP and owned everything from branding to the pop-up store. 55% sell-through.",
+      "kpis": [
+        { "val": "55%", "label": "Purchase conversion" },
+        { "val": "80%", "label": "Ownership" }
+      ],
+      "period": "Sep 2023 — Jan 2024",
+      "contrib": "80%",
+      "preview_images": ["images/p2_01.png", "images/p2_02.png", "images/p2_03.png"],
+      "panel_title": "“NAN-ZERO” Used-Phone Resale Campaign",
+      "panel_images": ["images/p2_01.png", "images/p2_02.png", "images/p2_03.png", "images/p2_04.png", "images/p2_05.png", "images/p2_06.png"],
+      "panel_kpis": [["55%", "Purchase conversion"], ["80%", "Ownership"], ["✓", "Business insights"]],
+      "problem": "The used-phone business needed end-to-end planning across branding, marketing and the offline pop-up, from intake to sale. Lowering the consumer trust barrier around used devices was the core challenge.",
+      "points": ["Proposed the brand name, key message and key visual guideline", "Planned the space layout and the customer experience flow", "Set content and posting cadence by marketing channel", "Wrote on-site response scenarios and scripts, and ran crew training"],
+      "result": "Achieved 55% purchase conversion against initial inventory. As a test-bed project, it surfaced customer, marketing and distribution insights for the business case."
+    },
+    {
+      "id": "p3",
+      "img_pos_top": true,
+      "category": "Exhibition Renewal",
+      "title": "Skt.zip Renewal (2nd Edition)",
+      "desc": "Cross-analysing completion and traffic data diagnosed low immersion. A full content redesign moved three KPIs at once.",
+      "kpis": [
+        { "val": "75%", "label": "Content completion" },
+        { "val": "2×", "label": "Floor traffic" },
+        { "val": "4.5", "label": "Satisfaction" }
+      ],
+      "period": "Feb 2024 — Feb 2025",
+      "contrib": "90%",
+      "preview_images": ["images/p3_01.png", "images/p3_02.png", "images/p3_03.png"],
+      "panel_title": "SKT Brand Experience Center “Skt.zip” — 2nd Renewal",
+      "panel_images": ["images/p3_01.png", "images/p3_02.png", "images/p3_03.png", "images/p3_04.png", "images/p3_05.png"],
+      "panel_kpis": [["75%", "Content completion"], ["2×", "Floor traffic"], ["4.5 / 5", "Visitor satisfaction"]],
+      "problem": "Falling completion rates and declining floor traffic called for a renewal that strengthened immersion and message delivery. Cross-analysing completion and traffic data diagnosed weak content immersion as the cause.",
+      "points": ["Re-selected the experience services, products and technologies on display", "Planned the core content and designed the UX flow", "Designed the operating model and the customer experience", "Owned agency communication"],
+      "result": "Reached 75% average completion among 2F visitors, doubled 2F traffic versus the previous concept, and scored 4.5 / 5 satisfaction from completing visitors."
+    },
+    {
+      "id": "p4",
+      "category": "UX Planning · Interactive",
+      "title": "X Caliber Experience UX",
+      "desc": "Designed a B2B AI service into a jargon-free, interaction-led experience that lands in three minutes.",
+      "kpis": [
+        { "val": "1.5×", "label": "Visitors completing" },
+        { "val": "#3", "label": "Content preference" }
+      ],
+      "period": "Feb 2024 — Feb 2025",
+      "contrib": "90%",
+      "preview_images": ["images/p4_01.png", "images/p4_02.png", "images/p4_03.png"],
+      "panel_title": "X Caliber — Experience Content UX Planning",
+      "panel_images": ["images/p4_01.png", "images/p4_02.png", "images/p4_03.png", "images/p4_04.png", "images/p4_05.png"],
+      "panel_kpis": [["1.5×", "Visitors completing"], ["#3", "Content preference (of 14)"], ["90%", "Ownership"]],
+      "problem": "An AI-assisted diagnostic B2B service needed an intuitive content UX/UI so that general visitors could grasp and experience it without technical background.",
+      "points": ["Set the UX/UI logic and planned the detail screens", "Ran business-team communication and secured resources", "Designed the operating model and the customer experience", "Researched the components required to build the experience zone"],
+      "result": "1.5× more visitors completed the experience versus the main exhibition floor, and the zone ranked 3rd of 14 items in the “best service experience” visitor survey."
+    }
+  ],
+  "other_projects": [
+    {
+      "id": "o_s26",
+      "image": "images/other_s26_01.png",
+      "period": "Feb — Mar 2026",
+      "title": "SKT S26 Market",
+      "desc": "Galaxy S26 launch pop-up. Ran 10 experience zones and trained 28 crew.",
+      "result": "28 crew trained",
+      "panel_category": "Pop-up · Operations",
+      "panel_title": "SKT S26 Market — Operations Planning",
+      "panel_images": ["images/other_s26_01.png", "images/other_s26_02.png", "images/other_s26_03.jpg.png", "images/other_s26_04.png"],
+      "panel_kpis": [["10", "Experience zones"], ["28", "Crew trained"], ["Feb–Mar 2026", "Run period"]],
+      "problem": "Operations planning for the SKT pre-order and purchase-benefit pop-up tied to the Samsung Galaxy S26 launch.",
+      "points": ["Wrote the operating plan for 10 experience zones", "Wrote the customer-response scripts", "Led training for 28 crew members"],
+      "result_panel": "Ran 10 experience zones and completed training for 28 crew members."
+    },
+    {
+      "id": "o4",
+      "image": "images/other_twuju_01.png",
+      "period": "Apr 2023 — Feb 2025",
+      "title": "T Universe UX Planning",
+      "desc": "Rebuilt the subscription service into a UX-flow-led experience.",
+      "result": "5× more completed experiences",
+      "panel_category": "UX · Digital",
+      "panel_title": "T Universe — Experience Content UX Planning",
+      "panel_images": ["images/other_twuju_01.png", "images/other_twuju_02.jpg.png", "images/other_twuju_03.jpg.png", "images/other_twuju_04.jpg.png", "images/other_twuju_05.jpg.png", "images/other_twuju_06.png"],
+      "panel_kpis": [["5×", "Completed experiences"], ["1.5 mos", "Planning"], ["✓", "UX redesign"]],
+      "problem": "To promote the subscription service, the content was designed as a UX-flow-led hands-on experience.",
+      "points": ["Planned the UX flow and screens", "Designed the subscription-service experience scenario"],
+      "result_panel": "Roughly 5× more visitors completed the experience versus the previous content."
+    },
+    {
+      "id": "o1",
+      "image": "images/other_skrt1_01.jpg.png",
+      "period": "Feb 2023 — Feb 2024",
+      "title": "SKT Brand Center Skt.zip",
+      "desc": "Initial renewal design and the center's first official opening.",
+      "result": "60% visitor entry rate",
+      "panel_category": "Exhibition",
+      "panel_title": "SKT Brand Experience Center “Skt.zip” (1st Edition)",
+      "panel_images": ["images/other_skrt1_01.jpg.png", "images/other_skrt1_02.jpg.png", "images/other_skrt1_03.png", "images/other_skrt1_04.png", "images/other_skrt1_05.png"],
+      "panel_kpis": [["60%", "Visitor entry rate"], ["4 mos", "Planning"], ["✓", "First official opening"]],
+      "problem": "Designed the center's initial renewal around hands-on content built on SKT products and services.",
+      "points": ["Selected the experience services and planned the content", "Designed the operating model and the customer experience"],
+      "result_panel": "Delivered the brand center's first official opening with a 60% average entry rate among all site visitors."
+    },
+    {
+      "id": "o2",
+      "image": "images/other_t1_01.png",
+      "period": "Jan — Aug 2023",
+      "title": "LCK T1 Merch & Viewing Party",
+      "desc": "Merchandise line and viewing-party events built for the T1 fan base.",
+      "result": "Zone traffic +40% · social tags 5×",
+      "panel_category": "Merchandise · Event",
+      "panel_title": "LCK T1 Merchandise & Viewing Party",
+      "panel_images": ["images/other_t1_01.png", "images/other_t1_02.png", "images/other_t1_03.png", "images/other_t1_04.png", "images/other_t1_05.jpg.png", "images/other_t1_06.jpg.png"],
+      "panel_kpis": [["+40%", "T1 zone traffic"], ["+20%", "Merch sales"], ["5×", "Social tags"]],
+      "problem": "Planned and ran seasonal merchandise and viewing-party events targeting the T1 fan base.",
+      "points": ["Planned seasonal merchandise and managed outsourced production", "Planned viewing-party operations and ran the events on site"],
+      "result_panel": "T1 zone traffic +40%, merchandise sales +20% during the viewing-party window, and social story tags up 5×."
+    },
+    {
+      "id": "o5",
+      "image": "images/other_goods_01.png",
+      "period": "Jan — Mar 2023",
+      "title": "Merch Package Redesign",
+      "desc": "Five eco-friendly ESG merchandise items, planned and produced.",
+      "result": "Tour applications 3×",
+      "panel_category": "Merchandise · Branding",
+      "panel_title": "Brand Merchandise Package Redesign",
+      "panel_images": ["images/other_goods_01.png", "images/other_goods_02.png", "images/other_goods_03.png", "images/other_goods_04.png", "images/other_goods_05.png", "images/other_goods_06.png"],
+      "panel_kpis": [["5", "Eco-friendly items"], ["3×", "Tour applications"], ["✓", "ESG-aligned"]],
+      "problem": "Planned and oversaw outsourced production of five eco-friendly merchandise items reflecting the company's ESG commitments.",
+      "points": ["Set the ESG-based concept and selected materials", "Selected production vendors and managed quality"],
+      "result_panel": "Tour applications more than tripled immediately after the merchandise launch."
+    },
+    {
+      "id": "o_horok",
+      "image": "images/other_horok_01.png",
+      "period": "Jun — Sep 2023",
+      "title": "One-Day Classes Tied to Main Exhibition",
+      "desc": "Five classes planned and run alongside the exhibition content",
+      "result": "200+ applicants each · all sold out early",
+      "panel_category": "Class · Operation",
+      "panel_title": "One-Day Classes Tied to the Main Exhibition",
+      "panel_images": ["images/other_horok_01.png", "images/other_horok_02.jpg.png", "images/other_horok_03.png", "images/other_horok_04.png"],
+      "panel_kpis": [["5", "Classes planned & run"], ["200+", "Applicants per class"], ["✓", "All sold out early"]],
+      "problem": "The main exhibition needed hands-on classes planned and operated in step with its content.",
+      "points": ["Planned programmes tied to the exhibition theme", "Secured instructors and owned operations"],
+      "result_panel": "Averaged 200+ applicants per class, with registration closing early every time."
+    },
+    {
+      "id": "o_crew",
+      "image": "images/other_edu_01.png",
+      "period": "Sep 2022 — Jan 2023",
+      "title": "Response Scripts & Crew Training",
+      "desc": "Customer-response scripts and training for the space and main exhibition",
+      "result": "24 crew trained · manual embedded",
+      "panel_category": "Education · Operation",
+      "panel_title": "Customer-Response Scripts & Crew Training",
+      "panel_images": ["images/other_edu_01.png", "images/other_edu_02.png", "images/other_edu_03.png", "images/other_edu_04.png", "images/other_edu_05.png", "images/other_edu_06.png"],
+      "panel_kpis": [["24", "Crew trained"], ["✓", "Response manual embedded"], ["✓", "Operating system established"]],
+      "problem": "Strengthening customer-response capability for the space and main exhibition required both scripts and a training system.",
+      "points": ["Wrote the customer-response scripts", "Planned and ran crew training end to end"],
+      "result_panel": "Trained 24 crew members in total, embedding the response manual and establishing the operating system."
+    }
+  ],
+  "contact": {
+    "title_line1": "Between brands and people,",
+    "title_accent": "better experiences",
+    "title_line3": " are what I build next.",
+    "sub": "If there's a brand experience you'd like to build together, feel free to reach out.",
+    "email_label": "Send an email",
+    "linkedin_label": "LinkedIn ↗"
+  },
+  "footer": {
+    "name_kr": "Gisu Yoon",
+    "name_en": "윤지수",
+    "role": "Brand Marketer",
+    "company": "SKT T Factory · PS&Marketing",
+    "copyright": "© 2026 Gisu Yoon (윤지수). All rights reserved."
+  }
+}
