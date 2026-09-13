@@ -468,7 +468,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 .sdots{position:absolute;bottom:12px;left:14px;display:flex;gap:5px}
 .dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .25s;cursor:pointer}
 .dot.active{background:var(--o);transform:scale(1.3)}
-.pkpis{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bd);margin-bottom:20px}
+.pkpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:2px;background:var(--bd);margin-bottom:20px}
 .pkpi{background:var(--bg3);padding:16px 12px;text-align:center;cursor:default;transition:background .3s}
 .pkpi:hover{background:#1e1e1e}
 .pkpi-v{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--o);line-height:1;transition:transform .3s,text-shadow .3s}
@@ -559,7 +559,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
 <!-- ABOUT -->
 <section class="about rv" id="about">
   <div class="sec-label">About</div>
-  <p class="about-headline">A brand marketer who designs brand messages into customer experience, <span class="about-az">A to Z</span></p>
+  <p class="about-headline">A brand marketer who turns brand messages into customer experience, <span class="about-az">A to Z</span></p>
   <div class="about-cards">
     <div class="about-card">
       <h3 class="card-title">Brand Experience Planning</h3>
@@ -574,7 +574,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:40px var(--p
       <p class="card-desc">Analyses visitor behaviour and customer feedback to validate results and feed them into the next plan</p>
     </div>
   </div>
-  <p class="about-tagline">Five years at SK Telecom T Factory — from brand pop-up and flagship space planning to on-site operations and post-launch analysis</p>
+  <p class="about-tagline">Brand events at Sweetspot Retail Inspiration · five years at SK Telecom T Factory — from space and content planning to on-site operations and post-launch analysis</p>
 </section>
 
 <div class="divider"></div>
@@ -1000,7 +1000,7 @@ async function loadContent(){
 
   // ── Main projects ──
   const mpEl=document.getElementById('mainProjects');
-  const projKpis=['Dwell time 40×↑ · 41 sign-ups','55% purchase conversion · business insights','75% completion · traffic 2×↑ · 4.5 satisfaction','Completion 1.5×↑ · #3 in preference'];
+  const projKpis=['Dwell time 40×↑ · 41 plan sign-ups','55% purchase conversion · business insights','75% completion · traffic 2×↑ · 4.5 satisfaction','Completion 1.5×↑ · 3rd of 14 in survey'];
   const rowsHtml=c.main_projects.map((p,i)=>{
     const yr=(p.period.match(/\d{4}/)||[''])[0];
     const num=String(i+1).padStart(2,'0');
