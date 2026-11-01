@@ -11,7 +11,7 @@
     "name_kr": "윤지수",
     "position_highlight": "Brand Marketer",
     "position_sub": "Designing spaces, content and campaigns from data",
-    "tagline": "Five years at T Factory, SK Telecom's flagship store, planning pop-ups, exhibition renewals and IMC campaigns —\nnow building brand events with the Retail Inspiration team at Sweetspot.",
+    "tagline": "Five years at T Factory, SK Telecom's flagship store, planning pop-ups, exhibition renewals and IMC campaigns —\nnow running brand campaigns for Hanwha Finance PLUS with the Retail Inspiration team at Sweetspot.",
     "stats": [
       {
         "end": 40,
@@ -32,8 +32,8 @@
         "decimal": false
       },
       {
-        "fixed": "6,500+",
-        "label": "Cumulative visitors"
+        "fixed": "9.60/10",
+        "label": "Brand event satisfaction"
       }
     ],
     "profile_image": "images/profile.png",
@@ -42,8 +42,8 @@
   },
   "about": {
     "block1": "A brand marketer who turns what a brand wants to say into customer experience, A to Z.",
-    "block2": "Five years planning brand pop-ups and flagship retail experiences at SK Telecom's T Factory, now running brand events with the Retail Inspiration team at Sweetspot. From space and content planning through budget and agency coordination, operating models and crew training, to post-launch performance analysis — owning projects from the first brief to the final review.",
-    "block3": "Sets direction from quantitative and qualitative data. Analyses visitor volume, dwell time and customer feedback, feeds it into the next plan, and turns it into measurable results — 1.8× purchase conversion against target, 40× dwell-time growth. Recently applying AI tools in daily work to speed up planning and documentation.",
+    "block2": "Five years planning brand pop-ups and flagship retail experiences at SK Telecom's T Factory, now running brand campaigns for Hanwha Finance PLUS with the Retail Inspiration team at Sweetspot. From space and content planning through budget and agency coordination, operating models and crew training, to post-launch performance analysis — owning projects from the first brief to the final review.",
+    "block3": "Sets direction from quantitative and qualitative data. Analyses visitor volume, dwell time and customer feedback, feeds it into the next plan, and turns it into measurable results — 1.8× purchase conversion against target, 40× dwell-time growth, and 9.60 / 10 satisfaction across a 6,500-participant campaign. Recently applying AI tools in daily work to speed up planning and documentation.",
     "skills": [
       {
         "name": "Brand Activation",
@@ -257,9 +257,9 @@
       "desc": "Collecting visitor volume, participation and feedback data, analysing KPIs, and recommending direction for the next plan"
     },
     {
-      "name": "On-Site Operations Ownership",
+      "name": "On-Site Operations",
       "icon": "settings-2",
-      "desc": "Running schedules, staffing and day-to-day site conditions with stable execution"
+      "desc": "Running operating manuals, staffing and day-to-day site conditions to deliver stable execution"
     },
     {
       "name": "Response Scripts & Crew Training",
@@ -296,111 +296,58 @@
   ],
   "main_projects": [
     {
-      "id": "p1",
-      "category": "Pop-up · Brand Experience",
-      "title": "0 Youth Plan × Galaxy Foldable Pop-up",
-      "desc": "Data showed the absence of hands-on content was driving drop-off. Shifting to an experience-led format lifted dwell time 40×.",
+      "id": "p5",
+      "category": "Brand Campaign · Experience Operations",
+      "title": "SEOUL PLUS 10K",
+      "desc": "Brought Hanwha Finance PLUS's analyse-train-recover message into the running scene across three programmes, reaching 6,500 participants.",
       "kpis": [
         {
-          "val": "40×",
-          "label": "Dwell-time growth"
+          "val": "6,500",
+          "label": "Total participants"
         },
         {
-          "val": "41",
-          "label": "Plan sign-ups"
+          "val": "9.60",
+          "label": "Satisfaction"
         }
       ],
-      "period": "Jul — Sep 2023",
-      "contrib": "90%",
+      "period": "Sep — Oct 2026",
+      "contrib": "50%",
       "preview_images": [
-        "images/p1_01.png",
-        "images/p1_02.png",
-        "images/p1_03.jpg"
+        "images/p10k_01.jpg",
+        "images/p10k_03.jpg",
+        "images/p10k_05.jpg"
       ],
-      "panel_title": "SKT 0 Youth Mobile Plan × Samsung Galaxy Z Flip5 / Fold5 Pop-up Store",
+      "panel_title": "SEOUL PLUS 10K — Hanwha Finance PLUS Running Brand Campaign",
       "panel_images": [
-        "images/p1_01.png",
-        "images/p1_02.png",
-        "images/p1_03.jpg",
-        "images/p1_04.png",
-        "images/p1_05.png"
+        "images/p10k_01.jpg",
+        "images/p10k_02.jpg",
+        "images/p10k_03.jpg",
+        "images/p10k_04.jpg",
+        "images/p10k_05.jpg",
+        "images/p10k_06.jpg"
       ],
       "panel_kpis": [
         [
-          "40×",
-          "Dwell-time growth"
+          "6,500",
+          "Total participants"
         ],
         [
-          "41",
-          "On-site plan sign-ups"
+          "9.60",
+          "Satisfaction (of 10)"
         ],
         [
-          "90%",
-          "Ownership"
+          "50%",
+          "Contribution"
         ]
       ],
-      "problem": "A display-only promotion could not hold visitor attention, so the plan launch needed experience-led content rather than signage. Dwell-time data on the existing device display showed the absence of hands-on content was the core reason visitors left.",
+      "problem": "A campaign built to prove Hanwha Finance PLUS's brand message — analyse, train, recover — inside the running scene. It ran as three programmes: a five-day PLUS Performance Lab at the 63 Building, coaching sessions for the run crew, and the PLUS Recovery Lab at the Yeouido race site on event day. Working alongside the team lead as main PM, I owned operations and production, from the manuals through to on-site delivery.",
       "points": [
-        "Set content direction and designed the hands-on experience concept",
-        "Designed experience-zone staffing and the customer-response process",
-        "Wrote response scripts and ran on-site crew training",
-        "Led communication across the partner brand, business teams and agencies"
+        "Wrote and distributed the booth operating manual and response scripts, setting the visitor flow from check-in through measurement to reward collection",
+        "Owned production delivery — designed the Suri sticker artwork myself and managed print runs and the advance shipping of 5,000 goods units, POP, banners and report packaging",
+        "Coordinated partners and internal teams — measurement-equipment vendors, coaches, running communities, sauna and massage operators — across schedule and scope",
+        "Handled press and PR, contract and insurance administration, and on-site logistics including load-in routes and build schedule"
       ],
-      "result": "Dwell time grew 40× versus the previous flagship device display, and on-site guidance converted into 41 mobile-plan subscriptions."
-    },
-    {
-      "id": "p2",
-      "category": "Brand Naming · Campaign",
-      "title": "“NAN-ZERO” Resale Campaign",
-      "desc": "Set the “Zero Doubt · Zero Worry · Zero Markup” USP and owned everything from branding to the pop-up store. 55% purchase conversion.",
-      "kpis": [
-        {
-          "val": "55%",
-          "label": "Purchase conversion"
-        },
-        {
-          "val": "80%",
-          "label": "Ownership"
-        }
-      ],
-      "period": "Sep 2023 — Jan 2024",
-      "contrib": "80%",
-      "preview_images": [
-        "images/p2_01.png",
-        "images/p2_02.png",
-        "images/p2_03.png"
-      ],
-      "panel_title": "“NAN-ZERO” Used-Phone Resale Campaign",
-      "panel_images": [
-        "images/p2_01.png",
-        "images/p2_02.png",
-        "images/p2_03.png",
-        "images/p2_04.png",
-        "images/p2_05.png",
-        "images/p2_06.png"
-      ],
-      "panel_kpis": [
-        [
-          "55%",
-          "Purchase conversion"
-        ],
-        [
-          "80%",
-          "Ownership"
-        ],
-        [
-          "✓",
-          "Business insights"
-        ]
-      ],
-      "problem": "The used-phone business needed end-to-end planning across branding, marketing and the offline pop-up, from intake to sale. Lowering the consumer trust barrier around used devices was the core challenge.",
-      "points": [
-        "Proposed the brand name, key message and key visual guideline",
-        "Planned the space layout and the customer experience flow",
-        "Set content and posting cadence by marketing channel",
-        "Wrote on-site response scenarios and scripts, and ran crew training"
-      ],
-      "result": "Achieved 55% purchase conversion against initial inventory. As a test-bed project, it surfaced customer, marketing and distribution insights for the business case."
+      "result": "The five-day Performance Lab drew 993 participants (95.8% of target) across 421 measurement sessions, and the race-day Recovery Lab reached 5,510 (88.2% of target). Across the three programmes, 144 survey respondents gave an average satisfaction of 9.60 / 10, with 86.1% scoring 9 or 10 and an NPS of +87. Paid magazine coverage reached 180,000 views."
     },
     {
       "id": "p3",
@@ -461,100 +408,114 @@
       "result": "Reached 75% average completion among 2F visitors, doubled 2F traffic versus the previous concept, and scored 4.5 / 5 satisfaction from completing visitors."
     },
     {
-      "id": "p4",
-      "category": "UX Planning · Interactive",
-      "title": "X Caliber Experience UX",
-      "desc": "Designed a B2B AI service into a jargon-free, interaction-led experience that lands in three minutes.",
+      "id": "p2",
+      "category": "Brand Naming · Campaign",
+      "title": "“NAN-ZERO” Resale Campaign",
+      "desc": "Set the “Zero Doubt · Zero Worry · Zero Markup” USP and owned everything from branding to the pop-up store. 55% purchase conversion.",
       "kpis": [
         {
-          "val": "1.5×",
-          "label": "Visitors completing"
+          "val": "55%",
+          "label": "Purchase conversion"
         },
         {
-          "val": "3rd",
-          "label": "of 14 in visitor survey"
+          "val": "80%",
+          "label": "Ownership"
         }
       ],
-      "period": "Feb 2024 — Feb 2025",
-      "contrib": "90%",
+      "period": "Sep 2023 — Jan 2024",
+      "contrib": "80%",
       "preview_images": [
-        "images/p4_01.png",
-        "images/p4_02.png",
-        "images/p4_03.png"
+        "images/p2_01.png",
+        "images/p2_02.png",
+        "images/p2_03.png"
       ],
-      "panel_title": "X Caliber — Experience Content UX Planning",
+      "panel_title": "“NAN-ZERO” Used-Phone Resale Campaign",
       "panel_images": [
-        "images/p4_01.png",
-        "images/p4_02.png",
-        "images/p4_03.png",
-        "images/p4_04.png",
-        "images/p4_05.png"
+        "images/p2_01.png",
+        "images/p2_02.png",
+        "images/p2_03.png",
+        "images/p2_04.png",
+        "images/p2_05.png",
+        "images/p2_06.png"
       ],
       "panel_kpis": [
         [
-          "1.5×",
-          "Visitors completing"
+          "55%",
+          "Purchase conversion"
         ],
         [
-          "3rd",
-          "of 14 in visitor survey"
+          "80%",
+          "Ownership"
+        ],
+        [
+          "✓",
+          "Business insights"
+        ]
+      ],
+      "problem": "The used-phone business needed end-to-end planning across branding, marketing and the offline pop-up, from intake to sale. Lowering the consumer trust barrier around used devices was the core challenge.",
+      "points": [
+        "Proposed the brand name, key message and key visual guideline",
+        "Planned the space layout and the customer experience flow",
+        "Set content and posting cadence by marketing channel",
+        "Wrote on-site response scenarios and scripts, and ran crew training"
+      ],
+      "result": "Achieved 55% purchase conversion against initial inventory. As a test-bed project, it surfaced customer, marketing and distribution insights for the business case."
+    },
+    {
+      "id": "p1",
+      "category": "Pop-up · Brand Experience",
+      "title": "0 Youth Plan × Galaxy Foldable Pop-up",
+      "desc": "Data showed the absence of hands-on content was driving drop-off. Shifting to an experience-led format lifted dwell time 40×.",
+      "kpis": [
+        {
+          "val": "40×",
+          "label": "Dwell-time growth"
+        },
+        {
+          "val": "41",
+          "label": "Plan sign-ups"
+        }
+      ],
+      "period": "Jul — Sep 2023",
+      "contrib": "90%",
+      "preview_images": [
+        "images/p1_01.png",
+        "images/p1_02.png",
+        "images/p1_03.jpg"
+      ],
+      "panel_title": "SKT 0 Youth Mobile Plan × Samsung Galaxy Z Flip5 / Fold5 Pop-up Store",
+      "panel_images": [
+        "images/p1_01.png",
+        "images/p1_02.png",
+        "images/p1_03.jpg",
+        "images/p1_04.png",
+        "images/p1_05.png"
+      ],
+      "panel_kpis": [
+        [
+          "40×",
+          "Dwell-time growth"
+        ],
+        [
+          "41",
+          "On-site plan sign-ups"
         ],
         [
           "90%",
           "Ownership"
         ]
       ],
-      "problem": "An AI-assisted diagnostic B2B service needed an intuitive content UX/UI so that general visitors could grasp and experience it without technical background.",
+      "problem": "A display-only promotion could not hold visitor attention, so the plan launch needed experience-led content rather than signage. Dwell-time data on the existing device display showed the absence of hands-on content was the core reason visitors left.",
       "points": [
-        "Set the UX/UI logic and planned the detail screens",
-        "Ran business-team communication and secured resources",
-        "Designed the operating model and the customer experience",
-        "Researched the components required to build the experience zone"
+        "Set content direction and designed the hands-on experience concept",
+        "Designed experience-zone staffing and the customer-response process",
+        "Wrote response scripts and ran on-site crew training",
+        "Led communication across the partner brand, business teams and agencies"
       ],
-      "result": "1.5× more visitors completed the experience versus the main exhibition floor, and the zone ranked 3rd out of 14 items in the “best service experience” visitor survey."
+      "result": "Dwell time grew 40× versus the previous flagship device display, and on-site guidance converted into 41 mobile-plan subscriptions."
     }
   ],
   "other_projects": [
-    {
-      "id": "o_plus10k",
-      "image": "images/p10k_01.jpg",
-      "period": "Sep — Oct 2026",
-      "title": "SEOUL PLUS 10K",
-      "desc": "A running brand campaign for Hanwha Finance PLUS. Built the operating manuals, ran production and coordinated partners.",
-      "result": "6,500 participants · 9.60 / 10 satisfaction",
-      "panel_category": "Brand Campaign · Experience Operations",
-      "panel_title": "SEOUL PLUS 10K — Hanwha Finance PLUS Running Brand Campaign",
-      "panel_images": [
-        "images/p10k_01.jpg",
-        "images/p10k_02.jpg",
-        "images/p10k_03.jpg",
-        "images/p10k_04.jpg",
-        "images/p10k_05.jpg",
-        "images/p10k_06.jpg"
-      ],
-      "panel_kpis": [
-        [
-          "9.60",
-          "Satisfaction (of 10)"
-        ],
-        [
-          "6,500",
-          "Total participants"
-        ],
-        [
-          "+87",
-          "Net Promoter Score"
-        ]
-      ],
-      "problem": "A campaign built to prove Hanwha Finance PLUS's brand message — analyse, train, recover — inside the running scene. It ran as three programmes: a five-day PLUS Performance Lab at the 63 Building, coaching sessions for the run crew, and the PLUS Recovery Lab at the Yeouido race site on event day. Working alongside the team lead as main PM, I owned operations and production, from the manuals through to on-site delivery.",
-      "points": [
-        "Wrote and distributed the booth operating manual and response scripts, setting the visitor flow from check-in through measurement to reward collection",
-        "Owned production delivery — designed the Suri sticker artwork myself and managed print runs and the advance shipping of 5,000 goods units, POP, banners and report packaging",
-        "Coordinated partners and internal teams — measurement-equipment vendors, coaches, running communities, sauna and massage operators — across schedule and scope",
-        "Handled press and PR, contract and insurance administration, and on-site logistics including load-in routes and build schedule"
-      ],
-      "result_panel": "The five-day Performance Lab drew 993 participants (95.8% of target) across 421 measurement sessions, and the race-day Recovery Lab reached 5,510 (88.2% of target). Across the three programmes, 144 survey respondents gave an average satisfaction of 9.60 / 10, with 86.1% scoring 9 or 10 and an NPS of +87. Paid magazine coverage reached 180,000 views."
-    },
     {
       "id": "o_plusrave",
       "image": "images/plus_01.jpg",
@@ -631,6 +592,45 @@
         "Led training for 28 crew members"
       ],
       "result_panel": "Ran 10 experience zones and completed training for 28 crew members."
+    },
+    {
+      "id": "o_xcaliber",
+      "image": "images/p4_01.png",
+      "period": "Feb 2024 — Feb 2025",
+      "title": "X Caliber Experience UX",
+      "desc": "Designed a B2B AI service into a jargon-free, interaction-led experience that lands in three minutes.",
+      "result": "1.5× completion · 3rd of 14",
+      "panel_category": "UX Planning · Interactive",
+      "panel_title": "X Caliber — Experience Content UX Planning",
+      "panel_images": [
+        "images/p4_01.png",
+        "images/p4_02.png",
+        "images/p4_03.png",
+        "images/p4_04.png",
+        "images/p4_05.png"
+      ],
+      "panel_kpis": [
+        [
+          "1.5×",
+          "Visitors completing"
+        ],
+        [
+          "3rd",
+          "of 14 in visitor survey"
+        ],
+        [
+          "90%",
+          "Ownership"
+        ]
+      ],
+      "problem": "An AI-assisted diagnostic B2B service needed an intuitive content UX/UI so that general visitors could grasp and experience it without technical background.",
+      "points": [
+        "Set the UX/UI logic and planned the detail screens",
+        "Ran business-team communication and secured resources",
+        "Designed the operating model and the customer experience",
+        "Researched the components required to build the experience zone"
+      ],
+      "result_panel": "1.5× more visitors completed the experience versus the main exhibition floor, and the zone ranked 3rd out of 14 items in the “best service experience” visitor survey."
     },
     {
       "id": "o4",
