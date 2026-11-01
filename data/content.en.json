@@ -516,14 +516,54 @@
   ],
   "other_projects": [
     {
+      "id": "o_plus10k",
+      "image": "images/p10k_01.jpg",
+      "period": "Sep — Oct 2026",
+      "title": "SEOUL PLUS 10K",
+      "desc": "A running brand campaign for Hanwha Finance PLUS. Built the operating manuals, ran production and coordinated partners.",
+      "result": "6,500 participants · 9.60 / 10 satisfaction",
+      "panel_category": "Brand Campaign · Experience Operations",
+      "panel_title": "SEOUL PLUS 10K — Hanwha Finance PLUS Running Brand Campaign",
+      "panel_images": [
+        "images/p10k_01.jpg",
+        "images/p10k_02.jpg",
+        "images/p10k_03.jpg",
+        "images/p10k_04.jpg",
+        "images/p10k_05.jpg",
+        "images/p10k_06.jpg"
+      ],
+      "panel_kpis": [
+        [
+          "9.60",
+          "Satisfaction (of 10)"
+        ],
+        [
+          "6,500",
+          "Total participants"
+        ],
+        [
+          "+87",
+          "Net Promoter Score"
+        ]
+      ],
+      "problem": "A campaign built to prove Hanwha Finance PLUS's brand message — analyse, train, recover — inside the running scene. It ran as three programmes: a five-day PLUS Performance Lab at the 63 Building, coaching sessions for the run crew, and the PLUS Recovery Lab at the Yeouido race site on event day. Working alongside the team lead as main PM, I owned operations and production, from the manuals through to on-site delivery.",
+      "points": [
+        "Wrote and distributed the booth operating manual and response scripts, setting the visitor flow from check-in through measurement to reward collection",
+        "Owned production delivery — designed the Suri sticker artwork myself and managed print runs and the advance shipping of 5,000 goods units, POP, banners and report packaging",
+        "Coordinated partners and internal teams — measurement-equipment vendors, coaches, running communities, sauna and massage operators — across schedule and scope",
+        "Handled press and PR, contract and insurance administration, and on-site logistics including load-in routes and build schedule"
+      ],
+      "result_panel": "The five-day Performance Lab drew 993 participants (95.8% of target) across 421 measurement sessions, and the race-day Recovery Lab reached 5,510 (88.2% of target). Across the three programmes, 144 survey respondents gave an average satisfaction of 9.60 / 10, with 86.1% scoring 9 or 10 and an NPS of +87. Paid magazine coverage reached 180,000 views."
+    },
+    {
       "id": "o_plusrave",
       "image": "images/plus_01.jpg",
       "period": "Aug — Sep 2026",
-      "title": "PLUS Run & Rave",
-      "desc": "A running-meets-rave brand event for PLUS (Hanwha Finance). Wrote the operating scripts, trained the crew and ran production.",
+      "title": "RUN [PLUS] RAVE",
+      "desc": "A running-meets-rave brand event for Hanwha Finance PLUS. Wrote the operating scripts, trained the crew and ran production.",
       "result": "9.59 / 10 satisfaction · 87% brand lift",
       "panel_category": "Brand Event · Operations",
-      "panel_title": "PLUS × Hanwha Finance — Run & Rave Brand Event",
+      "panel_title": "RUN [PLUS] RAVE — Hanwha Finance PLUS Brand Event",
       "panel_images": [
         "images/plus_01.jpg",
         "images/plus_02.jpg",
@@ -546,7 +586,7 @@
           "Participants"
         ]
       ],
-      "problem": "A brand event for PLUS (Hanwha Finance) pairing a 5K run with a rave after-party to build a networking experience for a single 20s–30s audience. I joined two weeks before the event, with the concept already locked, and took on the operating scripts and crew training, production orders and external communication through to delivery.",
+      "problem": "A brand event for Hanwha Finance PLUS pairing a 5K run with a rave after-party to build a networking experience for a single 20s–30s audience. I joined two weeks before the event, with the concept already locked, and took on the operating scripts and crew training, production orders and external communication through to delivery.",
       "points": [
         "Wrote the MC and on-site response scripts from scratch and ran crew training on site",
         "Checked and finalised production artwork and placed print orders — POP, banners, name tags, MC cue cards and staff badges — managing print and rental vendors",
