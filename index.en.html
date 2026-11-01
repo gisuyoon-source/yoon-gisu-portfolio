@@ -1015,7 +1015,6 @@ async function loadContent(){
 
   // ── Main projects ──
   const mpEl=document.getElementById('mainProjects');
-  const projKpis=['Dwell time 40×↑ · 41 plan sign-ups','55% purchase conversion · business insights','75% completion · traffic 2×↑ · 4.5 satisfaction','Completion 1.5×↑ · 3rd of 14 in survey'];
   const rowsHtml=c.main_projects.map((p,i)=>{
     const yr=(p.period.match(/\d{4}/)||[''])[0];
     const num=String(i+1).padStart(2,'0');
@@ -1025,7 +1024,7 @@ async function loadContent(){
       <span class="proj-row-name">${p.title}</span>
       <span class="proj-row-cat">${p.category}</span>
       <span class="proj-row-year">${yr}</span>
-      <span class="proj-row-kpi">${projKpis[i]||''}</span>
+      <span class="proj-row-kpi">${p.row_kpi||(p.kpis||[]).map(k=>k.val+' '+k.label).join(' · ')}</span>
     </div>`;
   }).join('');
   mpEl.innerHTML=`<div class="proj-sec-inner"><div class="proj-list">${rowsHtml}</div></div>`;

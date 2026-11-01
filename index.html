@@ -1015,7 +1015,6 @@ async function loadContent(){
 
   // ── Main projects ──
   const mpEl=document.getElementById('mainProjects');
-  const projKpis=['체류율 40배↑ · 가입유도 41건','구매전환율 55% · 인사이트 수집','완주율 75% · 유입 2배↑ · 만족도 4.5','체험증가 1.5배↑ · 선호도 3위'];
   const rowsHtml=c.main_projects.map((p,i)=>{
     const yr=(p.period.match(/\d{4}/)||[''])[0];
     const num=String(i+1).padStart(2,'0');
@@ -1025,7 +1024,7 @@ async function loadContent(){
       <span class="proj-row-name">${p.title}</span>
       <span class="proj-row-cat">${p.category}</span>
       <span class="proj-row-year">${yr}</span>
-      <span class="proj-row-kpi">${projKpis[i]||''}</span>
+      <span class="proj-row-kpi">${p.row_kpi||(p.kpis||[]).map(k=>k.val+' '+k.label).join(' · ')}</span>
     </div>`;
   }).join('');
   mpEl.innerHTML=`<div class="proj-sec-inner"><div class="proj-list">${rowsHtml}</div></div>`;
