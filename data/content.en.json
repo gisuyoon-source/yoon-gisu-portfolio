@@ -347,7 +347,8 @@
         "Coordinated partners and internal teams — measurement-equipment vendors, coaches, running communities, sauna and massage operators — across schedule and scope",
         "Handled press and PR, contract and insurance administration, and on-site logistics including load-in routes and build schedule"
       ],
-      "result": "The five-day Performance Lab drew 993 participants (95.8% of target) across 421 measurement sessions, and the race-day Recovery Lab reached 5,510 (88.2% of target). Across the three programmes, 144 survey respondents gave an average satisfaction of 9.60 / 10, with 86.1% scoring 9 or 10 and an NPS of +87. Paid magazine coverage reached 180,000 views."
+      "result": "The five-day Performance Lab drew 993 participants (95.8% of target) across 421 measurement sessions, and the race-day Recovery Lab reached 5,510 (88.2% of target). Across the three programmes, 144 survey respondents gave an average satisfaction of 9.60 / 10, with 86.1% scoring 9 or 10 and an NPS of +87. Paid magazine coverage reached 180,000 views.",
+      "row_kpi": "6,500 participants · 9.60 satisfaction · NPS +87"
     },
     {
       "id": "p3",
@@ -405,7 +406,8 @@
         "Designed the operating model and the customer experience",
         "Owned agency communication"
       ],
-      "result": "Reached 75% average completion among 2F visitors, doubled 2F traffic versus the previous concept, and scored 4.5 / 5 satisfaction from completing visitors."
+      "result": "Reached 75% average completion among 2F visitors, doubled 2F traffic versus the previous concept, and scored 4.5 / 5 satisfaction from completing visitors.",
+      "row_kpi": "75% completion · traffic 2×↑ · 4.5 satisfaction"
     },
     {
       "id": "p2",
@@ -459,7 +461,8 @@
         "Set content and posting cadence by marketing channel",
         "Wrote on-site response scenarios and scripts, and ran crew training"
       ],
-      "result": "Achieved 55% purchase conversion against initial inventory. As a test-bed project, it surfaced customer, marketing and distribution insights for the business case."
+      "result": "Achieved 55% purchase conversion against initial inventory. As a test-bed project, it surfaced customer, marketing and distribution insights for the business case.",
+      "row_kpi": "55% purchase conversion · business insights"
     },
     {
       "id": "p1",
@@ -512,7 +515,8 @@
         "Wrote response scripts and ran on-site crew training",
         "Led communication across the partner brand, business teams and agencies"
       ],
-      "result": "Dwell time grew 40× versus the previous flagship device display, and on-site guidance converted into 41 mobile-plan subscriptions."
+      "result": "Dwell time grew 40× versus the previous flagship device display, and on-site guidance converted into 41 mobile-plan subscriptions.",
+      "row_kpi": "Dwell time 40×↑ · 41 plan sign-ups"
     }
   ],
   "other_projects": [
