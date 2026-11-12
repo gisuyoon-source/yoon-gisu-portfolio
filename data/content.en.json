@@ -22,7 +22,7 @@
       {
         "end": 55,
         "suffix": "%",
-        "label": "Purchase conversion",
+        "label": "Sell-through rate",
         "decimal": false
       },
       {
@@ -43,7 +43,7 @@
   "about": {
     "block1": "A brand marketer who turns what a brand wants to say into customer experience, A to Z.",
     "block2": "Nearly five years planning brand pop-ups and flagship retail experiences at SK Telecom's T Factory, now running brand campaigns for Hanwha Finance PLUS with the Retail Inspiration Division at Sweetspot. From space and content planning through budget and agency coordination, operating models and crew training, to post-launch performance analysis — owning projects from the first brief to the final review.",
-    "block3": "Sets direction from quantitative and qualitative data. Analyses visitor volume, dwell time and customer feedback, feeds it into the next plan, and turns it into measurable results — 55% purchase conversion, 40× dwell-time growth, and 9.60 / 10 satisfaction across a 6,500-participant campaign. Recently applying AI tools in daily work to speed up planning and documentation.",
+    "block3": "Sets direction from quantitative and qualitative data. Analyses visitor volume, dwell time and customer feedback, feeds it into the next plan, and turns it into measurable results — 55% sell-through of initial inventory, 40× dwell-time growth, and 9.60 / 10 satisfaction across a 6,500-participant campaign. Recently applying AI tools in daily work to speed up planning and documentation.",
     "skills": [
       {
         "name": "Brand Activation",
@@ -413,11 +413,11 @@
       "id": "p2",
       "category": "Brand Naming · Campaign",
       "title": "“NAN-ZERO” Resale Campaign",
-      "desc": "Set the “Zero Doubt · Zero Worry · Zero Markup” USP and owned everything from branding to the pop-up store. 55% purchase conversion.",
+      "desc": "Set the “Zero Doubt · Zero Worry · Zero Markup” USP and owned everything from branding to the pop-up store. 55% sell-through of initial inventory.",
       "kpis": [
         {
           "val": "55%",
-          "label": "Purchase conversion"
+          "label": "Sell-through rate"
         },
         {
           "val": "80%",
@@ -443,7 +443,7 @@
       "panel_kpis": [
         [
           "55%",
-          "Purchase conversion"
+          "Sell-through rate"
         ],
         [
           "80%",
@@ -461,8 +461,8 @@
         "Set content and posting cadence by marketing channel",
         "Wrote on-site response scenarios and scripts, and ran crew training"
       ],
-      "result": "Achieved 55% purchase conversion against initial inventory. As a test-bed project, it surfaced customer, marketing and distribution insights for the business case.",
-      "row_kpi": "55% purchase conversion · business insights"
+      "result": "Achieved a 55% sell-through rate against initial inventory. As a test-bed project, it surfaced customer, marketing and distribution insights for the business case.",
+      "row_kpi": "55% sell-through · business insights"
     },
     {
       "id": "p1",
